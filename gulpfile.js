@@ -16,7 +16,7 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('app/styles'))
         .pipe(reload({stream:true}))
         .pipe($.size())
-        .pipe($.notify("Compilation complete."));;
+        .pipe($.notify("Compilation complete."));
 });
 
 gulp.task('scripts', function () {
@@ -85,8 +85,7 @@ gulp.task('serve', ['styles'], function () {
             directory: true
         },
         debugInfo: false,
-        open: false,
-        hostnameSuffix: ".xip.io"
+        open: false
     }, function (err, bs) {
         require('opn')(bs.options.url);
         console.log('Started connect web server on ' + bs.options.url);
@@ -98,12 +97,12 @@ gulp.task('wiredep', function () {
     var wiredep = require('wiredep').stream;
     gulp.src('app/styles/*.scss')
         .pipe(wiredep({
-            directory: 'bower_components'
+            directory: 'app/bower_components'
         }))
         .pipe(gulp.dest('app/styles'));
     gulp.src('app/*.html')
         .pipe(wiredep({
-            directory: 'bower_components'
+            directory: 'app/bower_components'
         }))
         .pipe(gulp.dest('app'));
 });
