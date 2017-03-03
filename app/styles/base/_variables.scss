@@ -1,0 +1,265 @@
+/**
+  Variables used throughout framework defined here
+
+  created by: Moustafa Baiou
+ */
+
+
+// COLORS
+
+  $black:                                   #333333 !default;
+  $charcoal:                                #666666 !default;
+  $stone:                                   #999999 !default;
+  $grey:                                    #adadad !default;
+  $heather:                                 #cccccc !default;
+  $line-color:                              #e0e0e0 !default;
+  $silver-sand:                             #f3f3f3 !default;
+  $white:                                   #FFFFFF !default;
+
+  $sky:                                     #27c2ff !default;
+  $space:                                   #09395C !default;
+
+  $vibrent-blue:                            #0098DB !default;
+  $vibrent-dark-blue:                       #006aab !default;
+
+  //for use on dark bg --START
+  $vibrent-light-blue:                      #88e9ff !default;
+  $vibrent-sea-blue:                        #3ed2ff !default;
+  $vibrent-teal:                            #00aaff !default;
+  // for use on dark bg --END
+
+  $blueberry:                               #262261 !default;
+  $wind:                                    #6CACE4 !default;
+
+  $pastel-light:                            #d9e6f0 !default;
+  $pastel-medium:                           #7fb0d2 !default;
+
+  $navy:                                    #0c476b !default;
+
+  $grass:                                   #7bb51f !default;
+  $orange:                                  #F98506 !default;
+  $candy-red:                               #e63900 !default;
+  $grape:                                   #8c2580 !default;
+
+  $highlight-red:                           #f4e0dc !default;
+
+
+// PADDING AND RADIUS defaults
+
+$content-padding:                           10px !default;
+
+$padding-base-vertical:                     6px !default;
+$padding-base-horizontal:                   12px !default;
+
+$padding-large-vertical:                    8px !default;
+$padding-large-horizontal:                  16px !default;
+
+$padding-small-vertical:                    5px !default;
+$padding-small-horizontal:                  10px !default;
+
+$border-width-base:                         1px !default;
+$border-width-thin:                         0.5px !default;
+$border-width-thick:                        2px !default;
+
+$border-radius-base:                        2px !default;
+$border-radius-large:                       4px !default;
+$border-radius-small:                       1px !default;
+
+
+
+// FONT AND TYPOGRAPHY
+
+$font-assets-path:                          '../assets/fonts';
+$vibrent-custom-font:                       'FONTNAMEGOESHERE';//TODO CORRECT THIS
+
+$font-family-regular:                       "AvenirNext-Regular", serif !default;
+$font-family-medium:                        "AvenirNext-Medium", serif !default;
+$font-family-bold:                          "AvenirNext-DemiBold", serif !default;
+
+$font-family-base:                          $font-family-regular !default;
+$font-size-base:                            14px !default;
+$font-size-large:                           16px !default;
+$font-size-small:                           11px !default;
+$font-text-color:                           $charcoal !default;
+
+$line-height-base:                          1.428571429 !default; // 20/14
+$line-height-computed:                      floor($font-size-base * $line-height-base) !default; // ~20px
+$line-height-large:                         1.25 !default;
+$line-height-small:                         1.81818182 !default;
+
+$headings-font-family:                      $font-family-medium !default;
+$headings-font-weight:                      500 !default;
+$headings-line-height:                      1.2 !default;
+$headings-text-color:                       $space !default;
+
+$h1-font-size:                              24px !default;
+$h2-font-size:                              20px !default;
+$h3-font-size:                              16px !default;
+$h4-font-size:                              14px !default;
+$h5-font-size:                              12px !default;
+
+$error-font-color:                          $candy-red !default;
+
+
+// BACKGROUNDS
+
+$default-bg-color:                          $white !default;
+$mobile-nav-bg-color:                       $pastel-light !default;
+$error-bg-color:                            $highlight-red !default;
+
+
+// BUTTONS
+
+$button-default-color:                      $vibrent-blue !default;
+$button-hover-color:                        $vibrent-dark-blue !default;
+$button-clicked-color:                      $navy !default;
+$button-disabled-bg-color:                  $line-color !default;
+$button-disabled-color:                     $grey !default;
+
+$button-secondary-bg-color:                 $default-bg-color !default;
+
+$button-default-height:                     34px !default;
+$button-large-height:                       46px !default;
+$button-small-height:                       30px !default;
+$button-mini-height:                        22px !default;
+
+$button-default-font-size:                  16px !default;
+$button-large-font-size:                    20px !default;
+$button-small-font-size:                    14px !default;
+$button-mini-font-size:                     11px !default;
+
+$button-default-hz-padding:                 30px !default;
+$button-large-hz-padding:                   50px !default;
+$button-small-hz-padding:                   25px !default;
+$button-mini-hz-padding:                    20px !default;
+
+
+// LINKS
+
+$link-default-color:                        $button-default-color !default;
+$link-hover-color:                          $button-hover-color !default;
+$link-clicked-color:                        $button-clicked-color !default;
+
+$link-default-color-dark-bg:                $vibrent-light-blue !default;
+$link-hover-color-dark-bg:                  $vibrent-sea-blue !default;
+$link-clicked-color-dark-bg:                $vibrent-teal !default;
+
+$link-default-font-size:                    14px !default;
+$link-large-font-size:                      18px !default;
+$link-small-font-size:                      11px !default;
+
+
+// ICONS
+
+$icon-default-color:                        $button-default-color !default;
+$icon-hover-color:                          $button-hover-color !default;
+$icon-clicked-color:                        $button-clicked-color !default;
+
+$icon-default-gray-color:                   $heather !default;
+$icon-hover-gray-color:                     $stone !default;
+$icon-clicked-gray-color:                   $charcoal !default;
+
+$mobile-nav-icon-unselected-color:          $pastel-medium !default;
+$mobile-nav-icon-selected-color:            $navy !default;
+$mobile-nav-icon-height:                    36px !default;
+$mobile-nav-icon-width:                     $mobile-nav-icon-height !default;
+
+$form-icon-default-height:                  83px !default;
+$form-icon-default-width:                   $form-icon-default-height !default;
+$form-icon-small-height:                    32px !default;
+$form-icon-small-width:                     $form-icon-small-height !default;
+
+$input-icon-default-height:                 26px !default;
+$input-icon-default-width:                  $input-icon-default-height !default;
+$input-icon-small-height:                   20px !default;
+$input-icon-small-width:                    $input-icon-small-height !default;
+
+// INPUTS
+
+$input-font:                                $font-family-base !default;
+
+$input-default-font-size:                   $font-size-base !default;
+$input-default-label-font-size:             10px !default;
+$input-default-border-vertical-padding:     6px !default;
+
+$input-large-font-size:                     $font-size-large !default;
+$input-large-label-font-size:               10px !default;
+$input-large-border-vertical-padding:       8px !default;
+
+$input-default-font-color:                  $font-text-color !default;
+$input-default-label-color:                 $stone !default;
+$input-default-placeholder-color:           $input-default-label-color !default;
+
+$input-default-border-color:                $input-default-label-color !default;
+$input-default-border-width:                $border-width-thin !default;
+$input-default-border-style:                solid !default;
+
+$input-focused-border-color:                $button-default-color !default;
+$input-focused-border-width:                $border-width-base !default;
+
+$input-error-border-color:                  $error-font-color !default;
+$input-error-border-width:                  $border-width-base !default;
+
+$input-disabled-font-color:                 $heather !default;
+$input-disabled-label-color:                $input-disabled-font-color !default;
+$input-disabled-border-style:               dotted !default;
+
+$input-error-message-font-size:             $font-size-small !default;
+$input-error-message-color:                 $error-font-color !default;
+$input-error-message-bg-color:              $error-bg-color !default;
+
+
+// SELECT (DROPDOWN)
+
+$select-font:                               $input-font !default;
+$select-options-font:                       $select-font !default;
+
+$select-default-font-size:                  $input-default-font-size !default;
+$select-default-label-font-size:            $input-default-label-font-size !default;
+$select-default-border-vertical-padding:    $input-default-border-vertical-padding !default;
+
+$select-large-font-size:                    $input-large-font-size !default;
+$select-large-label-font-size:              $input-large-label-font-size !default;
+$select-large-border-vertical-padding:      $input-large-border-vertical-padding !default;
+
+$select-default-font-color:                 $input-default-font-color !default;
+$select-default-label-color:                $input-default-label-color !default;
+$select-default-placeholder-color:          $select-default-label-color !default;
+$select-default-icon-color:                 $icon-default-color !default;
+$select-default-border-color:               $select-default-label-color !default;
+
+$select-default-border-width:               $input-default-border-width !default;
+
+$select-options-border-color:               $select-default-label-color !default;
+$select-options-border-width:               $select-default-border-width !default;
+$select-options-font-color:                 $select-default-font-color !default;
+$select-options-bg-color:                   $default-bg-color !default;
+
+$select-hover-icon-color:                   $icon-hover-color !default;
+
+$select-clicked-icon-color:                 $icon-clicked-color !default;
+
+$select-options-hover-font-color:           $select-options-bg-color !default;
+$select-options-hover-bg-color:             $select-default-icon-color !default;
+
+$select-disabled-font-color:                $input-disabled-font-color !default;
+$select-disabled-label-color:               $select-disabled-font-color !default;
+$select-disabled-icon-color:                $select-disabled-font-color !default;
+$select-disabled-border-style:              $input-disabled-border-style !default;
+
+
+// RADIO BUTTON
+
+//TODO WRITE THIS
+
+// CHECKBOX
+
+//TODO write this
+
+// TOGGLE
+
+//TODO write this
+
+// MEDIA PLAYER
+
+//TODO write this
