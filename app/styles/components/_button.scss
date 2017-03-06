@@ -1,21 +1,93 @@
 /*
 ---
-name: base button
-category: module/button
+name: default button
+category: components/buttons
 ---
 
-## This is base button
-
-* Base button style.
-* Use `a` or `button` tag.
+* Default button style.
+* Use `button` tag.
 
 ```html
-<button class="button-vibrent">Button</a>
+<button class="button-vibrent">default</a>
 ```
  */
 
 .button-vibrent{
-    @extend .btn;
     @include primary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color, $button-disabled-bg-color);
+    @include border-radius($base-border-radius);
+    height: $button-default-height;
+    font-size: $button-default-font-size;
+    padding: 0 $button-default-hz-padding;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: $btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
 
+/*
+---
+name: large button
+category: components/buttons
+---
+
+* Large button style.
+* Use `button` tag.
+
+```html
+<button class="button-vibrent-large">large</a>
+```
+ */
+.button-vibrent-large{
+    @extend .button-vibrent;
+    height: $button-large-height;
+    font-size: $button-large-font-size;
+    padding: 0 $button-large-hz-padding;
+}
+
+
+/*
+---
+name: small button
+category: components/buttons
+---
+
+* Small button style.
+* Use `button` tag.
+
+```html
+<button class="button-vibrent-small">small</a>
+```
+ */
+.button-vibrent-small{
+    @extend .button-vibrent;
+    height: $button-small-height;
+    font-size: $button-small-font-size;
+    padding: 0 $button-small-hz-padding;
+}
+
+
+/*
+---
+name: mini button
+category: components/buttons
+---
+
+* Mini button style.
+* Use `button` tag.
+
+```html
+<button class="button-vibrent-mini">mini</a>
+```
+ */
+.button-vibrent-mini{
+    @extend .button-vibrent;
+    height: $button-mini-height;
+    font-size: $button-mini-font-size;
+    padding: 0 $button-mini-hz-padding;
 }

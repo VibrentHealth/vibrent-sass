@@ -109,7 +109,10 @@
   border-color: $normal-color;
   background-color: $normal-color;
   color: $text-color;
-
+  &:focus{
+      color: $text-color;
+      outline: 1px $normal-color auto;
+  }
   &:hover {
     border-color: $hover-color;
     background-color: $hover-color;
@@ -131,8 +134,10 @@
   border-color: $normal-color;
   background-color: $bg-color;
   color: $normal-color;
-
-  &:hover {
+  &:focus{
+    outline: 1px $normal-color auto;
+  }
+  &:focus,&:hover {
     border-color: $hover-color;
     background-color: $bg-color;
     color: $hover-color;

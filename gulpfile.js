@@ -69,11 +69,8 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('clean', function () {
-    return gulp.src(['app/styles/main.css', 'styleguide'], { read: false }).pipe($.clean());
+    return gulp.src(['app/styles/main.css', 'styleguide', 'dist'], { read: false }).pipe($.clean());
 });
-
-gulp.task('build', ['html', 'images', 'fonts']);
-
 
 gulp.task('serve', ['aigis'], function () {
     browserSync.init(null, {
@@ -108,7 +105,7 @@ gulp.task('watch', ['serve'], function () {
 
     // watch for changes
     gulp.watch(['styleguide/*.html'], reload);
-
+    gulp.watch(['aigis_config.yml', 'template_ejs/**/*', 'aigis_assets/**/*'], ['aigis', 'delayed-reload']);
     gulp.watch('app/styles/**/*.scss', ['styles', 'aigis']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
@@ -120,6 +117,16 @@ gulp.task("aigis", ['styles'], function() {
         .pipe($.aigis());
 });
 
+gulp.task('delayed-reload',function () {
+    setTimeout(reload, 3000);
+});
+
+gulp.task('build', ['clean'], function () {
+    gulp.src('app/styles/**/*.scss')
+        .pipe($.size())
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.task('default', [ 'clean'], function () {
-    gulp.start('serve');
+    gulp.start('watch');
 });

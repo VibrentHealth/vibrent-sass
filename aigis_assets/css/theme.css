@@ -55,8 +55,11 @@ tag:
   margin-top: 10px;
   margin-bottom: 20px; }
 .aigis-header a {
+  float: right;
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+  padding-bottom: 20px;
+}
 
 /*
 ---
