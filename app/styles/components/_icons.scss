@@ -1,0 +1,208 @@
+
+$base-icon-prefix: "icon_vibrent_";
+
+[class^=#{$base-icon-prefix}], [class*=#{$base-icon-prefix}] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: $custom-font !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.#{$base-icon-prefix}exit{
+    :before {
+        content: $vbr-icon-exit;
+    }
+}
+.#{$base-icon-prefix}lock {
+    :before {
+        content: $vbr-icon-lock;
+    }
+}
+.#{$base-icon-prefix}check {
+    :before {
+        content: $vbr-icon-check;
+    }
+}
+.#{$base-icon-prefix}pause {
+    :before {
+        content: $vbr-icon-pause;
+    }
+}
+.#{$base-icon-prefix}arrow_left {
+    :before {
+        content: $vbr-icon-arrow-left;
+    }
+}
+.#{$base-icon-prefix}arrow_right {
+    :before {
+        content: $vbr-icon-arrow-right;
+    }
+}
+.#{$base-icon-prefix}calendar {
+    :before {
+        content: $vbr-icon-calendar;
+    }
+}
+.#{$base-icon-prefix}edit {
+    :before {
+        content: $vbr-icon-edit;
+    }
+}
+.#{$base-icon-prefix}feedback {
+    :before {
+        content: $vbr-icon-feedback;
+    }
+}
+.#{$base-icon-prefix}feeds {
+    :before {
+        content: $vbr-icon-feeds;
+    }
+}
+.#{$base-icon-prefix}gallery {
+    :before {
+        content: $vbr-icon-gallery;
+    }
+}
+.#{$base-icon-prefix}hamburger {
+    :before {
+        content: $vbr-icon-hamburger;
+    }
+}
+.#{$base-icon-prefix}help {
+    :before {
+        content: $vbr-icon-help;
+    }
+}
+.#{$base-icon-prefix}home {
+    :before {
+        content: $vbr-icon-home;
+    }
+}
+.#{$base-icon-prefix}inbox {
+    :before {
+        content: $vbr-icon-inbox;
+    }
+}
+.#{$base-icon-prefix}info {
+    :before {
+        content: $vbr-icon-info;
+    }
+}
+.#{$base-icon-prefix}lt {
+    :before {
+        content: $vbr-icon-lt;
+    }
+}
+.#{$base-icon-prefix}messages {
+    :before {
+        content: $vbr-icon-messages;
+    }
+}
+.#{$base-icon-prefix}minus {
+    :before {
+        content: $vbr-icon-minus;
+    }
+}
+.#{$base-icon-prefix}news {
+    :before {
+        content: $vbr-icon-news;
+    }
+}
+.#{$base-icon-prefix}plus {
+    :before {
+        content: $vbr-icon-plus;
+    }
+}
+.#{$base-icon-prefix}preferences {
+    :before {
+        content: $vbr-icon-preferences;
+    }
+}
+.#{$base-icon-prefix}profile {
+    :before {
+        content: $vbr-icon-profile;
+    }
+}
+.#{$base-icon-prefix}program {
+    :before {
+        content: $vbr-icon-program;
+    }
+}
+.#{$base-icon-prefix}search {
+    :before {
+        content: $vbr-icon-search;
+    }
+}
+.#{$base-icon-prefix}stats {
+    :before {
+        content: $vbr-icon-stats;
+    }
+}
+.#{$base-icon-prefix}telephone {
+    :before {
+        content: $vbr-icon-telephone;
+    }
+}
+.#{$base-icon-prefix}thin_hamburger {
+    :before {
+        content: $vbr-icon-thin_hamburger;
+    }
+}
+.#{$base-icon-prefix}user {
+    :before {
+        content: $vbr-icon-user;
+    }
+}
+.#{$base-icon-prefix}x {
+    :before {
+        content: $vbr-icon-x;
+    }
+}
+
+/*
+---
+name: Icons
+category: iconography
+---
+* font: $custom-font
+
+```html
+<span class="icon_vibrent_calendar">
+    calendar
+</span>
+<span class="icon_vibrent_exit">
+    exit
+</span>
+<span class="icon_vibrent_lock">
+    lock
+</span>
+<span class="icon_vibrent_check">
+    check
+</span>
+<span class="icon_vibrent_pause">
+    pause
+</span>
+<span class="icon_vibrent_arrow_left">
+    arrow_left
+</span>
+<span class="icon_vibrent_arrow_right">
+    arrow_right
+</span>
+<span class="icon_vibrent_edit">
+    edit
+</span>
+<span class="icon_vibrent_feedback">
+    feedback
+</span>
+```
+
+ */
