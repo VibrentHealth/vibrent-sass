@@ -1,0 +1,81 @@
+
+/*
+---
+name: default link
+category: components/links
+---
+
+* Default link style.
+* For use on light backgrounds
+* Use `a` tag.
+
+```html
+<div style="background-color: #fff; padding: 10px; margin: 0 -10px;">
+<a class="link-vibrent">this is a sample link</a>
+</div>
+<div style="background-color: #666; padding: 10px; margin: 0 -10px;">
+    <a class="link-vibrent-light">this is a sample link</a>
+</div>
+```
+ */
+
+.link-vibrent,.link-vibrent-light{
+    font-size: $link-default-font-size;
+    cursor: pointer;
+}
+.link-vibrent{
+    @include link-style($link-default-color, $link-hover-color, $link-clicked-color);
+}
+.link-vibrent-light{
+    @include link-style($link-default-color-dark-bg, $link-hover-color-dark-bg, $link-clicked-color-dark-bg);
+}
+
+
+/*
+---
+name: large link
+category: components/links
+---
+
+* Large link style.
+* For use on light backgrounds
+* Use `a` tag.
+
+```html
+<div style="background-color: #fff; padding: 10px; margin: 0 -10px;">
+    <a class="link-vibrent link-large">this is a sample link</a>
+</div>
+<div style="background-color: #666; padding: 10px; margin: 0 -10px;">
+    <a class="link-vibrent-light link-large">this is a sample link</a>
+</div>
+
+```
+ */
+
+.link-large{
+    font-size: $link-large-font-size;
+}
+
+/*
+---
+name: fine print link
+category: components/links
+---
+
+* Fine print link style.
+* For use on light backgrounds
+* Use `a` tag.
+
+```html
+<div style="background-color: #fff; padding: 10px; margin: 0 -10px;">
+    <a class="link-vibrent link-small">this is a sample link</a>
+</div>
+<div style="background-color: #666; padding: 10px; margin: 0 -10px;">
+    <a class="link-vibrent-light link-small">this is a sample link</a>
+</div>
+```
+ */
+
+.link-small{
+    font-size: $link-small-font-size;
+}

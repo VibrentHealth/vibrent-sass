@@ -1,19 +1,5 @@
-/*
----
-name: default button
-category: components/buttons
----
 
-* Default button style.
-* Use `button` tag.
-
-```html
-<button class="button-vibrent">default</a>
-```
- */
-
-.button-vibrent{
-    @include primary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color, $button-disabled-bg-color);
+%button-default{
     @include border-radius($base-border-radius);
     height: $button-default-height;
     font-size: $button-default-font-size;
@@ -32,6 +18,44 @@ category: components/buttons
 
 /*
 ---
+name: default button
+category: components/buttons
+---
+
+* Default button style.
+* Use `button` tag.
+
+```html
+<button class="button-vibrent">default</a>
+```
+ */
+
+.button-vibrent{
+    @extend %button-default;
+    @include primary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color, $button-disabled-bg-color);
+}
+
+
+/*
+---
+name: clear button
+category: components/buttons
+---
+
+* Clear button style.
+* Use `button` tag.
+
+```html
+<button class="button-vibrent-clear">clear</a>
+```
+ */
+.button-vibrent-clear{
+    @extend %button-default;
+    @include secondary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color);
+}
+
+/*
+---
 name: large button
 category: components/buttons
 ---
@@ -40,11 +64,13 @@ category: components/buttons
 * Use `button` tag.
 
 ```html
-<button class="button-vibrent-large">large</a>
+<button class="button-vibrent button-large">large</a>
+```
+```html
+<button class="button-vibrent-clear button-large">large</a>
 ```
  */
-.button-vibrent-large{
-    @extend .button-vibrent;
+.button-large{
     height: $button-large-height;
     font-size: $button-large-font-size;
     padding: 0 $button-large-hz-padding;
@@ -61,11 +87,13 @@ category: components/buttons
 * Use `button` tag.
 
 ```html
-<button class="button-vibrent-small">small</a>
+<button class="button-vibrent button-small">small</a>
+```
+```html
+<button class="button-vibrent-clear button-small">small</a>
 ```
  */
-.button-vibrent-small{
-    @extend .button-vibrent;
+.button-small{
     height: $button-small-height;
     font-size: $button-small-font-size;
     padding: 0 $button-small-hz-padding;
@@ -82,11 +110,13 @@ category: components/buttons
 * Use `button` tag.
 
 ```html
-<button class="button-vibrent-mini">mini</a>
+<button class="button-vibrent button-mini">mini</a>
+```
+```html
+<button class="button-vibrent-clear button-mini">mini</a>
 ```
  */
 .button-vibrent-mini{
-    @extend .button-vibrent;
     height: $button-mini-height;
     font-size: $button-mini-font-size;
     padding: 0 $button-mini-hz-padding;

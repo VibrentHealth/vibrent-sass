@@ -77,9 +77,9 @@ $font-family-medium:                        "AvenirNext-Medium", serif !default;
 $font-family-bold:                          "AvenirNext-DemiBold", serif !default;
 
 $base-font-family:                          $font-family-regular !default;
-$base-font-size:                            14px !default;
-$large-font-size:                           16px !default;
-$small-font-size:                           11px !default;
+$base-font-size:                            19px !default;
+$large-font-size:                           22px !default;
+$small-font-size:                           15px !default;
 $font-text-color:                           $charcoal !default;
 
 $base-line-height:                          1.428571429 !default; // 20/14
@@ -92,11 +92,12 @@ $font-weight-headings:                      500 !default;
 $line-height-headings:                      1.2 !default;
 $text-color-headings:                       $space !default;
 
-$h1-font-size:                              24px !default;
-$h2-font-size:                              20px !default;
-$h3-font-size:                              16px !default;
-$h4-font-size:                              14px !default;
-$h5-font-size:                              12px !default;
+$h1-font-size:                              32px !default;
+$h2-font-size:                              26px !default;
+$h3-font-size:                              22px !default;
+$h4-font-size:                              19px !default;
+$h5-font-size:                              16px !default;
+$h6-font-size:                              12px !default;
 
 $error-font-color:                          $candy-red !default;
 
@@ -144,9 +145,9 @@ $link-default-color-dark-bg:                $vibrent-light-blue !default;
 $link-hover-color-dark-bg:                  $vibrent-sea-blue !default;
 $link-clicked-color-dark-bg:                $vibrent-teal !default;
 
-$link-default-font-size:                    14px !default;
-$link-large-font-size:                      18px !default;
-$link-small-font-size:                      11px !default;
+$link-default-font-size:                    $base-font-size !default;
+$link-large-font-size:                      24px !default;
+$link-small-font-size:                      15px !default;
 
 
 // ICONS
