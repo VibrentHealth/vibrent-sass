@@ -105,7 +105,7 @@
 // BUTTONS/LINKS
 // --------------------------------------------------
 
-@mixin primary-button-style($text-color: $white, $normal-color, $hover-color, $clicked-color, $disabled-text-color, $disabled-color) {
+@mixin primary-button-style($text-color, $normal-color, $hover-color, $clicked-color, $disabled-text-color, $disabled-color) {
   border-color: $normal-color;
   background-color: $normal-color;
   color: $text-color;
@@ -127,7 +127,7 @@
   }
 }
 
-@mixin secondary-button-style($bg-color: $white, $normal-color, $hover-color, $clicked-color,  $disabled-color) {
+@mixin secondary-button-style($bg-color, $normal-color, $hover-color, $clicked-color,  $disabled-color) {
   border-color: $normal-color;
   background-color: $bg-color;
   color: $normal-color;

@@ -30,18 +30,18 @@
 }
 
 @font-face {
-  font-family: 'vibrent';
-  src:  url("#{$font-assets-path}/vibrent.eot?hnule1#iefix") format('embedded-opentype'),
-        url("#{$font-assets-path}/vibrent.ttf?hnule1") format('truetype'),
-        url("#{$font-assets-path}/vibrent.woff?hnule1") format('woff'),
-        url("#{$font-assets-path}/vibrent.svg?hnule1#vibrent") format('svg');
+  font-family: $custom-font;
+  src:  url("#{$font-assets-path}/#{$custom-font}.eot?hnule1#iefix") format('embedded-opentype'),
+        url("#{$font-assets-path}/#{$custom-font}.ttf?hnule1") format('truetype'),
+        url("#{$font-assets-path}/#{$custom-font}.woff?hnule1") format('woff'),
+        url("#{$font-assets-path}/#{$custom-font}.svg?hnule1#vibrent") format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon_"], [class*=" icon_"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'vibrent' !important;
+  font-family: $custom-font !important;
   speak: none;
   font-style: normal;
   font-weight: normal;

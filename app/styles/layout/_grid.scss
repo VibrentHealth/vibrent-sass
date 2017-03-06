@@ -4,3 +4,10 @@
   created by: Moustafa Baiou
  */
 
+.padding{
+    padding: $content-padding;
+}
+
+.padding-double{
+    padding: $content-padding * 2;
+}

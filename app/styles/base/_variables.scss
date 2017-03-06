@@ -69,28 +69,28 @@ $border-radius-small:                       1px !default;
 
 // FONT AND TYPOGRAPHY
 
-$font-assets-path:                          '../assets/fonts';
-$vibrent-custom-font:                       'FONTNAMEGOESHERE';//TODO CORRECT THIS
+$font-assets-path:                          '../fonts';
+$custom-font:                               'vibrent';
 
 $font-family-regular:                       "AvenirNext-Regular", serif !default;
 $font-family-medium:                        "AvenirNext-Medium", serif !default;
 $font-family-bold:                          "AvenirNext-DemiBold", serif !default;
 
-$font-family-base:                          $font-family-regular !default;
-$font-size-base:                            14px !default;
-$font-size-large:                           16px !default;
-$font-size-small:                           11px !default;
+$base-font-family:                          $font-family-regular !default;
+$base-font-size:                            14px !default;
+$large-font-size:                           16px !default;
+$small-font-size:                           11px !default;
 $font-text-color:                           $charcoal !default;
 
-$line-height-base:                          1.428571429 !default; // 20/14
-$line-height-computed:                      floor($font-size-base * $line-height-base) !default; // ~20px
-$line-height-large:                         1.25 !default;
-$line-height-small:                         1.81818182 !default;
+$base-line-height:                          1.428571429 !default; // 20/14
+$computed-line-height:                      floor($font-size-base * $line-height-base) !default; // ~20px
+$large-line-height:                         1.25 !default;
+$small-line-height:                         1.81818182 !default;
 
-$headings-font-family:                      $font-family-medium !default;
-$headings-font-weight:                      500 !default;
-$headings-line-height:                      1.2 !default;
-$headings-text-color:                       $space !default;
+$font-family-headings:                      $font-family-medium !default;
+$font-weight-headings:                      500 !default;
+$line-height-headings:                      1.2 !default;
+$text-color-headings:                       $space !default;
 
 $h1-font-size:                              24px !default;
 $h2-font-size:                              20px !default;

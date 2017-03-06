@@ -1,0 +1,21 @@
+/*
+---
+name: base button
+category: module/button
+---
+
+## This is base button
+
+* Base button style.
+* Use `a` or `button` tag.
+
+```html
+<button class="button-vibrent">Button</a>
+```
+ */
+
+.button-vibrent{
+    @extend .btn;
+    @include primary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color, $button-disabled-bg-color);
+
+}

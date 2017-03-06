@@ -40,7 +40,7 @@ gulp.task('html', ['styles', 'scripts'], function () {
         .pipe(cssFilter.restore())
         .pipe($.useref.restore())
         .pipe($.useref())
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('styleguide'))
         .pipe($.size());
 });
 
@@ -51,7 +51,7 @@ gulp.task('images', function () {
             progressive: true,
             interlaced: true
         })))
-        .pipe(gulp.dest('dist/images'))
+        .pipe(gulp.dest('styleguide/images'))
         .pipe(reload({stream:true, once:true}))
         .pipe($.size());
 });
@@ -64,24 +64,21 @@ gulp.task('fonts', function () {
     )
         .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
         .pipe($.flatten())
-        .pipe(gulp.dest('dist/fonts'))
+        .pipe(gulp.dest('styleguide/fonts'))
         .pipe($.size());
 });
 
 gulp.task('clean', function () {
-    return gulp.src(['app/styles/main.css', 'dist'], { read: false }).pipe($.clean());
+    return gulp.src(['app/styles/main.css', 'styleguide'], { read: false }).pipe($.clean());
 });
 
 gulp.task('build', ['html', 'images', 'fonts']);
 
-gulp.task('default', ['clean'], function () {
-    gulp.start('build');
-});
 
-gulp.task('serve', ['styles'], function () {
+gulp.task('serve', ['aigis'], function () {
     browserSync.init(null, {
         server: {
-            baseDir: 'app',
+            baseDir: 'styleguide',
             directory: true
         },
         debugInfo: false,
@@ -110,10 +107,19 @@ gulp.task('wiredep', function () {
 gulp.task('watch', ['serve'], function () {
 
     // watch for changes
-    gulp.watch(['app/*.html'], reload);
+    gulp.watch(['styleguide/*.html'], reload);
 
-    gulp.watch('app/styles/**/*.scss', ['styles']);
+    gulp.watch('app/styles/**/*.scss', ['styles', 'aigis']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
     gulp.watch('bower.json', ['wiredep']);
+});
+
+gulp.task("aigis", ['styles'], function() {
+    gulp.src("./aigis_config.yml")
+        .pipe($.aigis());
+});
+
+gulp.task('default', [ 'clean'], function () {
+    gulp.start('serve');
 });

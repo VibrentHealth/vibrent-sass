@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'AvenirNext-Regular';
+    src: url(AvenirNext-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'AvenirNext-Medium';
+    src: url(AvenirNext-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'avenirnextdemibold';
+    src: url(avenirnextdemibold.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url(OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url(OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: 'Glyphs';
+  src:  url('/bootstrap/fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+        url('/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff');
+}
