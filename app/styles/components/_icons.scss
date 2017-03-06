@@ -14,156 +14,157 @@ $base-icon-prefix: "icon_vibrent_";
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-align: center
 }
 
 
 .#{$base-icon-prefix}exit{
-    :before {
+    &:before {
         content: $vbr-icon-exit;
     }
 }
 .#{$base-icon-prefix}lock {
-    :before {
+    &:before {
         content: $vbr-icon-lock;
     }
 }
 .#{$base-icon-prefix}check {
-    :before {
+    &:before {
         content: $vbr-icon-check;
     }
 }
 .#{$base-icon-prefix}pause {
-    :before {
+    &:before {
         content: $vbr-icon-pause;
     }
 }
 .#{$base-icon-prefix}arrow_left {
-    :before {
+    &:before {
         content: $vbr-icon-arrow-left;
     }
 }
 .#{$base-icon-prefix}arrow_right {
-    :before {
+    &:before {
         content: $vbr-icon-arrow-right;
     }
 }
 .#{$base-icon-prefix}calendar {
-    :before {
+    &:before {
         content: $vbr-icon-calendar;
     }
 }
 .#{$base-icon-prefix}edit {
-    :before {
+    &:before {
         content: $vbr-icon-edit;
     }
 }
 .#{$base-icon-prefix}feedback {
-    :before {
+    &:before {
         content: $vbr-icon-feedback;
     }
 }
 .#{$base-icon-prefix}feeds {
-    :before {
+    &:before {
         content: $vbr-icon-feeds;
     }
 }
 .#{$base-icon-prefix}gallery {
-    :before {
+    &:before {
         content: $vbr-icon-gallery;
     }
 }
 .#{$base-icon-prefix}hamburger {
-    :before {
+    &:before {
         content: $vbr-icon-hamburger;
     }
 }
 .#{$base-icon-prefix}help {
-    :before {
+    &:before {
         content: $vbr-icon-help;
     }
 }
 .#{$base-icon-prefix}home {
-    :before {
+    &:before {
         content: $vbr-icon-home;
     }
 }
 .#{$base-icon-prefix}inbox {
-    :before {
+    &:before {
         content: $vbr-icon-inbox;
     }
 }
 .#{$base-icon-prefix}info {
-    :before {
+    &:before {
         content: $vbr-icon-info;
     }
 }
 .#{$base-icon-prefix}lt {
-    :before {
+    &:before {
         content: $vbr-icon-lt;
     }
 }
 .#{$base-icon-prefix}messages {
-    :before {
+    &:before {
         content: $vbr-icon-messages;
     }
 }
 .#{$base-icon-prefix}minus {
-    :before {
+    &:before {
         content: $vbr-icon-minus;
     }
 }
 .#{$base-icon-prefix}news {
-    :before {
+    &:before {
         content: $vbr-icon-news;
     }
 }
 .#{$base-icon-prefix}plus {
-    :before {
+    &:before {
         content: $vbr-icon-plus;
     }
 }
 .#{$base-icon-prefix}preferences {
-    :before {
+    &:before {
         content: $vbr-icon-preferences;
     }
 }
 .#{$base-icon-prefix}profile {
-    :before {
+    &:before {
         content: $vbr-icon-profile;
     }
 }
 .#{$base-icon-prefix}program {
-    :before {
+    &:before {
         content: $vbr-icon-program;
     }
 }
 .#{$base-icon-prefix}search {
-    :before {
+    &:before {
         content: $vbr-icon-search;
     }
 }
 .#{$base-icon-prefix}stats {
-    :before {
+    &:before {
         content: $vbr-icon-stats;
     }
 }
 .#{$base-icon-prefix}telephone {
-    :before {
+    &:before {
         content: $vbr-icon-telephone;
     }
 }
 .#{$base-icon-prefix}thin_hamburger {
-    :before {
+    &:before {
         content: $vbr-icon-thin_hamburger;
     }
 }
 .#{$base-icon-prefix}user {
-    :before {
+    &:before {
         content: $vbr-icon-user;
     }
 }
 .#{$base-icon-prefix}x {
-    :before {
+    &:before {
         content: $vbr-icon-x;
     }
 }
@@ -176,33 +177,35 @@ category: iconography
 * font: $custom-font
 
 ```html
-<span class="icon_vibrent_calendar">
-    calendar
-</span>
-<span class="icon_vibrent_exit">
-    exit
-</span>
-<span class="icon_vibrent_lock">
-    lock
-</span>
-<span class="icon_vibrent_check">
-    check
-</span>
-<span class="icon_vibrent_pause">
-    pause
-</span>
-<span class="icon_vibrent_arrow_left">
-    arrow_left
-</span>
-<span class="icon_vibrent_arrow_right">
-    arrow_right
-</span>
-<span class="icon_vibrent_edit">
-    edit
-</span>
-<span class="icon_vibrent_feedback">
-    feedback
-</span>
+<div style="display: flex">
+    <span class="icon_vibrent_calendar">
+        calendar
+    </span>
+    <span class="icon_vibrent_exit">
+        exit
+    </span>
+    <span class="icon_vibrent_lock">
+        lock
+    </span>
+    <span class="icon_vibrent_check">
+        check
+    </span>
+    <span class="icon_vibrent_pause">
+        pause
+    </span>
+    <span class="icon_vibrent_arrow_left">
+        arrow_left
+    </span>
+    <span class="icon_vibrent_arrow_right">
+        arrow_right
+    </span>
+    <span class="icon_vibrent_edit">
+        edit
+    </span>
+    <span class="icon_vibrent_feedback">
+        feedback
+    </span>
+</div>
 ```
 
  */
