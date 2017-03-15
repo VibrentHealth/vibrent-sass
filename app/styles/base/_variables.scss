@@ -61,14 +61,15 @@ $border-width-base:                         1px !default;
 $border-width-thin:                         0.5px !default;
 $border-width-thick:                        2px !default;
 
-$base-border-radius:                        2px !default;
-$large-border-radius:                       4px !default;
+$base-border-radius:                        3px !default;
+$large-border-radius:                       5px !default;
 $small-border-radius:                       1px !default;
 
 
 
 // FONT AND TYPOGRAPHY
 
+$images-assets-path:                        '../images';
 $font-assets-path:                          '../fonts';
 $custom-font:                               'vibrent';
 
@@ -227,9 +228,10 @@ $select-default-font-color:                 $input-default-font-color !default;
 $select-default-label-color:                $input-default-label-color !default;
 $select-default-placeholder-color:          $select-default-label-color !default;
 $select-default-icon-color:                 $icon-default-color !default;
-$select-default-border-color:               $select-default-label-color !default;
 
+$select-default-border-color:               $select-default-label-color !default;
 $select-default-border-width:               $input-default-border-width !default;
+$select-default-border-style:               $input-default-border-style !default;
 
 $select-options-border-color:               $select-default-label-color !default;
 $select-options-border-width:               $select-default-border-width !default;

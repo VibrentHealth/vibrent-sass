@@ -111,7 +111,7 @@
   color: $text-color;
   &:focus{
       color: $text-color;
-      outline: 1px $normal-color auto;
+      //outline: 1px $normal-color auto;
   }
   &:hover {
     border-color: $hover-color;
@@ -135,7 +135,7 @@
   background-color: $bg-color;
   color: $normal-color;
   &:focus{
-    outline: 1px $normal-color auto;
+    //outline: 1px $normal-color auto;
   }
   &:focus,&:hover {
     border-color: $hover-color;
@@ -322,4 +322,16 @@
   -ms-flex-order: $n;
   order: $n;
   -webkit-box-ordinal-group: $n;
+}
+
+
+// Icon minxins
+
+@mixin icon($icon-variable){
+    &.icon-left:before{
+        content: $icon-variable;
+    }
+    &.icon-right:after{
+        content: $icon-variable;
+    }
 }

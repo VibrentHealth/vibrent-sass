@@ -118,7 +118,7 @@ gulp.task("aigis", ['styles'], function() {
 });
 
 gulp.task('delayed-reload',function () {
-    setTimeout(reload, 3000);
+    setTimeout(reload, 5000);
 });
 
 gulp.task('build', ['clean'], function () {

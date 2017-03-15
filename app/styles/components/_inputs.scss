@@ -1,0 +1,81 @@
+//TODO: convert this to an angular directive
+
+/*
+---
+name: inputs
+category: components/inputs
+---
+
+
+```html
+<div style="display: inline-block;">
+    <div class="input-vibrent">
+        <label for="example">label</label>
+        <input id="example" type="text" placeholder="placeholder"/>
+    </div>
+</div>
+<div style="display: inline-block;">
+    <div class="input-vibrent">
+        <label for="example2" disabled="true">label</label>
+        <input id="example2" type="text" placeholder="placeholder" disabled="true"/>
+    </div>
+</div>
+<div style="display: inline-block;">
+    <div class="input-vibrent">
+        <label for="example3">label</label>
+        <input id="example3" class="error" type="text" placeholder="placeholder" />
+        <span class="input-error-message">example error</span>
+    </div>
+</div>
+```
+ */
+
+.input-vibrent{
+    font-family: $input-font;
+    @include flex();
+    input{
+        font-size: $input-default-font-size;
+        color: $input-default-font-color;
+        border: 0;
+        border-bottom-color: $input-default-border-color;
+        border-bottom-style: $input-default-border-style;
+        border-bottom-width: $input-default-border-width;
+        padding-bottom: $input-default-border-vertical-padding;
+        &:-ms-input-placeholder,&::-webkit-input-placeholder{
+            color: $input-default-placeholder-color;
+            &:disabled, &.disabled{
+                color: $input-disabled-font-color;
+            }
+        }
+        &:focus{
+            border-bottom-color: $input-focused-border-color;
+            border-bottom-width: $input-focused-border-width;
+        }
+        &.error{
+            border-bottom-color: $input-error-border-color;
+            border-bottom-width: $input-error-border-width;
+        }
+        &:disabled, &.disabled{
+            color: $input-disabled-font-color;
+            border-bottom-style: $input-disabled-border-style;
+        }
+    }
+    label{
+        position: absolute;
+        bottom: - $input-default-border-vertical-padding;
+        margin: $input-default-border-vertical-padding 0;
+        font-size: $input-default-label-font-size;
+        color: $input-default-label-color;
+        &:disabled, &.disabled{
+            color: $input-disabled-label-color;
+        }
+    }
+    .input-error-message{
+        font-size: $input-error-message-font-size;
+        color: $input-error-message-color;
+        background-color: $input-error-message-bg-color;
+        border-radius: $base-border-radius;
+        position: absolute;
+        bottom: 0 - $input-default-border-vertical-padding - $input-default-label-font-size;
+    }
+}

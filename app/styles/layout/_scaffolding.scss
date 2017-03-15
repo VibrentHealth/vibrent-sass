@@ -13,6 +13,12 @@ body{
     background-color: $default-bg-color;
 }
 
+// hack to remove outline for viewing purposes only now
+// This is very important for 508 compliance
+:focus{
+    outline: 0;
+}
+
 /*
 ---
 name: Headings

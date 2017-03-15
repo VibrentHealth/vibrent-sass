@@ -19,154 +19,94 @@ $base-icon-prefix: "icon_vibrent_";
 
 
 .#{$base-icon-prefix}exit{
-    &:before {
-        content: $vbr-icon-exit;
-    }
+    @include icon($vbr-icon-exit)
 }
 .#{$base-icon-prefix}lock {
-    &:before {
-        content: $vbr-icon-lock;
-    }
+   @include icon($vbr-icon-lock)
 }
 .#{$base-icon-prefix}check {
-    &:before {
-        content: $vbr-icon-check;
-    }
+    @include icon($vbr-icon-check)
 }
 .#{$base-icon-prefix}pause {
-    &:before {
-        content: $vbr-icon-pause;
-    }
+    @include icon($vbr-icon-pause)
 }
 .#{$base-icon-prefix}arrow_left {
-    &:before {
-        content: $vbr-icon-arrow-left;
-    }
+    @include icon($vbr-icon-arrow-left)
 }
 .#{$base-icon-prefix}arrow_right {
-    &:before {
-        content: $vbr-icon-arrow-right;
-    }
+    @include icon($vbr-icon-arrow-right)
 }
 .#{$base-icon-prefix}calendar {
-    &:before {
-        content: $vbr-icon-calendar;
-    }
+    @include icon($vbr-icon-calendar)
 }
 .#{$base-icon-prefix}edit {
-    &:before {
-        content: $vbr-icon-edit;
-    }
+    @include icon($vbr-icon-edit)
 }
 .#{$base-icon-prefix}feedback {
-    &:before {
-        content: $vbr-icon-feedback;
-    }
+    @include icon($vbr-icon-feedback)
 }
 .#{$base-icon-prefix}feeds {
-    &:before {
-        content: $vbr-icon-feeds;
-    }
+    @include icon($vbr-icon-feeds)
 }
 .#{$base-icon-prefix}gallery {
-    &:before {
-        content: $vbr-icon-gallery;
-    }
+    @include icon($vbr-icon-gallery)
 }
 .#{$base-icon-prefix}hamburger {
-    &:before {
-        content: $vbr-icon-hamburger;
-    }
+    @include icon($vbr-icon-hamburger)
 }
 .#{$base-icon-prefix}help {
-    &:before {
-        content: $vbr-icon-help;
-    }
+    @include icon($vbr-icon-help)
 }
 .#{$base-icon-prefix}home {
-    &:before {
-        content: $vbr-icon-home;
-    }
+    @include icon($vbr-icon-home)
 }
 .#{$base-icon-prefix}inbox {
-    &:before {
-        content: $vbr-icon-inbox;
-    }
+    @include icon($vbr-icon-inbox)
 }
 .#{$base-icon-prefix}info {
-    &:before {
-        content: $vbr-icon-info;
-    }
+    @include icon($vbr-icon-info)
 }
 .#{$base-icon-prefix}lt {
-    &:before {
-        content: $vbr-icon-lt;
-    }
+    @include icon($vbr-icon-lt)
 }
 .#{$base-icon-prefix}messages {
-    &:before {
-        content: $vbr-icon-messages;
-    }
+    @include icon($vbr-icon-messages)
 }
 .#{$base-icon-prefix}minus {
-    &:before {
-        content: $vbr-icon-minus;
-    }
+    @include icon($vbr-icon-minus)
 }
 .#{$base-icon-prefix}news {
-    &:before {
-        content: $vbr-icon-news;
-    }
+    @include icon($vbr-icon-news)
 }
 .#{$base-icon-prefix}plus {
-    &:before {
-        content: $vbr-icon-plus;
-    }
+    @include icon($vbr-icon-plus)
 }
 .#{$base-icon-prefix}preferences {
-    &:before {
-        content: $vbr-icon-preferences;
-    }
+    @include icon($vbr-icon-preferences)
 }
 .#{$base-icon-prefix}profile {
-    &:before {
-        content: $vbr-icon-profile;
-    }
+    @include icon($vbr-icon-profile)
 }
 .#{$base-icon-prefix}program {
-    &:before {
-        content: $vbr-icon-program;
-    }
+    @include icon($vbr-icon-program)
 }
 .#{$base-icon-prefix}search {
-    &:before {
-        content: $vbr-icon-search;
-    }
+   @include icon($vbr-icon-search)
 }
 .#{$base-icon-prefix}stats {
-    &:before {
-        content: $vbr-icon-stats;
-    }
+    @include icon($vbr-icon-stats)
 }
 .#{$base-icon-prefix}telephone {
-    &:before {
-        content: $vbr-icon-telephone;
-    }
+    @include icon($vbr-icon-telephone)
 }
 .#{$base-icon-prefix}thin_hamburger {
-    &:before {
-        content: $vbr-icon-thin_hamburger;
-    }
+    @include icon($vbr-icon-thin_hamburger)
 }
 .#{$base-icon-prefix}user {
-    &:before {
-        content: $vbr-icon-user;
-    }
+    @include icon($vbr-icon-user)
 }
 .#{$base-icon-prefix}x {
-    &:before {
-        content: $vbr-icon-x;
-    }
+    @include icon($vbr-icon-x)
 }
 
 /*
@@ -175,36 +115,191 @@ name: Icons
 category: iconography
 ---
 * font: $custom-font
+* use `icon-left` to display the icon to the left of the text
+* use `icon-right` to display the icon to the right of the text
 
 ```html
-<div style="display: flex">
-    <span class="icon_vibrent_calendar">
-        calendar
-    </span>
-    <span class="icon_vibrent_exit">
-        exit
-    </span>
-    <span class="icon_vibrent_lock">
-        lock
-    </span>
-    <span class="icon_vibrent_check">
-        check
-    </span>
-    <span class="icon_vibrent_pause">
-        pause
-    </span>
-    <span class="icon_vibrent_arrow_left">
-        arrow_left
-    </span>
-    <span class="icon_vibrent_arrow_right">
-        arrow_right
-    </span>
-    <span class="icon_vibrent_edit">
-        edit
-    </span>
-    <span class="icon_vibrent_feedback">
-        feedback
-    </span>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-3">
+            <span class="icon_vibrent_calendar icon-left">
+                calendar
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_exit icon-left">
+                exit
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_lock icon-right">
+                lock
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="icon_vibrent_check icon-left">
+                check
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_pause icon-left">
+                pause
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_arrow_right icon-right">
+                arrow_right
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="icon_vibrent_arrow_left icon-left">
+                arrow_left
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_edit icon-left">
+                edit
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_feedback icon-right">
+                feedback
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="icon_vibrent_feeds icon-left">
+                feeds
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_gallery icon-left">
+                gallery
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_hamburger icon-right">
+                hamburger
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="icon_vibrent_help icon-left">
+                help
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_home icon-left">
+                home
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_inbox icon-right">
+                inbox
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="icon_vibrent_info icon-left">
+                info
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_lt icon-left">
+                lt
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_messages icon-right">
+                messages
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="icon_vibrent_minus icon-left">
+                minus
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_news icon-left">
+                news
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_plus icon-right">
+                plus
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="icon_vibrent_preferences icon-left">
+                preferences
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_profile icon-left">
+                profile
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_program icon-right">
+                program
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="icon_vibrent_search icon-left">
+                search
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_stats icon-left">
+                stats
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_telephone icon-right">
+                telephone
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="icon_vibrent_thin_hamburger icon-left">
+                thin_hamburger
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_user icon-left">
+                user
+            </span>
+        </div>
+        <div class="col-md-3">
+            <span class="icon_vibrent_x icon-right">
+                x
+            </span>
+        </div>
+    </div>
 </div>
 ```
 
