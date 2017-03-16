@@ -7,22 +7,14 @@ category: components/dropdown
 
 ```html
 <div style="display: inline-block;">
-    <div class="select-vibrent">
-        <label for="example">label</label>
-        <select id="example">
-            <option value="" selected disabled >placeholder</option>
-            <option id="1" value="first">first</option>
-            <option id="2" value="second">second</option>
-            <option id="3" value="third">third</option>
-        </select>
-    </div>
+    <vbr-dropdown class="select-vibrent"></vbr-dropdown>
 </div>
 ```
  */
 
 .select-vibrent{
     font-family: $select-font;
-    @include flex();
+    @include display-flex;
     background-color: $select-options-bg-color;
     border-bottom-color: $select-default-border-color;
     border-bottom-style: $select-default-border-style;

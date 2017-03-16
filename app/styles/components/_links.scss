@@ -19,14 +19,16 @@ category: components/links
 ```
  */
 
-.link-vibrent,.link-vibrent-light{
+%default-links{
     font-size: $link-default-font-size;
     cursor: pointer;
 }
 .link-vibrent{
-    @include link-style($link-default-color, $link-hover-color, $link-clicked-color);
+    @extend %default-links;
+    @include link-style($link-default-color-light-bg, $link-hover-color-light-bg, $link-clicked-color-light-bg);
 }
 .link-vibrent-light{
+    @extend %default-links;
     @include link-style($link-default-color-dark-bg, $link-hover-color-dark-bg, $link-clicked-color-dark-bg);
 }
 

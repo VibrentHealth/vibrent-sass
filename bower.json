@@ -3,7 +3,12 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "angular": "1.5.11",
+    "angular-bootstrap": "2.2.0",
+    "angular-messages": "1.5.11",
+    "angular-touch": "1.5.11",
+    "angular-aria": "1.5.11"
   },
   "devDependencies": {}
 }

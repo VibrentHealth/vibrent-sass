@@ -47,6 +47,8 @@
 // PADDING AND RADIUS defaults
 
 $content-padding:                           10px !default;
+$content-padding-vertical:                  16px !default;
+$content-padding-horizontal:                15px !default;
 
 $padding-base-vertical:                     6px !default;
 $padding-base-horizontal:                   12px !default;
@@ -138,9 +140,9 @@ $button-mini-hz-padding:                    20px !default;
 
 // LINKS
 
-$link-default-color:                        $button-default-color !default;
-$link-hover-color:                          $button-hover-color !default;
-$link-clicked-color:                        $button-clicked-color !default;
+$link-default-color-light-bg:               $button-default-color !default;
+$link-hover-color-light-bg:                 $button-hover-color !default;
+$link-clicked-color-light-bg:               $button-clicked-color !default;
 
 $link-default-color-dark-bg:                $vibrent-light-blue !default;
 $link-hover-color-dark-bg:                  $vibrent-sea-blue !default;
@@ -266,3 +268,37 @@ $select-disabled-border-style:              $input-disabled-border-style !defaul
 // MEDIA PLAYER
 
 //TODO write this
+
+// NAVBAR
+
+$nav-bar-height:                            56px !default;
+$nav-bar-padding-vertical:                  $content-padding-vertical !default;
+$nav-bar-padding-horizontal:                $content-padding-horizontal !default;
+
+$nav-bar-bottom-margin:                     $nav-bar-padding-vertical !default;
+
+
+// FOOTER
+
+$footer-bar-height:                         136px !default;
+$footer-bar-padding-vertical:               44px !default;
+
+$footer-content-margin-bottom:              $content-padding * 2 !default;//20px
+
+// PAGE
+
+$page-content-margin:                       $content-padding-vertical !default;//16px
+$page-content-margin-top:                   $page-content-margin !default;
+$page-content-margin-bottom:                $footer-bar-padding-vertical !default;
+
+$page-content-padding:                      $content-padding !default;
+
+// MODALS
+
+$modal-content-padding:                     26px !default;
+
+
+// HAMBURGER MENU
+
+//TODO WRITE THIS
+

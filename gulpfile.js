@@ -20,8 +20,23 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('app/scripts/**/*.js')
+
+        gulp.src('app/scripts/main/**/*.html')
+        .pipe($.angularTemplatecache('templates.js', {
+            module: 'vbr-style-guide'
+        }))
+        .pipe(gulp.dest('app/scripts/main'));
+
+    return gulp.src(['app/scripts/main/**/*.module.js','app/scripts/main/**/*.js'])
         .pipe($.jshint())
+        .pipe($.ngAnnotate({
+            remove: true,
+            add: true,
+            single_quotes: true
+        }))
+        .pipe($.uglify())
+        .pipe($.concat('main.js'))
+        .pipe(gulp.dest('app/scripts'))
         .pipe($.jshint.reporter(require('jshint-stylish')))
         .pipe($.size());
 });
@@ -91,14 +106,21 @@ gulp.task('wiredep', function () {
     var wiredep = require('wiredep').stream;
     gulp.src('app/styles/*.scss')
         .pipe(wiredep({
-            directory: 'app/bower_components'
+            directory: 'bower_components'
         }))
         .pipe(gulp.dest('app/styles'));
-    gulp.src('app/*.html')
+    gulp.src('template_ejs/scripts.ejs')
         .pipe(wiredep({
-            directory: 'app/bower_components'
+            directory: 'bower_components',
+            fileTypes: {
+                html: {
+                    replace: {
+                        js: '<script src="<%- root%>{{filePath}}"></script>'
+                    }
+                }
+            }
         }))
-        .pipe(gulp.dest('app'));
+        .pipe(gulp.dest('template_ejs'));
 });
 
 gulp.task('watch', ['serve'], function () {
@@ -107,12 +129,12 @@ gulp.task('watch', ['serve'], function () {
     gulp.watch(['styleguide/*.html'], reload);
     gulp.watch(['aigis_config.yml', 'template_ejs/**/*', 'aigis_assets/**/*'], ['aigis', 'delayed-reload']);
     gulp.watch('app/styles/**/*.scss', ['styles', 'aigis']);
-    gulp.watch('app/scripts/**/*.js', ['scripts']);
+    gulp.watch('app/scripts/**/*.js', ['scripts', 'aigis']);
     gulp.watch('app/images/**/*', ['images']);
-    gulp.watch('bower.json', ['wiredep']);
+    gulp.watch('bower.json', ['wiredep', 'aigis']);
 });
 
-gulp.task("aigis", ['styles'], function() {
+gulp.task("aigis", ['styles', 'scripts'], function() {
     gulp.src("./aigis_config.yml")
         .pipe($.aigis());
 });

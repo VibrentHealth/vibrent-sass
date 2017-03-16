@@ -1,4 +1,3 @@
-//TODO: convert this to an angular directive
 
 /*
 ---
@@ -9,10 +8,8 @@ category: components/inputs
 
 ```html
 <div style="display: inline-block;">
-    <div class="input-vibrent">
-        <label for="example">label</label>
-        <input id="example" type="text" placeholder="placeholder"/>
-    </div>
+    <vbr-input class="input-vibrent">
+    </vbr-input>
 </div>
 <div style="display: inline-block;">
     <div class="input-vibrent">
@@ -32,7 +29,7 @@ category: components/inputs
 
 .input-vibrent{
     font-family: $input-font;
-    @include flex();
+    @include display-flex;
     input{
         font-size: $input-default-font-size;
         color: $input-default-font-color;
