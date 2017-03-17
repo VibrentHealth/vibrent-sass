@@ -15,7 +15,7 @@
                     link: link,
                     restrict: 'E',
                     scope: {},
-                    templateUrl: TEMPLATES+'/vbr-dropdown/dropdown.html'
+                    templateUrl: TEMPLATES + '/vbr-dropdown/dropdown.html'
                 };
                 return directive;
 

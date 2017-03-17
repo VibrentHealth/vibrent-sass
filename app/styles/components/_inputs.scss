@@ -7,8 +7,23 @@ category: components/inputs
 
 
 ```html
+<form name="someForm" ng-controller="ExampleController as ex">
 <div style="display: inline-block;">
-    <vbr-input class="input-vibrent">
+    <vbr-input
+        class="input-vibrent"
+        id="someName"
+        form="someForm"
+        type="email"
+        label="label"
+        placeholder="placeholder"
+        ng-model="ex.someModel"
+        ng-required="false"
+        ng-change="ex.someFunction()"
+        ng-minlength="3"
+        ng-maxlength="8"
+        ng-pattern="/w3schools/i"
+        ng-trim="true"
+        validations="ex.someValidations">
     </vbr-input>
 </div>
 <div style="display: inline-block;">

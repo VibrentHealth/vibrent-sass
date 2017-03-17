@@ -1,3 +1,31 @@
+<label
+    ng-if="vm.label"
+    for="{{vm.inputId}}">
+    {{vm.label}}
+</label>
 
-<label for="example">label</label>
-<input id="example" type="text" placeholder="placeholder"/>
+<input
+    id="{{vm.inputId}}"
+    name="{{vm.inputId}}"
+    type="{{vm.type}}"
+    placeholder="{{vm.placeholder}}"
+    ng-model="vm.ngModel"
+    ng-required="vm.ngRequired"
+    ng-minlength="vm.ngMinlength"
+    ng-maxlength="vm.ngMaxlength"
+    ng-change="vm.ngChange"
+    ng-pattern="vm.ngPattern"
+    ng-trim="vm.ngTrim"
+/>
+
+<div class="input-error-message" role="alert"
+     ng-if="vm.form.$invalid && vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty ||vm.form.$submitted)"
+     ng-messages="vm.form[vm.inputId].$error">
+
+    <span ng-repeat="error in vm.validations"
+        ng-message="{{error.key}}">
+        {{ error.message }}
+    </span>
+
+
+</div>

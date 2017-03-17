@@ -15,7 +15,7 @@
                     link: link,
                     restrict: 'E',
                     scope: {},
-                    templateUrl: TEMPLATES+'/vbr-checkbox/checkbox.html'
+                    templateUrl: TEMPLATES + '/vbr-checkbox/checkbox.html'
                 };
                 return directive;
 

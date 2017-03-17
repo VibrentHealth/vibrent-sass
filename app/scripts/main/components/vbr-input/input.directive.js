@@ -14,8 +14,22 @@
                     controllerAs: 'vm',
                     link: link,
                     restrict: 'E',
-                    scope: {},
-                    templateUrl: TEMPLATES+'/vbr-input/input.html'
+                    scope: {
+                        ngModel: '=',
+                        ngRequired: '=?',
+                        ngChange: '&?',
+                        ngMinlength: '=?',
+                        ngMaxlength: '=?',
+                        ngPattern: '@?',
+                        ngTrim: '=?',
+                        type: '@',
+                        form: '=',
+                        inputId: '@?id',
+                        label: '@?',
+                        placeholder: '@?',
+                        validations: '=?'
+                    },
+                    templateUrl: TEMPLATES + '/vbr-input/input.html'
                 };
                 return directive;
 
@@ -28,6 +42,18 @@
 
     /* @ngInject */
     function InputCtrl() {
+        var vm = this;
+
+        console.log(vm);
+
+        if(vm.validations){
+            angular.forEach(vm.validations, function (error, key) {
+                if(typeof (error.message) == 'string' && error.message.length > 0){
+                    vm.validations[key].key = key;
+                }
+            })
+        }
+
 
     }
 

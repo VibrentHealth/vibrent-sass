@@ -129,7 +129,7 @@ gulp.task('watch', ['serve'], function () {
     gulp.watch(['styleguide/*.html'], reload);
     gulp.watch(['aigis_config.yml', 'template_ejs/**/*', 'aigis_assets/**/*'], ['aigis', 'delayed-reload']);
     gulp.watch('app/styles/**/*.scss', ['styles', 'aigis']);
-    gulp.watch('app/scripts/**/*.js', ['scripts', 'aigis']);
+    gulp.watch(['app/scripts/**/*.js', 'app/scripts/**/*.html'], ['scripts', 'aigis']);
     gulp.watch('app/images/**/*', ['images']);
     gulp.watch('bower.json', ['wiredep', 'aigis']);
 });
