@@ -54,8 +54,26 @@ category: components/inputs
         background-color: $input-error-message-bg-color;
         border-radius: $large-border-radius;
         position: absolute;
-        top: ($input-default-border-vertical-padding*3 + $input-default-label-font-size + $content-padding + 2px);
+        top: ($input-default-border-vertical-padding*3 + $input-default-label-font-size*2 + $content-padding + 2px);
         width: 100%;
         padding: $content-padding/2 $content-padding;
+    }
+}
+
+.input-vibrent-large{
+    @extend .input-vibrent;
+    input{
+        font-size: $input-large-font-size;
+        padding-bottom: $input-large-border-vertical-padding;
+
+    }
+    label{
+        bottom: - ($input-large-border-vertical-padding*3 + 2px);
+        margin: $input-large-border-vertical-padding 0;
+        font-size: $input-large-label-font-size;
+    }
+    .input-error-message{
+        font-size: $input-error-message-font-size;
+        top: ($input-large-border-vertical-padding*3 + $input-large-label-font-size*2 + $content-padding + 2px);
     }
 }

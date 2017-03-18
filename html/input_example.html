@@ -1,9 +1,26 @@
 <div ng-controller="ExampleController as ex">
     <form name="someForm">
-        <div style="display: inline-block;">
+        <div style="display: inline-flex;">
             <vbr-input
                 class="input-vibrent"
                 id="someName"
+                form="someForm"
+                type="email"
+                label="label"
+                placeholder="placeholder"
+                ng-model="ex.someModel"
+                ng-required="false"
+                ng-change="ex.someFunction()"
+                ng-minlength="3"
+                ng-maxlength="8"
+                ng-pattern="/some/i"
+                ng-trim="true"
+                ng-disabled="ex.disabled"
+                validations="ex.someValidations">
+            </vbr-input>
+            <vbr-input
+                class="input-vibrent-large"
+                id="someName2"
                 form="someForm"
                 type="email"
                 label="label"
