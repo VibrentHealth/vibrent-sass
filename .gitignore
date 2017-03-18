@@ -6,3 +6,5 @@ bower_components
 app/styles/main.css
 .idea/
 styleguide/
+app/scripts/main/templates.js
+app/scripts/main.js
