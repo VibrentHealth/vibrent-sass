@@ -22,6 +22,7 @@
                         ngMaxlength: '=?',
                         ngPattern: '@?',
                         ngTrim: '=?',
+                        ngDisabled: '=?',
                         type: '@',
                         form: '=',
                         inputId: '@?id',
@@ -52,6 +53,14 @@
                     vm.validations[key].key = key;
                 }
             })
+        }
+
+        vm.errorClass = function () {
+            if (!vm.ngDisabled && vm.validations) {
+                return vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty || vm.form.$submitted)
+            } else {
+                return vm.form[vm.inputId].$invalid;
+            }
         }
 
 

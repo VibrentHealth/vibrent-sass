@@ -16,6 +16,8 @@
     ng-change="vm.ngChange"
     ng-pattern="vm.ngPattern"
     ng-trim="vm.ngTrim"
+    ng-disabled="vm.ngDisabled"
+    ng-class="{ error: vm.errorClass() }"
 />
 
 <div class="input-error-message" role="alert"

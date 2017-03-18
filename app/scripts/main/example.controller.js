@@ -25,11 +25,13 @@
                     },
                     'pattern': {
                         message: 'This is an example pattern error'
-                    },
-                    'custom': {
-                        message: 'This would be a custom error'
                     }
-                }
+                };
+                ex.disabled = false;
+                ex.disableInput = function () {
+                    ex.disabled = !ex.disabled;
+                };
+
             });
 
 })();

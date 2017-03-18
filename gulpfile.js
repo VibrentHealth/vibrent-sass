@@ -131,6 +131,7 @@ gulp.task('watch', ['serve'], function () {
     gulp.watch('app/styles/**/*.scss', ['styles', 'aigis']);
     gulp.watch(['app/scripts/**/*.js', 'app/scripts/**/*.html'], ['scripts', 'aigis']);
     gulp.watch('app/images/**/*', ['images']);
+    gulp.watch('html/**/*', ['aigis']);
     gulp.watch('bower.json', ['wiredep', 'aigis']);
 });
 

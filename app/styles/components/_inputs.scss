@@ -4,42 +4,7 @@
 name: inputs
 category: components/inputs
 ---
-
-
-```html
-<form name="someForm" ng-controller="ExampleController as ex">
-<div style="display: inline-block;">
-    <vbr-input
-        class="input-vibrent"
-        id="someName"
-        form="someForm"
-        type="email"
-        label="label"
-        placeholder="placeholder"
-        ng-model="ex.someModel"
-        ng-required="false"
-        ng-change="ex.someFunction()"
-        ng-minlength="3"
-        ng-maxlength="8"
-        ng-pattern="/w3schools/i"
-        ng-trim="true"
-        validations="ex.someValidations">
-    </vbr-input>
-</div>
-<div style="display: inline-block;">
-    <div class="input-vibrent">
-        <label for="example2" disabled="true">label</label>
-        <input id="example2" type="text" placeholder="placeholder" disabled="true"/>
-    </div>
-</div>
-<div style="display: inline-block;">
-    <div class="input-vibrent">
-        <label for="example3">label</label>
-        <input id="example3" class="error" type="text" placeholder="placeholder" />
-        <span class="input-error-message">example error</span>
-    </div>
-</div>
-```
+!![](./input_example.html)
  */
 
 .input-vibrent{
