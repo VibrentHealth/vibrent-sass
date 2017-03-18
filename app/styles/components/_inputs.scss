@@ -52,11 +52,10 @@ category: components/inputs
         font-size: $input-error-message-font-size;
         color: $input-error-message-color;
         background-color: $input-error-message-bg-color;
-        border-radius: $base-border-radius;
+        border-radius: $large-border-radius;
         position: absolute;
         top: ($input-default-border-vertical-padding*3 + $input-default-label-font-size + $content-padding + 2px);
         width: 100%;
-        text-align: center;
-        padding: $content-padding/2 0;
+        padding: $content-padding/2 $content-padding;
     }
 }
