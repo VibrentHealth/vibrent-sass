@@ -8,6 +8,7 @@ category: components/dropdown
  */
 
 .select-vibrent{
+    position: relative;
     font-family: $select-font;
     @include display-flex;
     background-color: $select-options-bg-color;
@@ -33,7 +34,7 @@ category: components/dropdown
 
     label{
         position: absolute;
-        bottom: - $input-default-border-vertical-padding;
+        bottom: - ($input-default-border-vertical-padding*3 +2px);
         margin: $input-default-border-vertical-padding 0;
         font-size: $input-default-label-font-size;
         color: $input-default-label-color;

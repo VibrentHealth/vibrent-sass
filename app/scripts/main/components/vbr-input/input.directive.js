@@ -61,7 +61,7 @@
             } else {
                 return vm.form[vm.inputId].$invalid;
             }
-        }
+        };
 
 
     }

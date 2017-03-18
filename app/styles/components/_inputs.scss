@@ -9,6 +9,7 @@ category: components/inputs
 
 .input-vibrent{
     font-family: $input-font;
+    position: relative;
     @include display-flex;
     input{
         font-size: $input-default-font-size;
@@ -39,7 +40,7 @@ category: components/inputs
     }
     label{
         position: absolute;
-        bottom: - $input-default-border-vertical-padding;
+        bottom: - ($input-default-border-vertical-padding*3 + 2px);
         margin: $input-default-border-vertical-padding 0;
         font-size: $input-default-label-font-size;
         color: $input-default-label-color;
@@ -53,6 +54,9 @@ category: components/inputs
         background-color: $input-error-message-bg-color;
         border-radius: $base-border-radius;
         position: absolute;
-        bottom: 0 - $input-default-border-vertical-padding - $input-default-label-font-size;
+        top: ($input-default-border-vertical-padding*3 + $input-default-label-font-size + $content-padding + 2px);
+        width: 100%;
+        text-align: center;
+        padding: $content-padding/2 0;
     }
 }
