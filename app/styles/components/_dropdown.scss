@@ -8,35 +8,51 @@ category: components/dropdown
  */
 
 .select-vibrent{
+    margin: $content-padding;
     position: relative;
     font-family: $select-font;
     @include display-flex;
     background-color: $select-options-bg-color;
-    border-bottom-color: $select-default-border-color;
-    border-bottom-style: $select-default-border-style;
-    border-bottom-width: $select-default-border-width;
     select{
-        -webkit-appearance: none;
-        @include border-radius(0);
-        background: transparent;
         font-size: $select-default-font-size;
         color: $select-default-font-color;
+        @include border-radius(0);
         border: 0;
-        padding-bottom: $input-default-border-vertical-padding;
+        @include vbr-bottom-border($select-default-border-color, $select-default-border-style, $select-default-border-width);
+        padding-bottom: $select-default-border-vertical-padding;
+        //for styling select arrow
+        @include hideSelectToggle;
+        background: url($images-assets-path + '/dropdown.svg') no-repeat right transparent;
+        background-size: 12px 12px;
+        background-position: 95% 40%;
+        min-width: 100px;
+        //to style placeholder
+        &.ng-empty{
+            color: $select-default-placeholder-color;
+        }
         option{
-             background-color: $select-options-bg-color;
-            :first-of-type{
-                color: $select-default-placeholder-color;
-                display: none;
-            }
+            // nothing styled here will actually show up because options box is rendered primarily by the os and browser.
+            // in order to achieve this we will have to build this out more custom as a directive
+        }
+        &:disabled, &.disabled{
+            color: $select-disabled-font-color;
+            border-bottom-style: $select-disabled-border-style;
+            border-bottom-color: $select-disabled-border-color;
+            background-image: url($images-assets-path + '/dropdown-disabled.svg');
+        }
+        &:active, &.active{
+            background-image: url($images-assets-path + '/dropdown-close.svg');
         }
     }
 
     label{
         position: absolute;
-        bottom: - ($input-default-border-vertical-padding*3 +2px);
-        margin: $input-default-border-vertical-padding 0;
-        font-size: $input-default-label-font-size;
-        color: $input-default-label-color;
+        bottom: - ($select-default-border-vertical-padding*3 +2px);
+        margin: $select-default-border-vertical-padding 0;
+        font-size: $select-default-label-font-size;
+        color: $select-default-label-color;
+        &:disabled, &.disabled{
+            color: $select-disabled-label-color;
+        }
     }
 }

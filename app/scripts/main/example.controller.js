@@ -32,6 +32,21 @@
                     ex.disabled = !ex.disabled;
                 };
 
+                ex.dropdownOptions = [
+                    {display: 'option 1', value: 1},
+                    {display: 'option 2', value: 2},
+                    {display: 'option 3', value: 3},
+                    {display: 'option 4', value: 4}
+                ];
+
+                ex.disableDropdown = function () {
+                    ex.disabledDropdown = !ex.disabledDropdown;
+                };
+
+                ex.someFunction = function () {
+                    console.log('change function called');
+                }
+
             });
 
 })();

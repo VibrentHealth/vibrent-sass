@@ -8,6 +8,7 @@ category: components/inputs
  */
 
 .input-vibrent{
+    margin: $content-padding;
     font-family: $input-font;
     position: relative;
     @include display-flex;
@@ -15,16 +16,9 @@ category: components/inputs
         font-size: $input-default-font-size;
         color: $input-default-font-color;
         border: 0;
-        border-bottom-color: $input-default-border-color;
-        border-bottom-style: $input-default-border-style;
-        border-bottom-width: $input-default-border-width;
+        @include vbr-bottom-border($input-default-border-color, $input-default-border-style, $input-default-border-width);
         padding-bottom: $input-default-border-vertical-padding;
-        &:-ms-input-placeholder,&::-webkit-input-placeholder{
-            color: $input-default-placeholder-color;
-            &:disabled, &.disabled{
-                color: $input-disabled-font-color;
-            }
-        }
+        @include vbr-placeholder($input-default-placeholder-color, $input-disabled-font-color);
         &:focus{
             border-bottom-color: $input-focused-border-color;
             border-bottom-width: $input-focused-border-width;
@@ -36,6 +30,7 @@ category: components/inputs
         &:disabled, &.disabled{
             color: $input-disabled-font-color;
             border-bottom-style: $input-disabled-border-style;
+            border-bottom-color: $input-disabled-border-color;
         }
     }
     label{

@@ -102,6 +102,14 @@
   @include border-bottom-left-radius($radius);
 }
 
+//vibrent border styling:
+
+@mixin vbr-bottom-border($border-color, $border-style, $border-width){
+    border-bottom-color: $border-color;
+    border-bottom-style: $border-style;
+    border-bottom-width: $border-width;
+}
+
 // BUTTONS/LINKS
 // --------------------------------------------------
 
@@ -183,6 +191,13 @@
     // Safari placeholder margin issue
     text-indent: $text-indent;
   }
+}
+
+@mixin vbr-placeholder($color, $disabled-color, $text-indent: 0){
+    @include placeholder($color, $text-indent);
+    &:disabled, &.disabled{
+        @include placeholder($disabled-color, $text-indent);
+    }
 }
 
 // FLEXBOX
@@ -333,5 +348,16 @@
     }
     &.icon-right:after{
         content: $icon-variable;
+    }
+}
+
+// SELECT mixins
+
+@mixin hideSelectToggle {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    ::-ms-expand { /* for IE 11 */
+        display: none;
     }
 }

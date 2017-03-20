@@ -192,7 +192,7 @@ $input-large-border-vertical-padding:       8px !default;
 
 $input-default-font-color:                  $font-text-color !default;
 $input-default-label-color:                 $stone !default;
-$input-default-placeholder-color:           $input-default-label-color !default;
+$input-default-placeholder-color:           $grey !default;
 
 $input-default-border-color:                $input-default-label-color !default;
 $input-default-border-width:                $border-width-thin !default;
@@ -206,6 +206,7 @@ $input-error-border-width:                  $border-width-base !default;
 
 $input-disabled-font-color:                 $heather !default;
 $input-disabled-label-color:                $input-disabled-font-color !default;
+$input-disabled-border-color:               $input-disabled-label-color !default;
 $input-disabled-border-style:               dotted !default;
 
 $input-error-message-font-size:             $font-size-small !default;
@@ -228,7 +229,7 @@ $select-large-border-vertical-padding:      $input-large-border-vertical-padding
 
 $select-default-font-color:                 $input-default-font-color !default;
 $select-default-label-color:                $input-default-label-color !default;
-$select-default-placeholder-color:          $select-default-label-color !default;
+$select-default-placeholder-color:          $input-default-placeholder-color !default;
 $select-default-icon-color:                 $icon-default-color !default;
 
 $select-default-border-color:               $select-default-label-color !default;
@@ -250,6 +251,7 @@ $select-options-hover-bg-color:             $select-default-icon-color !default;
 $select-disabled-font-color:                $input-disabled-font-color !default;
 $select-disabled-label-color:               $select-disabled-font-color !default;
 $select-disabled-icon-color:                $select-disabled-font-color !default;
+$select-disabled-border-color:              $select-disabled-font-color !default;
 $select-disabled-border-style:              $input-disabled-border-style !default;
 
 

@@ -1,3 +1,18 @@
-<div style="display: inline-block;">
-    <vbr-dropdown class="select-vibrent"></vbr-dropdown>
+<div ng-controller="ExampleController as ex">
+    <form name="dropdownForm">
+        <div style="display: inline-flex;">
+            <vbr-dropdown
+                class="select-vibrent"
+                ng-model="ex.dropdownModel"
+                label="label"
+                placeholder="placeholder"
+                ng-required="false"
+                ng-change="ex.someFunction()"
+                options="ex.dropdownOptions"
+                ng-disabled="ex.disabledDropdown">
+            </vbr-dropdown>
+        </div>
+        <button class="button-vibrent" ng-click="ex.disableDropdown()">disable</button>
+    </form>
+
 </div>

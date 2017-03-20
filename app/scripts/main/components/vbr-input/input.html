@@ -1,6 +1,7 @@
 <label
     ng-if="vm.label"
-    for="{{vm.inputId}}">
+    for="{{vm.inputId}}"
+    ng-class="{ disabled: vm.ngDisabled}">
     {{vm.label}}
 </label>
 
@@ -22,6 +23,7 @@
 
 <div class="input-error-message" role="alert"
      ng-if="vm.form.$invalid && vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty ||vm.form.$submitted)"
+     ng-hide="vm.ngDisabled"
      ng-messages="vm.form[vm.inputId].$error">
 
     <span ng-repeat="error in vm.validations"
