@@ -13,7 +13,7 @@ category: components/dropdown
     font-family: $select-font;
     @include display-flex;
     background-color: $select-options-bg-color;
-    .selector{
+    .selector,select{
         font-size: $select-default-font-size;
         color: $select-default-font-color;
         @include border-radius(0);
@@ -63,7 +63,7 @@ category: components/dropdown
         }
     }
 
-    .label{
+    .label,label{
         position: absolute;
         bottom: - ($select-default-border-vertical-padding*3 +2px);
         margin: $select-default-border-vertical-padding 0;

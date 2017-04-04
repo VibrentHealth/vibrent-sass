@@ -19,6 +19,7 @@
                      * options: an array of options objects of the type: { display: string, value: any }
                      */
                     scope: {
+                        customSelect: '=?',
                         ngModel: '=',
                         ngRequired: '=?',
                         ngChange: '&?',
@@ -58,7 +59,7 @@
             // don't occur before click events select options
             $timeout(function () {
                 vm.active = false;
-            }, 5000);
+            }, 100);
         };
 
         vm.ngChangeWrapper = function () {

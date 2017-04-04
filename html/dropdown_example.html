@@ -2,10 +2,26 @@
     <form name="dropdownForm">
         <div style="display: inline-flex;">
             <vbr-dropdown
+                custom-select="true"
+                id="select-1"
                 class="select-vibrent"
                 ng-model="ex.dropdownModel"
                 label="label"
                 placeholder="placeholder"
+                ng-required="false"
+                ng-change="ex.someFunction()"
+                options="ex.dropdownOptions"
+                ng-disabled="ex.disabledDropdown">
+            </vbr-dropdown>
+        </div>
+        <div style="display: inline-flex;">
+            <vbr-dropdown
+                custom-select="false"
+                id="select-2"
+                class="select-vibrent"
+                ng-model="ex.dropdownModel2"
+                label="label2"
+                placeholder="placeholder2"
                 ng-required="false"
                 ng-change="ex.someFunction()"
                 options="ex.dropdownOptions"
