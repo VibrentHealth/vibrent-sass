@@ -17,8 +17,6 @@
                     /**
                      * acceptable values for
                      * options: an array of options objects of the type: { display: string, value: any }
-                     * multiple: boolean true or false
-                     * size: number of visible options
                      */
                     scope: {
                         ngModel: '=',
@@ -29,10 +27,7 @@
                         inputId: '@?id',
                         label: '@?',
                         placeholder: '@?',
-                        options: '=',
-                        multiple: '@?',
-                        size: '@?'
-
+                        options: '='
                     },
                     templateUrl: TEMPLATES + '/vbr-dropdown/dropdown.html'
                 };
@@ -43,10 +38,10 @@
                 }
             });
 
-    DropdownCtrl.$inject = ['$document'];
+    DropdownCtrl.$inject = ['$document', '$timeout'];
 
     /* @ngInject */
-    function DropdownCtrl($document) {
+    function DropdownCtrl($document, $timeout) {
 
         var vm = this;
 
@@ -59,7 +54,11 @@
         };
 
         vm.resetDownArrow = function () {
-            vm.active = false;
+            //give this a timeout so that blur events
+            // don't occur before click events select options
+            $timeout(function () {
+                vm.active = false;
+            }, 5000);
         };
 
         vm.ngChangeWrapper = function () {

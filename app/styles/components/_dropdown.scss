@@ -13,7 +13,7 @@ category: components/dropdown
     font-family: $select-font;
     @include display-flex;
     background-color: $select-options-bg-color;
-    select{
+    .selector{
         font-size: $select-default-font-size;
         color: $select-default-font-color;
         @include border-radius(0);
@@ -26,13 +26,31 @@ category: components/dropdown
         background-size: 12px 12px;
         background-position: 95% 40%;
         min-width: 100px;
+        span{
+            padding: $content-padding/3;
+        }
         //to style placeholder
         &.ng-empty{
             color: $select-default-placeholder-color;
         }
-        option{
-            // nothing styled here will actually show up because options box is rendered primarily by the os and browser.
-            // in order to achieve this we will have to build this out more custom as a directive
+        .options-box{
+            position: absolute;
+            display: block;
+            top: 100%;
+            width: 100%;
+            background-color: $select-options-bg-color;
+            border-color: $select-options-border-color;
+            border-width: $select-options-border-width;
+            border-style: $select-options-border-style;
+            font-family: $select-options-font;
+            color: $select-options-font-color;
+            span{
+                display: block;
+                &:hover{
+                    background-color: $select-options-hover-bg-color;
+                    color: $select-options-hover-font-color
+                }
+            }
         }
         &:disabled, &.disabled{
             color: $select-disabled-font-color;
@@ -45,7 +63,7 @@ category: components/dropdown
         }
     }
 
-    label{
+    .label{
         position: absolute;
         bottom: - ($select-default-border-vertical-padding*3 +2px);
         margin: $select-default-border-vertical-padding 0;
