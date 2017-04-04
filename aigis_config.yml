@@ -22,5 +22,6 @@ dependencies:
 # It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)
 template_dir: ./template_ejs
 template_engine: ejs
+color_palette: false
 
 name: Acadia Styleguide

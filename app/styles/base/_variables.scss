@@ -6,43 +6,56 @@
 
 
 // COLORS
+$colors: (
+    "black":                      #333333,
+    "charcoal":                   #666666,
+    "stone":                      #999999,
+    "grey":                       #adadad,
+    "heather":                    #cccccc,
+    "line-color":                 #e0e0e0,
+    "silver-sand":                #f3f3f3,
+    "white":                      #FFFFFF,
 
-  $black:                                   #333333 !default;
-  $charcoal:                                #666666 !default;
-  $stone:                                   #999999 !default;
-  $grey:                                    #adadad !default;
-  $heather:                                 #cccccc !default;
-  $line-color:                              #e0e0e0 !default;
-  $silver-sand:                             #f3f3f3 !default;
-  $white:                                   #FFFFFF !default;
+    "sky":                        #27c2ff,
+    "space":                      #09395C,
 
-  $sky:                                     #27c2ff !default;
-  $space:                                   #09395C !default;
+    "vibrent-blue":               #0098DB,
+    "vibrent-dark-blue":          #006aab,
 
-  $vibrent-blue:                            #0098DB !default;
-  $vibrent-dark-blue:                       #006aab !default;
+    //for use on dark bg --START
+    "vibrent-light-blue":         #88e9ff,
+    "vibrent-sea-blue":           #3ed2ff,
+    "vibrent-teal":               #00aaff,
+    // for use on dark bg --END
 
-  //for use on dark bg --START
-  $vibrent-light-blue:                      #88e9ff !default;
-  $vibrent-sea-blue:                        #3ed2ff !default;
-  $vibrent-teal:                            #00aaff !default;
-  // for use on dark bg --END
+    "blueberry":                  #262261,
+    "wind":                       #6CACE4,
 
-  $blueberry:                               #262261 !default;
-  $wind:                                    #6CACE4 !default;
+    "pastel-light":               #d9e6f0,
+    "pastel-medium":              #7fb0d2,
 
-  $pastel-light:                            #d9e6f0 !default;
-  $pastel-medium:                           #7fb0d2 !default;
+    "navy":                       #0c476b,
 
-  $navy:                                    #0c476b !default;
+    "grass":                      #7bb51f,
+    "orange":                     #F98506,
+    "candy-red":                  #e63900,
+    "grape":                      #8c2580,
 
-  $grass:                                   #7bb51f !default;
-  $orange:                                  #F98506 !default;
-  $candy-red:                               #e63900 !default;
-  $grape:                                   #8c2580 !default;
+    "highlight-red":              #f4e0dc
+);
 
-  $highlight-red:                           #f4e0dc !default;
+@each $name, $color in $colors {
+    .vbr-#{$name} {
+        color: $color;
+    }
+    .vbr-#{$name}-bg {
+        background-color: $color;
+    }
+}
 
+@function col($name) {
+    @return map-get($colors, $name);
+}
 
 // PADDING AND RADIUS defaults
 
@@ -83,7 +96,7 @@ $base-font-family:                          $font-family-regular !default;
 $base-font-size:                            19px !default;
 $large-font-size:                           22px !default;
 $small-font-size:                           15px !default;
-$font-text-color:                           $charcoal !default;
+$font-text-color:                           col("charcoal");
 
 $base-line-height:                          1.428571429 !default; // 20/14
 $computed-line-height:                      floor($font-size-base * $line-height-base) !default; // ~20px
@@ -93,7 +106,7 @@ $small-line-height:                         1.81818182 !default;
 $font-family-headings:                      $font-family-medium !default;
 $font-weight-headings:                      500 !default;
 $line-height-headings:                      1.2 !default;
-$text-color-headings:                       $space !default;
+$text-color-headings:                       col("space");
 
 $h1-font-size:                              32px !default;
 $h2-font-size:                              26px !default;
@@ -102,23 +115,22 @@ $h4-font-size:                              19px !default;
 $h5-font-size:                              16px !default;
 $h6-font-size:                              12px !default;
 
-$error-font-color:                          $candy-red !default;
+$error-font-color:                          col("candy-red") !default;
 
 
 // BACKGROUNDS
 
-$default-bg-color:                          $white !default;
-$mobile-nav-bg-color:                       $pastel-light !default;
-$error-bg-color:                            $highlight-red !default;
-
+$default-bg-color:                          col("white") !default;
+$mobile-nav-bg-color:                       col("pastel-light") !default;
+$error-bg-color:                            col("highlight-red") !default;
 
 // BUTTONS
 
-$button-default-color:                      $vibrent-blue !default;
-$button-hover-color:                        $vibrent-dark-blue !default;
-$button-clicked-color:                      $navy !default;
-$button-disabled-bg-color:                  $line-color !default;
-$button-disabled-color:                     $grey !default;
+$button-default-color:                      col("vibrent-blue") !default;
+$button-hover-color:                        col("vibrent-dark-blue") !default;
+$button-clicked-color:                      col("navy") !default;
+$button-disabled-bg-color:                  col("line-color") !default;
+$button-disabled-color:                     col("grey") !default;
 
 $button-secondary-bg-color:                 $default-bg-color !default;
 
@@ -144,9 +156,9 @@ $link-default-color-light-bg:               $button-default-color !default;
 $link-hover-color-light-bg:                 $button-hover-color !default;
 $link-clicked-color-light-bg:               $button-clicked-color !default;
 
-$link-default-color-dark-bg:                $vibrent-light-blue !default;
-$link-hover-color-dark-bg:                  $vibrent-sea-blue !default;
-$link-clicked-color-dark-bg:                $vibrent-teal !default;
+$link-default-color-dark-bg:                col("vibrent-light-blue") !default;
+$link-hover-color-dark-bg:                  col("vibrent-sea-blue") !default;
+$link-clicked-color-dark-bg:                col("vibrent-teal") !default;
 
 $link-default-font-size:                    $base-font-size !default;
 $link-large-font-size:                      24px !default;
@@ -159,12 +171,12 @@ $icon-default-color:                        $button-default-color !default;
 $icon-hover-color:                          $button-hover-color !default;
 $icon-clicked-color:                        $button-clicked-color !default;
 
-$icon-default-gray-color:                   $heather !default;
-$icon-hover-gray-color:                     $stone !default;
-$icon-clicked-gray-color:                   $charcoal !default;
+$icon-default-gray-color:                   col("heather") !default;
+$icon-hover-gray-color:                     col("stone") !default;
+$icon-clicked-gray-color:                   col("charcoal");
 
-$mobile-nav-icon-unselected-color:          $pastel-medium !default;
-$mobile-nav-icon-selected-color:            $navy !default;
+$mobile-nav-icon-unselected-color:          col("pastel-medium") !default;
+$mobile-nav-icon-selected-color:            col("navy") !default;
 $mobile-nav-icon-height:                    36px !default;
 $mobile-nav-icon-width:                     $mobile-nav-icon-height !default;
 
@@ -191,8 +203,8 @@ $input-large-label-font-size:               10px !default;
 $input-large-border-vertical-padding:       8px !default;
 
 $input-default-font-color:                  $font-text-color !default;
-$input-default-label-color:                 $stone !default;
-$input-default-placeholder-color:           $grey !default;
+$input-default-label-color:                 col("stone") !default;
+$input-default-placeholder-color:           col("grey") !default;
 
 $input-default-border-color:                $input-default-label-color !default;
 $input-default-border-width:                $border-width-thin !default;
@@ -204,7 +216,7 @@ $input-focused-border-width:                $border-width-base !default;
 $input-error-border-color:                  $error-font-color !default;
 $input-error-border-width:                  $border-width-base !default;
 
-$input-disabled-font-color:                 $heather !default;
+$input-disabled-font-color:                 col("heather") !default;
 $input-disabled-label-color:                $input-disabled-font-color !default;
 $input-disabled-border-color:               $input-disabled-label-color !default;
 $input-disabled-border-style:               dotted !default;
