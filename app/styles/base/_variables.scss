@@ -7,41 +7,41 @@
 
 // COLORS
 $colors: (
-    "black":                      #333333,
-    "charcoal":                   #666666,
-    "stone":                      #999999,
-    "grey":                       #adadad,
-    "heather":                    #cccccc,
-    "line-color":                 #e0e0e0,
-    "silver-sand":                #f3f3f3,
-    "white":                      #FFFFFF,
+    "black":                      #333,
+    "charcoal":                   #666,
+    "stone":                      #999,
+    "grey":                       #ADADAD,
+    "heather":                    #CCC,
+    "line-color":                 #E0E0E0,
+    "silver-sand":                #F3F3F3,
+    "white":                      #FFF,
 
-    "sky":                        #27c2ff,
+    "sky":                        #27C2FF,
     "space":                      #09395C,
 
     "vibrent-blue":               #0098DB,
-    "vibrent-dark-blue":          #006aab,
+    "vibrent-dark-blue":          #006AAB,
 
     // for use on dark bg --START
-    "vibrent-light-blue":         #88e9ff,
-    "vibrent-sea-blue":           #3ed2ff,
-    "vibrent-teal":               #00aaff,
+    "vibrent-light-blue":         #88E9FF,
+    "vibrent-sea-blue":           #3ED2FF,
+    "vibrent-teal":               #00AAFF,
     // for use on dark bg --END
 
     "blueberry":                  #262261,
     "wind":                       #6CACE4,
 
-    "pastel-light":               #d9e6f0,
-    "pastel-medium":              #7fb0d2,
+    "pastel-light":               #D9E6F0,
+    "pastel-medium":              #7FB0D2,
 
-    "navy":                       #0c476b,
+    "navy":                       #0C476B,
 
-    "grass":                      #7bb51f,
+    "grass":                      #7BB51F,
     "orange":                     #F98506,
-    "candy-red":                  #e63900,
-    "grape":                      #8c2580,
+    "candy-red":                  #E63900,
+    "grape":                      #8C2580,
 
-    "highlight-red":              #f4e0dc
+    "highlight-red":              #F4E0DC
 );
 
 @each $name, $color in $colors {

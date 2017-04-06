@@ -1,6 +1,8 @@
 <div ng-controller="ColorController as col">
-    <div ng-repeat="(name, color) in col.colors">
+    <div ng-repeat="(name, color) in col.colors" title="{{ color }}">
+        <!-- class="vbr-[color name]-bg" for background color -->
         <div class="aigis-colorPalette__color vbr-{{ name }}-bg"></div>
-        <div class="aigis-colorPalette__label vbr-{{ name }}">{{ name }}</div>
+        <!-- class="vbr-[color name]" for text color -->
+        <div class="aigis-colorPalette__label">{{ name }}</div>
     </div>
 </div>
