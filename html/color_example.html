@@ -1,6 +1,6 @@
 <div ng-controller="ColorController as col">
-    <div class="aigis-colorPalette">
-        <div class="aigis-colorPalette__color vbr-charcoal-bg"></div>
-        <div class="aigis-colorPalette__label vbr-charcoal">charcoal</div>
+    <div ng-repeat="(name, color) in col.colors">
+        <div class="aigis-colorPalette__color vbr-{{ name }}-bg"></div>
+        <div class="aigis-colorPalette__label vbr-{{ name }}">{{ name }}</div>
     </div>
 </div>

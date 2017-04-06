@@ -4,6 +4,7 @@ dist
 .sass-cache
 bower_components
 app/styles/main.css
+app/styles/variables.json
 .idea/
 styleguide/
 app/scripts/main/templates.js

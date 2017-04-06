@@ -5,29 +5,36 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var gutil = require('gulp-util');
+var sassJson = require('gulp-sass-json');
 
 // load plugins
 var $ = require('gulp-load-plugins')();
 
-gulp.task('styles', function () {
+gulp.task('styles', ['sassvars'], function () {
     return gulp.src('app/styles/main.scss')
-        .pipe($.sass({errLogToConsole: true}))
+        .pipe($.sass({ errLogToConsole: true }))
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest('app/styles'))
-        .pipe(reload({stream:true}))
+        .pipe(reload({ stream: true }))
         .pipe($.size())
         .pipe($.notify("Compilation complete."));
 });
 
+gulp.task('sassvars', function () {
+    return gulp.src('app/styles/base/_variables.scss')
+        .pipe(sassJson())
+        .pipe(gulp.dest('app/styles'));
+});
+
 gulp.task('scripts', function () {
 
-        gulp.src('app/scripts/main/**/*.html')
+    gulp.src('app/scripts/main/**/*.html')
         .pipe($.angularTemplatecache('templates.js', {
             module: 'vbr-style-guide'
         }))
         .pipe(gulp.dest('app/scripts/main'));
 
-    return gulp.src(['app/scripts/main/**/*.module.js','app/scripts/main/**/*.js'])
+    return gulp.src(['app/scripts/main/**/*.module.js', 'app/scripts/main/**/*.js'])
         .pipe($.jshint())
         .pipe($.ngAnnotate({
             remove: true,
@@ -67,13 +74,13 @@ gulp.task('images', function () {
             interlaced: true
         })))
         .pipe(gulp.dest('styleguide/images'))
-        .pipe(reload({stream:true, once:true}))
+        .pipe(reload({ stream: true, once: true }))
         .pipe($.size());
 });
 
 gulp.task('fonts', function () {
     var streamqueue = require('streamqueue');
-    return streamqueue({objectMode: true},
+    return streamqueue({ objectMode: true },
         $.bowerFiles(),
         gulp.src('app/fonts/**/*')
     )
@@ -84,7 +91,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('clean', function () {
-    return gulp.src(['app/styles/main.css', 'styleguide', 'dist'], { read: false }).pipe($.clean());
+    return gulp.src(['app/styles/main.css', 'app/styles/variables.json', 'styleguide', 'dist'], { read: false }).pipe($.clean());
 });
 
 gulp.task('serve', ['aigis'], function () {
@@ -135,12 +142,12 @@ gulp.task('watch', ['serve'], function () {
     gulp.watch('bower.json', ['wiredep', 'aigis']);
 });
 
-gulp.task("aigis", ['styles', 'scripts'], function() {
+gulp.task("aigis", ['styles', 'scripts'], function () {
     gulp.src("./aigis_config.yml")
         .pipe($.aigis());
 });
 
-gulp.task('delayed-reload',function () {
+gulp.task('delayed-reload', function () {
     setTimeout(reload, 5000);
 });
 
@@ -150,6 +157,6 @@ gulp.task('build', ['clean'], function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', [ 'clean'], function () {
+gulp.task('default', ['clean'], function () {
     gulp.start('watch');
 });
