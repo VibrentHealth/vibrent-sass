@@ -44,16 +44,7 @@ $colors: (
     "highlight-red":              #F4E0DC
 );
 
-@each $name, $color in $colors {
-    .vbr-#{$name} {
-        color: $color;
-    }
-    .vbr-#{$name}-bg {
-        background-color: $color;
-    }
-}
-
-@function col($name) {
+@function color($name) {
     @return map-get($colors, $name);
 }
 
@@ -96,7 +87,7 @@ $base-font-family:                          $font-family-regular !default;
 $base-font-size:                            19px !default;
 $large-font-size:                           22px !default;
 $small-font-size:                           15px !default;
-$font-text-color:                           col("charcoal");
+$font-text-color:                           color("charcoal");
 
 $base-line-height:                          1.428571429 !default; // 20/14
 $computed-line-height:                      floor($font-size-base * $line-height-base) !default; // ~20px
@@ -106,7 +97,7 @@ $small-line-height:                         1.81818182 !default;
 $font-family-headings:                      $font-family-medium !default;
 $font-weight-headings:                      500 !default;
 $line-height-headings:                      1.2 !default;
-$text-color-headings:                       col("space");
+$text-color-headings:                       color("space");
 
 $h1-font-size:                              32px !default;
 $h2-font-size:                              26px !default;
@@ -115,22 +106,22 @@ $h4-font-size:                              19px !default;
 $h5-font-size:                              16px !default;
 $h6-font-size:                              12px !default;
 
-$error-font-color:                          col("candy-red") !default;
+$error-font-color:                          color("candy-red") !default;
 
 
 // BACKGROUNDS
 
-$default-bg-color:                          col("white") !default;
-$mobile-nav-bg-color:                       col("pastel-light") !default;
-$error-bg-color:                            col("highlight-red") !default;
+$default-bg-color:                          color("white") !default;
+$mobile-nav-bg-color:                       color("pastel-light") !default;
+$error-bg-color:                            color("highlight-red") !default;
 
 // BUTTONS
 
-$button-default-color:                      col("vibrent-blue") !default;
-$button-hover-color:                        col("vibrent-dark-blue") !default;
-$button-clicked-color:                      col("navy") !default;
-$button-disabled-bg-color:                  col("line-color") !default;
-$button-disabled-color:                     col("grey") !default;
+$button-default-color:                      color("vibrent-blue") !default;
+$button-hover-color:                        color("vibrent-dark-blue") !default;
+$button-clicked-color:                      color("navy") !default;
+$button-disabled-bg-color:                  color("line-color") !default;
+$button-disabled-color:                     color("grey") !default;
 
 $button-secondary-bg-color:                 $default-bg-color !default;
 
@@ -156,9 +147,9 @@ $link-default-color-light-bg:               $button-default-color !default;
 $link-hover-color-light-bg:                 $button-hover-color !default;
 $link-clicked-color-light-bg:               $button-clicked-color !default;
 
-$link-default-color-dark-bg:                col("vibrent-light-blue") !default;
-$link-hover-color-dark-bg:                  col("vibrent-sea-blue") !default;
-$link-clicked-color-dark-bg:                col("vibrent-teal") !default;
+$link-default-color-dark-bg:                color("vibrent-light-blue") !default;
+$link-hover-color-dark-bg:                  color("vibrent-sea-blue") !default;
+$link-clicked-color-dark-bg:                color("vibrent-teal") !default;
 
 $link-default-font-size:                    $base-font-size !default;
 $link-large-font-size:                      24px !default;
@@ -171,12 +162,12 @@ $icon-default-color:                        $button-default-color !default;
 $icon-hover-color:                          $button-hover-color !default;
 $icon-clicked-color:                        $button-clicked-color !default;
 
-$icon-default-gray-color:                   col("heather") !default;
-$icon-hover-gray-color:                     col("stone") !default;
-$icon-clicked-gray-color:                   col("charcoal");
+$icon-default-gray-color:                   color("heather") !default;
+$icon-hover-gray-color:                     color("stone") !default;
+$icon-clicked-gray-color:                   color("charcoal");
 
-$mobile-nav-icon-unselected-color:          col("pastel-medium") !default;
-$mobile-nav-icon-selected-color:            col("navy") !default;
+$mobile-nav-icon-unselected-color:          color("pastel-medium") !default;
+$mobile-nav-icon-selected-color:            color("navy") !default;
 $mobile-nav-icon-height:                    36px !default;
 $mobile-nav-icon-width:                     $mobile-nav-icon-height !default;
 
@@ -203,8 +194,8 @@ $input-large-label-font-size:               10px !default;
 $input-large-border-vertical-padding:       8px !default;
 
 $input-default-font-color:                  $font-text-color !default;
-$input-default-label-color:                 col("stone") !default;
-$input-default-placeholder-color:           col("grey") !default;
+$input-default-label-color:                 color("stone") !default;
+$input-default-placeholder-color:           color("grey") !default;
 
 $input-default-border-color:                $input-default-label-color !default;
 $input-default-border-width:                $border-width-thin !default;
@@ -216,7 +207,7 @@ $input-focused-border-width:                $border-width-base !default;
 $input-error-border-color:                  $error-font-color !default;
 $input-error-border-width:                  $border-width-base !default;
 
-$input-disabled-font-color:                 col("heather") !default;
+$input-disabled-font-color:                 color("heather") !default;
 $input-disabled-label-color:                $input-disabled-font-color !default;
 $input-disabled-border-color:               $input-disabled-label-color !default;
 $input-disabled-border-style:               dotted !default;

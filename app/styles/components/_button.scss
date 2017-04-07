@@ -26,11 +26,11 @@ category: components/buttons
 * Use `button` tag.
 
 ```html
-<button class="button-vibrent">default</a>
+<button class="vbr-btn">default</a>
 ```
  */
 
-.button-vibrent{
+.vbr-btn{
     @extend %button-default;
     @include primary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color, $button-disabled-bg-color);
 }
@@ -46,10 +46,10 @@ category: components/buttons
 * Use `button` tag.
 
 ```html
-<button class="button-vibrent-clear">clear</a>
+<button class="vbr-btn-clear">clear</a>
 ```
  */
-.button-vibrent-clear{
+.vbr-btn-clear{
     @extend %button-default;
     @include secondary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color);
 }
@@ -64,13 +64,13 @@ category: components/buttons
 * Use `button` tag.
 
 ```html
-<button class="button-vibrent button-large">large</a>
+<button class="vbr-btn btn-large">large</a>
 ```
 ```html
-<button class="button-vibrent-clear button-large">large</a>
+<button class="vbr-btn-clear btn-large">large</a>
 ```
  */
-.button-large{
+.btn-large{
     height: $button-large-height;
     font-size: $button-large-font-size;
     padding: 0 $button-large-hz-padding;
@@ -87,13 +87,13 @@ category: components/buttons
 * Use `button` tag.
 
 ```html
-<button class="button-vibrent button-small">small</a>
+<button class="vbr-btn btn-small">small</a>
 ```
 ```html
-<button class="button-vibrent-clear button-small">small</a>
+<button class="vbr-btn-clear btn-small">small</a>
 ```
  */
-.button-small{
+.btn-small{
     height: $button-small-height;
     font-size: $button-small-font-size;
     padding: 0 $button-small-hz-padding;
@@ -110,13 +110,13 @@ category: components/buttons
 * Use `button` tag.
 
 ```html
-<button class="button-vibrent button-mini">mini</a>
+<button class="vbr-btn btn-mini">mini</a>
 ```
 ```html
-<button class="button-vibrent-clear button-mini">mini</a>
+<button class="vbr-btn-clear btn-mini">mini</a>
 ```
  */
-.button-vibrent-mini{
+.btn-mini{
     height: $button-mini-height;
     font-size: $button-mini-font-size;
     padding: 0 $button-mini-hz-padding;

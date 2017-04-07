@@ -11,10 +11,10 @@ category: components/links
 
 ```html
 <div style="background-color: #fff; padding: 10px; margin: 0 -10px;">
-<a class="link-vibrent">this is a sample link</a>
+<a class="vbr-link">this is a sample link</a>
 </div>
 <div style="background-color: #666; padding: 10px; margin: 0 -10px;">
-    <a class="link-vibrent-light">this is a sample link</a>
+    <a class="vbr-link-light">this is a sample link</a>
 </div>
 ```
  */
@@ -23,11 +23,11 @@ category: components/links
     font-size: $link-default-font-size;
     cursor: pointer;
 }
-.link-vibrent{
+.vbr-link{
     @extend %default-links;
     @include link-style($link-default-color-light-bg, $link-hover-color-light-bg, $link-clicked-color-light-bg);
 }
-.link-vibrent-light{
+.vbr-link-light{
     @extend %default-links;
     @include link-style($link-default-color-dark-bg, $link-hover-color-dark-bg, $link-clicked-color-dark-bg);
 }
@@ -45,10 +45,10 @@ category: components/links
 
 ```html
 <div style="background-color: #fff; padding: 10px; margin: 0 -10px;">
-    <a class="link-vibrent link-large">this is a sample link</a>
+    <a class="vbr-link link-large">this is a sample link</a>
 </div>
 <div style="background-color: #666; padding: 10px; margin: 0 -10px;">
-    <a class="link-vibrent-light link-large">this is a sample link</a>
+    <a class="vbr-link-light link-large">this is a sample link</a>
 </div>
 
 ```
@@ -70,10 +70,10 @@ category: components/links
 
 ```html
 <div style="background-color: #fff; padding: 10px; margin: 0 -10px;">
-    <a class="link-vibrent link-small">this is a sample link</a>
+    <a class="vbr-link link-small">this is a sample link</a>
 </div>
 <div style="background-color: #666; padding: 10px; margin: 0 -10px;">
-    <a class="link-vibrent-light link-small">this is a sample link</a>
+    <a class="vbr-link-light link-small">this is a sample link</a>
 </div>
 ```
  */

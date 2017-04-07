@@ -7,7 +7,7 @@ category: components/inputs
 !![](./input_example.html)
  */
 
-.input-vibrent{
+.vbr-input{
     margin: $content-padding;
     font-family: $input-font;
     position: relative;
@@ -55,8 +55,8 @@ category: components/inputs
     }
 }
 
-.input-vibrent-large{
-    @extend .input-vibrent;
+.vbr-input-large{
+    @extend .vbr-input;
     input{
         font-size: $input-large-font-size;
         padding-bottom: $input-large-border-vertical-padding;
