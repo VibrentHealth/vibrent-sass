@@ -9,12 +9,7 @@ category: components/banners
 ```html
 <div class="vbr-banner-container" ng-class="{{vm.type}}">
     <div class="vbr-banner-content">
-        <span class="vbr-banner-cus-icon" ng-if="vm.customIcon">
-            <i class="{{vm.customIcon}}"></i>
-        </span>
-        <span class="vbr-banner-cus-icon">
-            <i class="{{vm.customIcon}}"></i>
-        </span>
+        <span ng-class="vm.customIcon ? vm.customIcon : 'icon_vibrent_check' "></span>
         <span class="vbr-banner-msg">{{vm.message}}</span>
         <span ng-if="vm.closeable">
             <span>X</span>
