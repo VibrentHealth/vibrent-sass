@@ -41,7 +41,10 @@ $colors: (
     "candy-red":                  #E63900,
     "grape":                      #8C2580,
 
-    "highlight-red":              #F4E0DC
+    "highlight-red":              #F4E0DC,
+
+    "success":                    #5DA31F,
+    "error":                      #F4E0DC
 );
 
 @function color($name) {

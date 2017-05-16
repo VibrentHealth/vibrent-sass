@@ -45,7 +45,7 @@
 
                 ex.someFunction = function () {
                     console.log('change function called');
-                }
+                };
 
             });
 
