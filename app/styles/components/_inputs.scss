@@ -12,6 +12,25 @@ category: components/inputs
     font-family: $input-font;
     position: relative;
     @include display-flex;
+
+
+    .vbr-tooltip{
+        /* Specify styling for tooltip contents */
+        .tooltip-inner {
+            background-color: $input-tooltip-bg-color;
+            color: $input-tooltip-color;
+            font-size: $input-tooltip-font-size;
+            border-radius: $input-tooltip-border-radius;
+            padding: $content-padding;
+        }
+        /* To style arrow */
+        .tooltip-arrow {
+            border-top-color: $input-tooltip-bg-color;
+            left: 20px !important;
+        }
+    }
+
+
     input{
         font-size: $input-default-font-size;
         color: $input-default-font-color;
@@ -72,3 +91,4 @@ category: components/inputs
         top: ($input-large-border-vertical-padding*3 + $input-large-label-font-size*2 + $content-padding + 2px);
     }
 }
+

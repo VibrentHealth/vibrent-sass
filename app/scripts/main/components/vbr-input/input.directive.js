@@ -28,7 +28,8 @@
                         inputId: '@?id',
                         label: '@?',
                         placeholder: '@?',
-                        validations: '=?'
+                        validations: '=?',
+                        tooltip: '=?'
                     },
                     templateUrl: TEMPLATES + '/vbr-input/input.html'
                 };
