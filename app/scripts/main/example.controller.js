@@ -47,11 +47,12 @@
                     console.log('change function called');
                 };
 
+                ex.tooltipTesting = 'Some instructions for the input';
+
                 ex.banner = {
                     type: 'success',
                     message: 'Hey man nice job'
                 };
-
             });
 
 })();

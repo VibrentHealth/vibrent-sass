@@ -19,6 +19,10 @@
     ng-trim="vm.ngTrim"
     ng-disabled="vm.ngDisabled"
     ng-class="{ error: vm.errorClass() }"
+    uib-tooltip="{{vm.tooltip}}"
+    tooltip-placement="top-left"
+    tooltip-trigger="'focus'"
+    tooltip-class="vbr-tooltip"
 />
 
 <div class="input-error-message" role="alert"

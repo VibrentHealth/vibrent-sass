@@ -115,7 +115,6 @@ $error-font-color:                          color("candy-red") !default;
 $default-bg-color:                          color("white") !default;
 $mobile-nav-bg-color:                       color("pastel-light") !default;
 $error-bg-color:                            color("highlight-red") !default;
-$success-bg-color:                          color("success") !default;
 
 // BUTTONS
 
@@ -166,7 +165,7 @@ $icon-clicked-color:                        $button-clicked-color !default;
 
 $icon-default-gray-color:                   color("heather") !default;
 $icon-hover-gray-color:                     color("stone") !default;
-$icon-clicked-gray-color:                   color("charcoal");
+$icon-clicked-gray-color:                   color("charcoal") !default;
 
 $mobile-nav-icon-unselected-color:          color("pastel-medium") !default;
 $mobile-nav-icon-selected-color:            color("navy") !default;
@@ -221,6 +220,10 @@ $input-error-message-font-size:             $font-size-small !default;
 $input-error-message-color:                 $error-font-color !default;
 $input-error-message-bg-color:              $error-bg-color !default;
 
+$input-tooltip-font-size:                   $input-default-font-size !default;
+$input-tooltip-color:                       $default-bg-color !default;
+$input-tooltip-bg-color:                    $button-default-color !default;
+$input-tooltip-border-radius:               $small-border-radius !default;
 
 // SELECT (DROPDOWN)
 
@@ -310,6 +313,26 @@ $modal-content-padding:                     26px !default;
 
 
 // HAMBURGER MENU
+
+//TODO WRITE THIS
+
+// AVATAR PHOTO
+
+$avatar-border-radius:                      50% !default;
+$avatar-border-color:                       color('vibrent-blue') !default;
+$avatar-border-style:                       solid !default;
+$avatar-border-width:                       $small-border-radius !default;
+
+$avatar-small-height:                       32px !default;
+$avatar-small-width:                        $avatar-small-height !default;
+
+$avatar-medium-height:                      83px !default;
+$avatar-medium-width:                       $avatar-medium-height !default;
+
+$avatar-large-height:                       113px !default;
+$avatar-large-width:                        $avatar-large-height !default;
+
+// UPLOAD PHOTO
 
 //TODO WRITE THIS
 
