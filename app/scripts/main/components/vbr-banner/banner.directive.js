@@ -2,7 +2,21 @@
  * Created by jpierce on 5/15/17.
  */
 (function () {
-    "use strict";
+    'use strict';
+
+    function BannerCtrl () {
+        var vm = this;
+
+        vm.type = vm.type || 'error';
+        vm.message = vm.message || 'Error';
+        vm.animated = vm.animated || false;
+        vm.animationDuration = vm.animationDuration || '1';
+        vm.customIcon = vm.icon || 'icon_vibrent_check';
+    }
+
+    function link (scope, element, attrs) {
+
+    }
 
     angular
         .module('vbr-style-guide')
@@ -16,29 +30,16 @@
                     restrict: 'E',
                     link: link,
                     scope: {
-                        type: '@',
-                        message: '@?',
+                        type: '=',
+                        message: '=',
                         closeable: '=?',
                         animated: '=?',
                         animationDuration: '@?',
                         icon: '@?customIcon'
                     },
-                    templateUrl: TEMPLATES + 'vbr-banner/banner.html'
+                    templateUrl: TEMPLATES + '/vbr-banner/banner.html'
                 };
                 return directive;
-
-                function link (scope, element, attrs, ngModel) {
-
-
-                }
         });
-
-    function BannerCtrl ($scope) {
-        var vm = this;
-
-
-
-
-    }
 
 }());

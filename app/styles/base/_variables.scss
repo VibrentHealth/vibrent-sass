@@ -42,9 +42,7 @@ $colors: (
     "grape":                      #8C2580,
 
     "highlight-red":              #F4E0DC,
-
-    "success":                    #5DA31F,
-    "error":                      #F4E0DC
+    "success":                    #5DA31F
 );
 
 @function color($name) {
@@ -117,6 +115,7 @@ $error-font-color:                          color("candy-red") !default;
 $default-bg-color:                          color("white") !default;
 $mobile-nav-bg-color:                       color("pastel-light") !default;
 $error-bg-color:                            color("highlight-red") !default;
+$success-bg-color:                          color("success") !default;
 
 // BUTTONS
 
@@ -183,6 +182,9 @@ $input-icon-default-height:                 26px !default;
 $input-icon-default-width:                  $input-icon-default-height !default;
 $input-icon-small-height:                   20px !default;
 $input-icon-small-width:                    $input-icon-small-height !default;
+
+$banner-icon-default-height:                24px !default;
+$banner-icon-default-width:                 $banner-icon-default-height;
 
 // INPUTS
 
@@ -311,3 +313,7 @@ $modal-content-padding:                     26px !default;
 
 //TODO WRITE THIS
 
+// BANNER
+
+$banner-icon-size:                          $banner-icon-default-height;
+$banner-icon-padding:                       ($banner-icon-size / 4);

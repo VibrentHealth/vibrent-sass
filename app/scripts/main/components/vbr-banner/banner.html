@@ -1,9 +1,5 @@
-<div class="{{vm.type}}" ng-class="{{vm.type}}">
-    <div class="vbr-banner-content">
-        <span ng-class="vm.customIcon ? vm.customIcon : 'icon_vibrent_check' "></span>
-        <span class="vbr-banner-msg">{{vm.message}}</span>
-        <span ng-if="vm.closeable">
-            <span>X</span>
-        </span>
-    </div>
+<div class="vbr-banner-container" ng-class="vm.type">
+    <span class="icon-left" ng-class="vm.customIcon"></span>
+    <span>{{vm.message}}</span>
+    <span class="icon_vibrent_x icon-left" ng-if="vm.closeable"></span>
 </div>

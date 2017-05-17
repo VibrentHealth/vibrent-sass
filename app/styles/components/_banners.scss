@@ -6,31 +6,35 @@ category: components/banners
 
 * Default banner style.
 
-```html
-<div class="vbr-banner-container" ng-class="{{vm.type}}">
-    <div class="vbr-banner-content">
-        <span ng-class="vm.customIcon ? vm.customIcon : 'icon_vibrent_check' "></span>
-        <span class="vbr-banner-msg">{{vm.message}}</span>
-        <span ng-if="vm.closeable">
-            <span>X</span>
-        </span>
-    </div>
-</div>
-```
+!![](./banner_example.html)
+
  */
 
+%banner-contents {
+    margin: 0 $banner-icon-padding;
+    &.icon-left {
+        font-size: $banner-icon-size;
+    }
+}
+
 .vbr-banner-container {
-    display: block;
-    position: relative;
-    width: 100%;
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(center);
+    padding: $content-padding-vertical $content-padding-horizontal;
     &.success {
-        color('success');
+        background-color: color('success');
+        span {
+            @extend %banner-contents;
+            color: color('white');
+        }
     }
     &.error {
-        color('error');
+        background-color: color('error');
+        span {
+            @extend %banner-contents;
+            color: color('highlight-red');
+        }
     }
 }
 
-.vbr-banner-container {
-
-}
