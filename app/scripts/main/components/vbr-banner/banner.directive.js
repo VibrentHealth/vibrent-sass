@@ -11,7 +11,8 @@
         vm.message = vm.message || 'Error';
         vm.animated = vm.animated || false;
         vm.animationDuration = vm.animationDuration || '1';
-        vm.customIcon = vm.icon || 'icon_vibrent_check';
+        vm.customIcon = vm.type === 'success' ? vm.icon || 'icon_vibrent_check' : null;
+        vm.closeable = vm.closeable || false;
     }
 
     function link (scope, element, attrs) {

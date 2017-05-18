@@ -50,8 +50,9 @@
                 ex.tooltipTesting = 'Some instructions for the input';
 
                 ex.banner = {
-                    type: 'success',
-                    message: 'Hey man nice job'
+                    type: 'error',
+                    message: 'Hey man nice job',
+                    closeable: true
                 };
             });
 

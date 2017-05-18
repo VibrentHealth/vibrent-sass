@@ -20,9 +20,9 @@ category: components/banners
 .vbr-banner-container {
     @include display-flex;
     @include flex-direction(row);
-    @include justify-content(center);
     padding: $content-padding-vertical $content-padding-horizontal;
     &.success {
+        @include justify-content(center);
         background-color: color('success');
         span {
             @extend %banner-contents;
@@ -30,10 +30,15 @@ category: components/banners
         }
     }
     &.error {
-        background-color: color('error');
+        background-color: color('highlight-red');
         span {
+            @include justify-content(center);
             @extend %banner-contents;
-            color: color('highlight-red');
+            color: color('candy-red');
+
+            &.icon_vibrent_x {
+
+            }
         }
     }
 }
