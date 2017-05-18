@@ -20,23 +20,49 @@ category: components/banners
 .vbr-banner-container {
     @include display-flex;
     @include flex-direction(row);
+    @include align-items(stretch);
     padding: $content-padding-vertical $content-padding-horizontal;
     &.success {
         @include justify-content(center);
         background-color: color('success');
-        span {
+        div {
             @extend %banner-contents;
+            @include display-flex;
+            @include justify-content(center);
+            //@include justify-content(flex-start);
+            @include flex(2);
             color: color('white');
+
+            &.banner-icon-cont {
+                @include flex(1);
+                margin-right: 0;
+                @include justify-content(flex-end);
+                span {
+                    @include align-self(center);
+                    cursor: pointer;
+                }
+
+            }
         }
     }
     &.error {
+        @include justify-content(center);
         background-color: color('highlight-red');
-        span {
-            @include justify-content(center);
+        div {
             @extend %banner-contents;
+            @include display-flex;
+            @include justify-content(center);
+            @include flex(1);
             color: color('candy-red');
 
-            &.icon_vibrent_x {
+            &.banner-icon-cont {
+                @include flex(1);
+                margin-right: 0;
+                @include justify-content(flex-end);
+                span {
+                    @include align-self(center);
+                    cursor: pointer;
+                }
 
             }
         }
