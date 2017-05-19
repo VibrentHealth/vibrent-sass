@@ -46,7 +46,6 @@
     function InputCtrl() {
         var vm = this;
 
-        console.log(vm);
 
         if(vm.validations){
             angular.forEach(vm.validations, function (error, key) {
@@ -64,6 +63,24 @@
             }
         };
 
+        vm.errorsVisible = false;
+
+        vm.focused = function () {
+            if(vm.errorsVisible){
+                vm.errorsVisible = false;
+            }
+        };
+
+        vm.blurred = function () {
+            if(!vm.errorsVisible){
+                vm.errorsVisible = true;
+            }
+        };
+
+
+        vm.shouldShowErrors = function () {
+            return vm.errorsVisible  && vm.form.$invalid && vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty ||vm.form.$submitted);
+        };
 
     }
 
