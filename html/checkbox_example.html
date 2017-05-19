@@ -1,0 +1,34 @@
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="display: inline-flex;">
+            <vbr-checkbox
+                class="vbr-checkbox"
+                id="someName"
+                form="someForm"
+                type="checkbox"
+                label="{{ex.checkBoxOptions[0]['display']}}"
+                ng-model="ex.someModel"
+                ng-required="false"
+                ng-change="ex.someFunction()"
+                ng-disabled="ex.isDisabled"
+                ng-class="{'vbr-checkbox input:disabled':ex.isDisabled==true}"
+                >
+            </vbr-checkbox>
+            <vbr-checkbox
+                class="vbr-checkbox"
+                id="someName2"
+                form="someForm"
+                type="checkbox"
+                label="{{ex.checkBoxOptions[1]['display']}}"
+                ng-model="ex.someModel"
+                ng-required="false"
+                ng-change="ex.someFunction()"
+                ng-trim="true"
+                ng-class="{'vbr-checkbox input:disabled':ex.isDisabled==true}"
+                ng-disabled=ex.isDisabled;
+            >
+            </vbr-checkbox>
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
+    </form>
+</div>

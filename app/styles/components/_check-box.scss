@@ -1,0 +1,92 @@
+
+/*
+---
+name: Default Checkbox
+category: components/checkbox
+---
+!![](./checkbox_example.html)
+ */
+//
+
+.vbr-checkbox{
+    margin: $content-padding;
+    font-family: $font-family-regular;
+    position: relative;
+    @include display-flex;
+        .active {
+            background:red;
+        }
+    input{
+        -webkit-appearance: none;
+        background-color: #e0e0e0;
+        color:#666666;
+        //border: 1px solid #cacece;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+        padding: 10px;
+        height:16px;
+        width:16px;
+        border-radius: 3px;
+        display: inline-block;
+        position: relative;
+    }
+    input:active,input:checked:active{
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+    }
+    input:checked{
+        background-color:#0098db;
+        border: 1px solid #adb8c0;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+        color: #99a1a7;
+    }
+    input:checked:after{
+        content: '\2713';
+        height:16px;
+        width:16px;
+        font-size: 14px;
+        position: absolute;
+        top: 0px;
+        left: 3px;
+        color: #FFFFFF
+    }
+    label{
+        display:inline;
+        font-weight:200;
+        margin-left:10px;
+    }
+
+    label:disabled{
+        color:#e0e0e0;
+    }
+    input:disabled{
+        border: 1px dotted #e0e0e0;
+        background-color:#FFFFFF;
+        color:#FFFFFF;
+    }
+    input:checked+label{
+        color:#0098db;
+    }
+}
+
+.vbr-checkbox-large{
+    @extend .vbr-checkbox;
+    input{
+        font-size: $input-large-font-size;
+        padding-bottom: $input-large-border-vertical-padding;
+
+    }
+    label{
+        bottom: - ($input-large-border-vertical-padding*3 + 2px);
+        margin: $input-large-border-vertical-padding 0;
+        font-size: $input-large-label-font-size;
+    }
+    .input-error-message{
+        font-size: $input-error-message-font-size;
+        top: ($input-large-border-vertical-padding*3 + $input-large-label-font-size*2 + $content-padding + 2px);
+    }
+}
+
+
+
+
+
+

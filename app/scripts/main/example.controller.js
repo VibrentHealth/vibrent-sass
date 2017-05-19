@@ -12,7 +12,7 @@
                 var ex = this;
 
                 //input example
-                ex.someModel = '';
+                ex.someModel = ' ';
                 ex.someValidations = {
                     'email': {
                         message: 'Email is invalid'
@@ -28,8 +28,14 @@
                     }
                 };
                 ex.disabled = false;
-                ex.disableInput = function () {
-                    ex.disabled = !ex.disabled;
+                ex.disableInput = function (value) {
+                    console.log('Fired');
+                    return value === true;
+                };
+
+                ex.isActive = false;
+                ex.activeButton = function() {
+                    ex.isActive = !ex.isActive;
                 };
 
                 ex.dropdownOptions = [
@@ -45,7 +51,28 @@
 
                 ex.someFunction = function () {
                     console.log('change function called');
+                };
+
+                ex.updateSelection = function(position,entitites){
+                    angular.forEach(entitites,function(subscription,index){
+                        if(position!=index){
+                            subscription.checked = false;
+                        }
+                    })
                 }
+
+
+
+                ex.isDisabled = false;
+                ex.toggleMe = function(){
+                    ex.isDisabled = !ex.isDisabled;
+                };
+
+                ex.checkBoxOptions = [
+                    {display:"apples"},
+                    {display:"bananas"},
+                    {display:'oranges'}
+                ];
 
             });
 

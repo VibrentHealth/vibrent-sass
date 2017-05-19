@@ -1,17 +1,20 @@
 /**
+ * Created by moham on 5/15/2017.
+ */
+/**
  * Created by moustafabaiou on 3/16/17.
  */
 (function () {
     'use strict';
 
     angular.module('vbr-style-guide')
-        .directive('vbrInput',
+        .directive('vbr-toggle',
 
             function (TEMPLATES) {
                 var directive = {
                     bindToController: true,
-                    controller: InputCtrl,
-                    controllerAs: 'vm',
+                    controller: ToggleCtrl,
+                    controllerAs: 'tc',
                     link: link,
                     restrict: 'E',
                     scope: {
@@ -30,7 +33,7 @@
                         placeholder: '@?',
                         validations: '=?'
                     },
-                    templateUrl: TEMPLATES + '/vbr-input/input.html'
+                    templateUrl: TEMPLATES + '/vbr-toggle/toggle.html'
                 };
                 return directive;
 
@@ -39,26 +42,26 @@
                 }
             });
 
-    InputCtrl.$inject = [];
+    ToggleCtrl.$inject = [];
 
     /* @ngInject */
-    function InputCtrl() {
-        var vm = this;
-        console.log(vm);
+    function ToggleCtrl() {
+        var tc = this;
+        console.log(tc);
 
-        if(vm.validations){
-            angular.forEach(vm.validations, function (error, key) {
+        if(tc.validations){
+            angular.forEach(tc.validations, function (error, key) {
                 if(typeof (error.message) == 'string' && error.message.length > 0){
-                    vm.validations[key].key = key;
+                    tc.validations[key].key = key;
                 }
             })
         }
 
-        vm.errorClass = function () {
-            if (!vm.ngDisabled && vm.validations) {
-                return vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty || vm.form.$submitted)
+        tc.errorClass = function () {
+            if (!tc.ngDisabled && tc.validations) {
+                return tc.form[tc.inputId].$invalid && (tc.form[tc.inputId].$dirty || tc.form.$submitted)
             } else {
-                return vm.form[vm.inputId].$invalid;
+                return tc.form[tc.inputId].$invalid;
             }
         };
 
@@ -66,4 +69,3 @@
     }
 
 })();
-

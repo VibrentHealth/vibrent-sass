@@ -1,26 +1,28 @@
 /**
+ * Created by moham on 5/15/2017.
+ */
+/**
  * Created by moustafabaiou on 3/16/17.
  */
 (function () {
     'use strict';
 
     angular.module('vbr-style-guide')
-        .directive('vbrCheckbox',
+        .directive('vbr-radiobutton',
             function(TEMPLATES) {
                 var directive = {
                     bindToController: true,
-                    controller: CheckboxCtrl,
-                    controllerAs: 'cb',
+                    controller: RadioButtonCtrl,
+                    controllerAs: 'rb',
                     link: link,
                     restrict: 'E',
                     scope:{
                         class: '=',
                         ngModel: '=',
                         ngRequired: '=?',
-                        ngChecked:'=?',
                         ngChange: '&?',
                         ngTrim: '=?',
-                        ngDisabled: '&=?',
+                        ngDisabled: '=?',
                         type: '@',
                         value: '=',
                         form: '=',
@@ -34,34 +36,33 @@
                 }
             });
 
-    CheckboxCtrl.$inject = [];
+    RadioButtonCtrl.$inject = [];
 
     /* @ngInject */
-    function CheckboxCtrl() {
-        var cb =  this;
+    function RadioButtonCtrl() {
+        var rb =  this;
 
-        cb.isChecked = true;
+        rb.isChecked = true;
 
-        cb.toggleMe = function(){
-            cb.isChecked = !(cb.isChecked);
+        rb.toggleMe = function(){
+            rb.isChecked = !(rb.isChecked);
         };
 
-        if(cb.validations){
-            angular.forEach(cb.validations, function (error, key) {
+        if(rb.validations){
+            angular.forEach(rb.validations, function (error, key) {
                 if(typeof (error.message) == 'string' && error.message.length > 0){
-                    cb.validations[key].key = key;
+                    rb.validations[key].key = key;
                 }
             });
         }
 
-        cb.errorClass = function () {
-            if (!cb.ngDisabled && cb.validations) {
-                return cb.form[cb.inputId].$invalid && (cb.form[cb.inputId].$dirty || cb.form.$submitted)
+        rb.errorClass = function () {
+            if (!rb.ngDisabled && rb.validations) {
+                return rb.form[rb.inputId].$invalid && (rb.form[rb.inputId].$dirty || rb.form.$submitted)
             } else {
-                return cb.form[cb.inputId].$invalid;
+                return rb.form[rb.inputId].$invalid;
             }
         };
     }
 
 })();
-

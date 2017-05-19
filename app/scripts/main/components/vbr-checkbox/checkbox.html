@@ -1,1 +1,19 @@
-checkbox will go here
+
+
+
+<input
+    id="{{cb.inputId}}"
+    name="{{cb.inputId}}"
+    type="{{cb.type}}"
+    ng-model="cb.ngModel"
+    ng-trim="cb.ngTrim"
+    ng-disabled="cb.ngDisabled"
+    ng-checked="cb.ngChecked"
+/>
+
+<label
+    ng-if="cb.label"
+    for="{{cb.inputId}}"
+>
+    {{cb.label}}
+</label>

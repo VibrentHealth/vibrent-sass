@@ -1,0 +1,85 @@
+
+/*
+---
+name: default toggle
+category: components/toggle 
+---
+
+* Default link style.
+* For use on light backgrounds
+* Use `a` tag.
+
+```html
+<div style="background-color: #fff; padding: 10px; margin: 0 -10px;">
+<a class="vbr-link">this is a sample link</a>
+</div>
+<div style="background-color: #666; padding: 10px; margin: 0 -10px;">
+    <a class="vbr-link-light">this is a sample link</a>
+</div>
+```
+
+ */
+
+%default-links{
+    font-size: $link-default-font-size;
+    cursor: pointer;
+}
+.vbr-link{
+    @extend %default-links;
+    @include link-style($link-default-color-light-bg, $link-hover-color-light-bg, $link-clicked-color-light-bg);
+}
+.vbr-link-light{
+    @extend %default-links;
+    @include link-style($link-default-color-dark-bg, $link-hover-color-dark-bg, $link-clicked-color-dark-bg);
+}
+
+
+/*
+---
+name: large link
+category: components/links
+---
+
+* Large link style.
+* For use on light backgrounds
+* Use `a` tag.
+
+```html
+<div style="background-color: #fff; padding: 10px; margin: 0 -10px;">
+    <a class="vbr-link link-large">this is a sample link</a>
+</div>
+<div style="background-color: #666; padding: 10px; margin: 0 -10px;">
+    <a class="vbr-link-light link-large">this is a sample link</a>
+</div>
+
+```
+ */
+
+.link-large{
+    font-size: $link-large-font-size;
+}
+
+/*
+---
+name: fine print link
+category: components/links
+---
+
+* Fine print link style.
+* For use on light backgrounds
+* Use `a` tag.
+
+```html
+<div style="background-color: #fff; padding: 10px; margin: 0 -10px;">
+    <a class="vbr-link link-small">this is a sample link</a>
+</div>
+<div style="background-color: #666; padding: 10px; margin: 0 -10px;">
+    <a class="vbr-link-light link-small">this is a sample link</a>
+</div>
+```
+ */
+
+.link-small{
+    font-size: $link-small-font-size;
+}
+
