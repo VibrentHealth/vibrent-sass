@@ -76,6 +76,11 @@
                     {display:'oranges'}
                 ];
 
+                ex.toggleOptions = [
+                    {display:"don't know"},
+                    {display:"prefer not to answer"}
+                ];
+
             });
 
 })();

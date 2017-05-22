@@ -1,1 +1,35 @@
 
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="display: inline-flex;">
+            <vbr-toggle
+                class="vbr-radio"
+                id="someName"
+                form="someForm"
+                type="radio"
+                label="{{ex.checkBoxOptions[0]['display']}}"
+                ng-model="ex.someModel"
+                ng-required="false"
+                ng-change="ex.someFunction()"
+                ng-disabled="ex.isDisabled"
+                ng-class="ex.disabled === false ? 'vbr-radio input:checked+label':'vbr-radio input:disabled:checked+label'"
+            >
+            </vbr-toggle>
+            <vbr-radio
+                class="vbr-radio"
+                id="someName"
+                form="someForm"
+                type="radio"
+                label="{{ex.checkBoxOptions[1]['display']}}"
+                ng-model="ex.someModel"
+                ng-required="false"
+                ng-change="ex.someFunction()"
+                ng-trim="true"
+                ng-disabled=ex.isDisabled;
+                ng-class="ex.disabled === false ? 'vbr-radio input:checked+label':'vbr-radio input:disabled:checked+label'"
+            >
+            </vbr-radio>
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
+    </form>
+</div>
