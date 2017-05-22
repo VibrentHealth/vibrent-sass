@@ -63,7 +63,6 @@
 
 
 
-                ex.isDisabled = false;
                 ex.toggleMe = function(){
                     ex.isDisabled = !ex.isDisabled;
                 };

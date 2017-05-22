@@ -20,7 +20,7 @@
                         ngChecked:'=?',
                         ngChange: '&?',
                         ngTrim: '=?',
-                        ngDisabled: '&=?',
+                        ngDisabled: '=?',
                         type: '@',
                         value: '=',
                         form: '=',

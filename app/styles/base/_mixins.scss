@@ -214,6 +214,19 @@
   display: flex;
 }
 
+@mixin disabledValue($value:disabled){
+    @if $value == disabled{
+        label{
+            color:#e0e0e0;
+        }
+        input{
+            border: 1px dotted #e0e0e0;
+            background-color:#FFFFFF;
+            color:#FFFFFF;
+        }
+    }
+}
+
 @mixin display-inline-flex {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

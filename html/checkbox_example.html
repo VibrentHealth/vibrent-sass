@@ -11,7 +11,7 @@
                 ng-required="false"
                 ng-change="ex.someFunction()"
                 ng-disabled="ex.isDisabled"
-                ng-class="{'vbr-checkbox input:disabled':ex.isDisabled==true}"
+                ng-class="ex.disabled === false ? 'vbr-checkbox input:checked+label':'vbr-checkbox input:disabled:checked+label'"
                 >
             </vbr-checkbox>
             <vbr-checkbox
@@ -24,7 +24,7 @@
                 ng-required="false"
                 ng-change="ex.someFunction()"
                 ng-trim="true"
-                ng-class="{'vbr-checkbox input:disabled':ex.isDisabled==true}"
+                ng-class="ex.disabled === false ? 'vbr-checkbox input:checked+label':'vbr-checkbox input:disabled:checked+label'"
                 ng-disabled=ex.isDisabled;
             >
             </vbr-checkbox>

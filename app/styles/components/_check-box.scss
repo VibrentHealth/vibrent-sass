@@ -53,14 +53,16 @@ category: components/checkbox
         font-weight:200;
         margin-left:10px;
     }
-
-    label:disabled{
-        color:#e0e0e0;
-    }
     input:disabled{
         border: 1px dotted #e0e0e0;
         background-color:#FFFFFF;
         color:#FFFFFF;
+    }
+    label:disabled{
+        color:#e0e0e0;
+    }
+    input:disabled:checked+label{
+        color:#e0e0e0;
     }
     input:checked+label{
         color:#0098db;
