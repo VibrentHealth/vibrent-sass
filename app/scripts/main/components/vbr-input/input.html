@@ -19,10 +19,16 @@
     ng-trim="vm.ngTrim"
     ng-disabled="vm.ngDisabled"
     ng-class="{ error: vm.errorClass() }"
+    uib-tooltip="{{vm.tooltip}}"
+    tooltip-placement="top-left"
+    tooltip-trigger="'focus'"
+    tooltip-class="vbr-tooltip"
+    ng-focus="vm.focused()"
+    ng-blur="vm.blurred()"
 />
 
 <div class="input-error-message" role="alert"
-     ng-if="vm.form.$invalid && vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty ||vm.form.$submitted)"
+     ng-if="vm.shouldShowErrors()"
      ng-hide="vm.ngDisabled"
      ng-messages="vm.form[vm.inputId].$error">
 

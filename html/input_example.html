@@ -1,6 +1,6 @@
 <div ng-controller="ExampleController as ex">
     <form name="someForm">
-        <div style="display: inline-flex;">
+        <div style="display: inline-flex; padding: 50px 0;">
             <vbr-input
                 class="vbr-input"
                 id="someName"
@@ -16,7 +16,8 @@
                 ng-pattern="/some/i"
                 ng-trim="true"
                 ng-disabled="ex.disabled"
-                validations="ex.someValidations">
+                validations="ex.someValidations"
+                tooltip="ex.tooltipTesting">
             </vbr-input>
             <vbr-input
                 class="vbr-input-large"

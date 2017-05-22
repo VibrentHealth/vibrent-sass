@@ -45,8 +45,9 @@
 
                 ex.someFunction = function () {
                     console.log('change function called');
-                }
+                };
 
+                ex.tooltipTesting = 'Some instructions for the input';
             });
 
 })();
