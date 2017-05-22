@@ -11,6 +11,11 @@
             function ExampleController() {
                 var ex = this;
 
+                ex.someValue = {
+                    firstThing: 'thing to be passed'
+                };
+
+
                 //input example
                 ex.someModel = '';
                 ex.someValidations = {
@@ -51,8 +56,12 @@
 
                 ex.banner = {
                     type: 'success',
-                    message: 'Your request is a yuuuuge success and you may have dessert',
-                    closeable: true
+                    message: 'Your request is a yuuuuge success and you may have dessert ads;lfj asdfjadklsf;lak sdfjka sdf;lk adsl;f ',
+                    autoClose: false,
+                    onCloseFn: function (args) {
+                        console.log('banner close callback fn fired: ' + args.firstThing);
+                    }
+
                 };
             });
 

@@ -1,5 +1,9 @@
 <div class="vbr-banner-container" ng-class="vm.type" role="alert">
-    <div class="banner-icon-cont"><span class="icon-left" ng-class="vm.customIcon"></span></div>
-    <div><span>{{vm.message}}</span></div>
-    <div class="banner-icon-cont" ng-if="vm.closeable"><span class="icon_vibrent_x icon-right"></span></div>
+    <div class="vbr-banner-content">
+        <span class="icon-left" ng-class="vm.customIcon"></span>
+        <div class="banner-html-message" ng-bind-html="vm.messageAsHTML"></div>
+    </div>
+    <span class="icon_vibrent_x icon-right"
+          ng-if="!vm.autoClose"
+          ng-click="vm.close()"></span>
 </div>
