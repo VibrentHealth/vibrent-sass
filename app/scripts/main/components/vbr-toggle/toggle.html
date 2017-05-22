@@ -1,42 +1,18 @@
-<div ng-controller="ExampleController as ex">
-    <form name="someForm">
-        <div style="display: inline-flex;">
-            <vbr-toggle
-                class="vbr-toggle"
-                id="someName"
-                form="someForm"
-                type="email"
-                label="label"
-                placeholder="placeholder"
-                ng-model="ex.someModel"
-                ng-required="false"
-                ng-change="ex.someFunction()"
-                ng-minlength="3"
-                ng-maxlength="8"
-                ng-pattern="/some/i"
-                ng-trim="true"
-                ng-disabled="ex.disabled"
-                validations="ex.someValidations">
-            </vbr-toggle>
-            <vbr-toggle
-                class="vbr-toggle"
-                id="someName2"
-                form="someForm"
-                type="email"
-                label="label"
-                placeholder="placeholder"
-                ng-model="ex.someModel"
-                ng-required="false"
-                ng-change="ex.someFunction()"
-                ng-minlength="3"
-                ng-maxlength="8"
-                ng-pattern="/some/i"
-                ng-trim="true"
-                ng-disabled="ex.disabled"
-                validations="ex.someValidations">
-            </vbr-toggle>
-        </div>
-        <button class="vbr-btn" ng-click="ex.disableInput()">disable input</button>
-    </form>
-</div>
+
+<input
+    id="{{tc.inputId}}"
+    name="{{tc.inputId}}"
+    type="{{tc.type}}"
+    ng-model="tc.ngModel"
+    ng-disabled="tc.ngDisabled"
+    ng-checked="tc.ngChecked"
+/>
+
+<label
+    ng-if="tc.label"
+    for="{{tc.inputId}}"
+>
+    {{tc.label}}
+</label>
+
 

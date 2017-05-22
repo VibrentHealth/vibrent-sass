@@ -13,9 +13,6 @@ category: components/checkbox
     font-family: $font-family-regular;
     position: relative;
     @include display-flex;
-        .active {
-            background:red;
-        }
     input{
         -webkit-appearance: none;
         background-color: #e0e0e0;
@@ -64,9 +61,13 @@ category: components/checkbox
     input:disabled:checked+label{
         color:#e0e0e0;
     }
+    input:disabled+label{
+        color:#e0e0e0;
+    }
     input:checked+label{
         color:#0098db;
     }
+
 }
 
 .vbr-checkbox-large{

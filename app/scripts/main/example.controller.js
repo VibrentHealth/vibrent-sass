@@ -62,7 +62,10 @@
                 }
 
 
-
+                ex.isVertical = false;
+                ex.alignMe = function(){
+                    ex.isVertical = !ex.isVertical;
+                }
                 ex.toggleMe = function(){
                     ex.isDisabled = !ex.isDisabled;
                 };

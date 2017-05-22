@@ -1,28 +1,34 @@
 <div ng-controller="ExampleController as ex">
     <form name="someForm">
         <div style="display: inline-flex;">
-            <vbr-radiobutton
+            <vbr-radio
                 class="vbr-radio"
                 id="someName"
                 form="someForm"
                 type="radio"
+                label="{{ex.checkBoxOptions[0]['display']}}"
                 ng-model="ex.someModel"
                 ng-required="false"
                 ng-change="ex.someFunction()"
-                ng-disabled="ex.disabled">
-            </vbr-radiobutton>
-            <vbr-radiobutton
+                ng-disabled="ex.isDisabled"
+                ng-class="ex.disabled === false ? 'vbr-radio input:checked+label':'vbr-radio input:disabled:checked+label'"
+            >
+            </vbr-radio>
+            <vbr-radio
                 class="vbr-radio"
-                id="someName2"
+                id="someName"
                 form="someForm"
                 type="radio"
+                label="{{ex.checkBoxOptions[1]['display']}}"
                 ng-model="ex.someModel"
                 ng-required="false"
                 ng-change="ex.someFunction()"
                 ng-trim="true"
-                ng-disabled="ex.disabled">
-            </vbr-radiobutton>
+                ng-disabled=ex.isDisabled;
+                ng-class="ex.disabled === false ? 'vbr-radio input:checked+label':'vbr-radio input:disabled:checked+label'"
+            >
+            </vbr-radio>
         </div>
-        <button type="button" class="vbr-btn" ng-click="ex.activeButton()">Disable Input</button>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
     </form>
 </div>

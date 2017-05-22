@@ -40,7 +40,7 @@
     function CheckboxCtrl() {
         var cb =  this;
 
-        cb.isChecked = true;
+
 
         cb.toggleMe = function(){
             cb.isChecked = !(cb.isChecked);

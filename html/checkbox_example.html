@@ -16,14 +16,13 @@
             </vbr-checkbox>
             <vbr-checkbox
                 class="vbr-checkbox"
-                id="someName2"
+                id="someName"
                 form="someForm"
                 type="checkbox"
                 label="{{ex.checkBoxOptions[1]['display']}}"
                 ng-model="ex.someModel"
                 ng-required="false"
                 ng-change="ex.someFunction()"
-                ng-trim="true"
                 ng-class="ex.disabled === false ? 'vbr-checkbox input:checked+label':'vbr-checkbox input:disabled:checked+label'"
                 ng-disabled=ex.isDisabled;
             >

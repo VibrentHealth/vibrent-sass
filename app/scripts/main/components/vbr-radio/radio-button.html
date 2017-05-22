@@ -1,19 +1,16 @@
+
 <input
     id="{{rb.inputId}}"
     name="{{rb.inputId}}"
     type="{{rb.type}}"
     ng-model="rb.ngModel"
-    ng-required="rb.ngRequired"
-    ng-change="rb.ngChange"
-    ng-trim="rb.ngTrim"
     ng-disabled="rb.ngDisabled"
-    ng-class="{ error: rb.errorClass() }"
-    ng-disabled=""
+    ng-checked="rb.ngChecked"
 />
 
 <label
     ng-if="rb.label"
     for="{{rb.inputId}}"
-    ng-class="{ disabled: rb.ngDisabled}">
+>
     {{rb.label}}
 </label>
