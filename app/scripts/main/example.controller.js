@@ -55,12 +55,15 @@
                 ex.tooltipTesting = 'Some instructions for the input';
 
                 ex.banner = {
-                    type: 'success',
-                    message: 'Your request is a yuuuuge success and you may have dessert ads;lfj asdfjadklsf;lak sdfjka sdf;lk adsl;f ',
+                    type: 'error',
+                    message: 'st is a yuuuuge <a href="">success</a> Your request is a yuuuuge success',
                     autoClose: false,
                     onCloseFn: function (args) {
                         console.log('banner close callback fn fired: ' + args.firstThing);
-                    }
+                    },
+                    animated: true,
+                    animationDuration: 3000,
+                    animationName: 'squeeze-up'
 
                 };
             });
