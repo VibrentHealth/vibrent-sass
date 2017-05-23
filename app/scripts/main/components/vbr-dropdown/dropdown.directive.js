@@ -19,16 +19,16 @@
                      * options: an array of options objects of the type: { display: string, value: any }
                      */
                     scope: {
-                        customSelect: '=?',
+                        form: '=',
+                        options: '=',
                         ngModel: '=',
+                        customSelect: '=?',
                         ngRequired: '=?',
                         ngChange: '&?',
                         ngDisabled: '=?',
-                        form: '=',
                         inputId: '@?id',
                         label: '@?',
-                        placeholder: '@?',
-                        options: '='
+                        placeholder: '@?'
                     },
                     templateUrl: TEMPLATES + '/vbr-dropdown/dropdown.html'
                 };

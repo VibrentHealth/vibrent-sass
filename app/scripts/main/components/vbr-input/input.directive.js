@@ -16,6 +16,8 @@
                     restrict: 'E',
                     scope: {
                         ngModel: '=',
+                        type: '@',
+                        form: '=',
                         ngRequired: '=?',
                         ngChange: '&?',
                         ngMinlength: '=?',
@@ -23,8 +25,6 @@
                         ngPattern: '@?',
                         ngTrim: '=?',
                         ngDisabled: '=?',
-                        type: '@',
-                        form: '=',
                         inputId: '@?id',
                         label: '@?',
                         placeholder: '@?',
