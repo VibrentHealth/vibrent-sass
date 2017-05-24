@@ -53,35 +53,22 @@
                     console.log('change function called');
                 };
 
-                ex.updateSelection = function(position,entitites){
-                    angular.forEach(entitites,function(subscription,index){
-                        if(position!=index){
-                            subscription.checked = false;
-                        }
-                    })
-                }
-
-
-                ex.isVertical = false;
-                ex.alignMe = function(){
-                    ex.isVertical = !ex.isVertical;
-                }
                 ex.toggleMe = function(){
                     ex.isDisabled = !ex.isDisabled;
                 };
 
-                ex.checkBoxOptions = [
-                    {display:"apples"},
-                    {display:"bananas"},
-                    {display:'oranges'}
-                ];
+                ex.fruits =
+                    [
+                        {name:'Apple',selected:true},
+                        {name:'Orange',selected:true},
+                        {name:'Pear',selected:true},
+                        {name:'Grapes',selected:true}
+                    ];
 
                 ex.toggleOptions = [
                     {display:"don't know"},
                     {display:"prefer not to answer"}
                 ];
-
             });
-
 })();
 

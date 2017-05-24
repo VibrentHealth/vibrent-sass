@@ -1,16 +1,14 @@
 
-<input
-    id="{{rb.inputId}}"
-    name="{{rb.inputId}}"
-    type="{{rb.type}}"
-    ng-model="rb.ngModel"
-    ng-disabled="rb.ngDisabled"
-    ng-checked="rb.ngChecked"
-/>
+<div ng-repeat="location in rb.stores.Locations">
+    <input
+        ng-model="$parent.storeDefault"
+        ng-disabled="rb.ngDisabled"
+        value="{{location.id}}"
+        name="isDefault_group"
+        type="{{rb.type}}"
+    />
+    <label>
+        {{location.name}}
+    </label>
+</div>
 
-<label
-    ng-if="rb.label"
-    for="{{rb.inputId}}"
->
-    {{rb.label}}
-</label>

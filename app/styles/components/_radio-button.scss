@@ -1,18 +1,63 @@
 
+
+
 /*
 ---
-name: Radio Button(Horizontal Layout)
+name: Radio Button
 category: components/radio-button
 ---
-!![](./radio-button_example.html)
- */
 
+* Horizontal Layout
+
+
+```html
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="display: inline-flex">
+            <vbr-radio
+                class="vbr-radio"
+                type="radio"
+                ng-disabled="ex.isDisabled"
+                ng-value="true"
+                ng-class="ex.disabled === false ? 'vbr-radio input:checked+label':'vbr-radio input:disabled:checked+label'"
+            ></vbr-radio>
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
+    </form>
+</div>
+```
+*/
+
+/*
+---
+name: Radio Button (Vertical Alignment)
+category: components/radio-button
+---
+
+* Vertical Layout
+
+```html
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="flex-direction:column;">
+            <vbr-radio
+                class="vbr-radio"
+                type="radio"
+                ng-disabled="ex.isDisabled"
+                ng-value="true"
+                ng-class="ex.disabled === false ? 'vbr-radio input:checked+label':'vbr-radio input:disabled:checked+label'"
+            ></vbr-radio>
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
+    </form>
+</div>
+```
+ */
 .vbr-radio {
     margin: $content-padding;
     font-family: $font-family-regular;
     position: relative;
     @include display-flex;
-
     input[type='radio'] {
         -webkit-appearance:none;
         width:16px;

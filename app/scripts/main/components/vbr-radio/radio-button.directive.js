@@ -14,10 +14,7 @@
                         class: '=',
                         name:'@',
                         ngModel: '=',
-                        ngRequired: '=?',
                         ngChecked:'=?',
-                        ngChange: '&?',
-                        ngTrim: '=?',
                         ngDisabled: '=?',
                         type: '@',
                         value: '=',
@@ -39,13 +36,27 @@
     function RadioCtrl() {
         var rb = this;
 
-        if(rb.validations){
-            angular.forEach(rb.validations, function (error, key) {
-                if(typeof (error.message) === 'string' && error.message.length > 0){
-                    rb.validations[key].key = key;
+        rb.stores={
+            Locations:[
+                {
+                    name: 'Target', id: 1, isDefault: true
+                },
+                {
+                    name:'Best Buy',id:2,isDefault:false
+                },
+                {
+                    name:'WalMart',id:3,isDefault:false
                 }
-            });
+            ]
+        };
+
+        for(var i =0;i<rb.stores.Locations.length;i++){
+            if(rb.stores.Locations[i].isDefault){
+                rb.storeDefault = rb.stores.Locations[i].id;
+                break;
+            }
         }
+
     }
 })();
 
