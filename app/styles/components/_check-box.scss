@@ -60,49 +60,58 @@ category: components/check-box
     @include display-flex;
     input{
         -webkit-appearance: none;
-        background-color: #e0e0e0;
+        background-color: $input-background-color;
         color:#666666;
         //border: 1px solid #cacece;
         box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-        padding: 10px;
-        height:16px;
-        width:16px;
-        border-radius: 3px;
+        padding: $checkbox-default-padding;
+        height:$default-input-height;
+        width:$default-input-width;
+        border-radius: $checkbox-border-radius;
         display: inline-block;
         position: relative;
+
+        &:active,&:checked:active{
+            box-shadow:$input-default-box-shadow;
+        }
+        &:checked{
+            background-color:$input-checked-color;
+            border: 1px solid #adb8c0;
+            box-shadow: $input-default-box-shadow, inset 15px 10px -12px rgba(255,255,255,0.1);
+            color: #99a1a7;
+        }
+        &:checked:after{
+            content: '\2713';
+            height:16px;
+            width:16px;
+            font-size: 14px;
+            position: absolute;
+            top: 0px;
+            left: 3px;
+            color: #FFFFFF
+        }
+        &:disabled{
+            border: 1px dotted #e0e0e0;
+            background-color:#FFFFFF;
+            color:#FFFFFF;
+        }
+        &:disabled+label{
+            color:$input-default-color;
+        }
+        &:checked+label{
+            color:$input-checked-color;
+        }
     }
-    input:active,input:checked:active{
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
-    }
-    input:checked{
-        background-color:#0098db;
-        border: 1px solid #adb8c0;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
-        color: #99a1a7;
-    }
-    input:checked:after{
-        content: '\2713';
-        height:16px;
-        width:16px;
-        font-size: 14px;
-        position: absolute;
-        top: 0px;
-        left: 3px;
-        color: #FFFFFF
-    }
+
     label{
         display:inline;
         font-weight:200;
         margin-left:10px;
+        &:disabled{
+            color:#e0e0e0;
+        }
     }
-    input:disabled{
-        border: 1px dotted #e0e0e0;
-        background-color:#FFFFFF;
-        color:#FFFFFF;
-    }
-    label:disabled{
-        color:#e0e0e0;
-    }
+
     input:disabled:checked+label{
         color:#e0e0e0;
     }

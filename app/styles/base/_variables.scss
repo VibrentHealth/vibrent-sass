@@ -187,11 +187,12 @@ $input-font:                                $font-family-base !default;
 //checked color variable
 //disabled border variable
 //disabled color variable
-//input height
-//input width
+$default-input-height:                      16px;//input height
+$default-input-width:                       16px;//input width
+$input-background-color:                    #FFFFFF;
 
-//vertical alignment for input variable
-//horizontal alignment for input variable
+$input-default-box-shadow:                   0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+$input-checked-color:                       #0089db;
 
 $input-default-font-size:                   $font-size-base !default;
 $input-default-label-font-size:             10px !default;
@@ -278,7 +279,7 @@ $select-disabled-border-style:              $input-disabled-border-style !defaul
 
 $checkbox-default-height:                       16px;
 $checkbox-default-width:                        16px;
-
+$checkbox-default-padding:                      10px;
 $checkbox-default-color:                        #E0E0E0;
 
 $checkbox-default-label-font-size:             10px !default;
@@ -298,7 +299,7 @@ $checkbox-default-border-style:                solid !default;
 
 $checkbox-focused-border-color:                $button-default-color !default;
 $checkbox-focused-border-width:                $border-width-base !default;
-
+$checkbox-border-radius:                       3px;
 $checkbox-selected-font-color:                 color("heather") !default;
 $checkbox-selected-label-color:                color("heather") !default;
 
