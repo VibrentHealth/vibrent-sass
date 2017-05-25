@@ -41,7 +41,8 @@ $colors: (
     "candy-red":                  #E63900,
     "grape":                      #8C2580,
 
-    "highlight-red":              #F4E0DC
+    "highlight-red":              #F4E0DC,
+    "success":                    #5DA31F
 );
 
 @function color($name) {
@@ -180,6 +181,9 @@ $input-icon-default-height:                 26px !default;
 $input-icon-default-width:                  $input-icon-default-height !default;
 $input-icon-small-height:                   20px !default;
 $input-icon-small-width:                    $input-icon-small-height !default;
+
+$banner-icon-default-height:                24px !default;
+$banner-icon-default-width:                 $banner-icon-default-height;
 
 // INPUTS
 
@@ -349,3 +353,8 @@ $uploader-error-message-bg-color:           $input-error-message-bg-color;
 
 
 
+// BANNER
+
+$banner-icon-size:                          $banner-icon-default-height;
+$banner-icon-padding:                       ($banner-icon-size / 2);
+$banner-font-size:                          16px !default;

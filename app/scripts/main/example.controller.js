@@ -11,6 +11,11 @@
             function ExampleController() {
                 var ex = this;
 
+                ex.someValue = {
+                    firstThing: 'thing to be passed'
+                };
+
+
                 //input example
                 ex.someModel = '';
                 ex.someValidations = {
@@ -61,6 +66,19 @@
                     'maxSize': {
                         message: 'The file is too big'
                     }
+                };
+
+                ex.banner = {
+                    type: 'error',
+                    message: 'st is a yuuuuge <a href="">success</a> Your request is a yuuuuge success',
+                    autoClose: false,
+                    onCloseFn: function (args) {
+                        console.log('banner close callback fn fired: ' + args.firstThing);
+                    },
+                    animated: true,
+                    animationDuration: 3000,
+                    animationName: 'squeeze-up'
+
                 };
             });
 
