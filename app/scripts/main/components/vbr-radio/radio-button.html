@@ -1,0 +1,14 @@
+
+<div ng-repeat="location in rb.stores.Locations">
+    <input
+        ng-model="$parent.storeDefault"
+        ng-disabled="rb.ngDisabled"
+        value="{{location.id}}"
+        name="isDefault_group"
+        type="{{rb.type}}"
+    />
+    <label>
+        {{location.name}}
+    </label>
+</div>
+

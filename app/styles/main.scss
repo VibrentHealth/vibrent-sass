@@ -14,7 +14,11 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 @import "layout/scaffolding";
 @import "layout/color";
 
+
 @import "components/icons";
+@import "components/check-box";
+@import "components/radio-button";
+@import "components/toggle";
 @import "components/button";
 @import "components/links";
 @import "components/inputs";

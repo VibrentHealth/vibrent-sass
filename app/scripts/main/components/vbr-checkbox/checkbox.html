@@ -1,1 +1,33 @@
-checkbox will go here
+
+
+
+<!--<input-->
+    <!--id="{{cb.inputId}}"-->
+    <!--name="{{cb.inputId}}"-->
+    <!--type="{{cb.type}}"-->
+    <!--ng-model="cb.ngModel"-->
+    <!--ng-trim="cb.ngTrim"-->
+    <!--ng-disabled="cb.ngDisabled"-->
+    <!--ng-checked="cb.ngChecked"-->
+<!--/>-->
+
+<!--<label-->
+    <!--ng-if="cb.label"-->
+    <!--for="{{cb.inputId}}"-->
+<!--&gt;-->
+    <!--{{cb.label}}-->
+<!--</label>-->
+
+<div ng-repeat="(fruit,enabled) in cb.fruits">
+    <input
+        ng-model="fruits[fruit]"
+        ng-checked="fruits[fruit]==(fruit,enabled)"
+        ng-disabled="cb.ngDisabled"
+        type="{{cb.type}}"
+    />
+    <label>
+    {{fruit}}
+    </label>
+</div>
+
+<!-----TEMPLATE GET PASSED IN FROM THE DIRECTIVE------>

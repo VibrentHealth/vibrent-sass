@@ -80,7 +80,19 @@
                     animationName: 'squeeze-up'
 
                 };
-            });
 
+                ex.fruits =
+                    [
+                        {name:'Apple',selected:true},
+                        {name:'Orange',selected:true},
+                        {name:'Pear',selected:true},
+                        {name:'Grapes',selected:true}
+                    ];
+
+                ex.toggleOptions = [
+                    {display:"don't know"},
+                    {display:"prefer not to answer"}
+                ];
+            });
 })();
 

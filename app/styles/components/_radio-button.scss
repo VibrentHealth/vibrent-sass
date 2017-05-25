@@ -1,0 +1,106 @@
+
+
+
+/*
+---
+name: Radio Button
+category: components/radio-button
+---
+
+* Horizontal Layout
+
+
+```html
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="display: inline-flex">
+            <vbr-radio
+                class="vbr-radio"
+                type="radio"
+                ng-disabled="ex.isDisabled"
+                ng-value="true"
+                ng-class="ex.disabled === false ? 'vbr-radio input:checked+label':'vbr-radio input:disabled:checked+label'"
+            ></vbr-radio>
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
+    </form>
+</div>
+```
+*/
+
+/*
+---
+name: Radio Button (Vertical Alignment)
+category: components/radio-button
+---
+
+* Vertical Layout
+
+```html
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="flex-direction:column;">
+            <vbr-radio
+                class="vbr-radio"
+                type="radio"
+                ng-disabled="ex.isDisabled"
+                ng-value="true"
+                ng-class="ex.disabled === false ? 'vbr-radio input:checked+label':'vbr-radio input:disabled:checked+label'"
+            ></vbr-radio>
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
+    </form>
+</div>
+```
+ */
+.vbr-radio {
+    margin: $content-padding;
+    font-family: $font-family-regular;
+    position: relative;
+    @include display-flex;
+    input[type='radio'] {
+        -webkit-appearance:none;
+        width:16px;
+        height:16px;
+        border-radius:50%;
+        outline:none;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+        background-color:#e0e0e0;
+        position:relative;
+    }
+    input[type='radio']:before {
+        content:'';
+        display:block;
+        width:60%;
+        height:60%;
+        margin: 20% auto;
+        border-radius:50%;
+    }
+    input[type='radio']:checked:before {
+        background:#0098db;
+    }
+    input:disabled{
+        border:1px dotted #e0e0e0;
+        background-color:#FFFFFF;
+        color:#FFFFFF;
+    }
+    input:checked+label{
+        color:#0098db;
+    }
+    input:disabled:checked+label{
+        color:#e0e0e0;
+    }
+    input:disabled+label{
+        color:#e0e0e0;
+    }
+    label{
+        display:inline;
+        font-weight:200;
+        margin-left:10px;
+    }
+    label:disabled{
+        color:#e0e0e0;
+    }
+}
+
+

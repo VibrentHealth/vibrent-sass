@@ -1,0 +1,13 @@
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="display: inline-flex;">
+            <vbr-checkbox
+                class="vbr-checkbox"
+                type="checkbox"
+                ng-disabled="ex.isDisabled"
+                ng-class="ex.disabled === false ? 'vbr-checkbox input:checked+label':'vbr-checkbox input:disabled:checked+label'"
+            ></vbr-checkbox>
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
+    </form>
+</div>

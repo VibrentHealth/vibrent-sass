@@ -1,0 +1,22 @@
+
+<div ng-controller="ExampleController as ex">
+        <div style="display: inline-flex;">
+            <vbr-toggle
+                class="vbr-toggle"
+                form="someForm"
+                label="{{ex.toggleOptions[0]['display']}}"
+                name="{{ex.toggleOptions[1]['display']}}"
+                ng-model="ex.someModel"
+                ng-change="ex.someFunction()"
+            >
+            </vbr-toggle>
+            <!--<vbr-toggle-->
+                <!--class="vbr-toggle"-->
+                <!--label="{{ex.toggleOptions[1]['display']}}"-->
+                <!--ng-model="ex.someModel"-->
+                <!--ng-change="ex.someFunction()"-->
+            <!--&gt;-->
+            <!--</vbr-toggle>-->
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
+</div>

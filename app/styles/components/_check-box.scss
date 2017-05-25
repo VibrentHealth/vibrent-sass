@@ -1,0 +1,149 @@
+
+/*
+---
+name: Check Boxes
+category: components/check-box
+---
+
+* Horizontal Layout
+
+
+```html
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="display: inline-flex;">
+            <vbr-checkbox
+                class="vbr-checkbox"
+                type="checkbox"
+                ng-disabled="ex.isDisabled"
+                ng-class="ex.disabled === false ? 'vbr-checkbox input:checked+label':'vbr-checkbox input:disabled:checked+label'"
+            ></vbr-checkbox>
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
+    </form>
+</div>
+
+```
+*/
+
+
+/*
+---
+name: Check Boxes(Vertical Alignment)
+category: components/check-box
+---
+
+* Vertical Layout
+
+```html
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="flex-direction:column">
+            <vbr-checkbox
+                class="vbr-checkbox"
+                type="checkbox"
+                ng-disabled="ex.isDisabled"
+                ng-class="ex.disabled === false ? 'vbr-checkbox input:checked+label':'vbr-checkbox input:disabled:checked+label'"
+            ></vbr-checkbox>
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.toggleMe()">Disable Input</button>
+    </form>
+</div>
+
+```
+*/
+
+.vbr-checkbox{
+    margin: $content-padding;
+    font-family: $font-family-regular;
+    position: relative;
+    @include display-flex;
+    input{
+        -webkit-appearance: none;
+        background-color: $input-background-color;
+        color:#666666;
+        //border: 1px solid #cacece;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+        padding: $checkbox-default-padding;
+        height:$default-input-height;
+        width:$default-input-width;
+        border-radius: $checkbox-border-radius;
+        display: inline-block;
+        position: relative;
+
+        &:active,&:checked:active{
+            box-shadow:$input-default-box-shadow;
+        }
+        &:checked{
+            background-color:$input-checked-color;
+            border: 1px solid #adb8c0;
+            box-shadow: $input-default-box-shadow, inset 15px 10px -12px rgba(255,255,255,0.1);
+            color: #99a1a7;
+        }
+        &:checked:after{
+            content: '\2713';
+            height:16px;
+            width:16px;
+            font-size: 14px;
+            position: absolute;
+            top: 0px;
+            left: 3px;
+            color: #FFFFFF
+        }
+        &:disabled{
+            border: 1px dotted #e0e0e0;
+            background-color:#FFFFFF;
+            color:#FFFFFF;
+        }
+        &:disabled+label{
+            color:$input-default-color;
+        }
+        &:checked+label{
+            color:$input-checked-color;
+        }
+    }
+
+    label{
+        display:inline;
+        font-weight:200;
+        margin-left:10px;
+        &:disabled{
+            color:#e0e0e0;
+        }
+    }
+
+    input:disabled:checked+label{
+        color:#e0e0e0;
+    }
+    input:disabled+label{
+        color:#e0e0e0;
+    }
+    input:checked+label{
+        color:#0098db;
+    }
+
+}
+
+.vbr-checkbox-large{
+    @extend .vbr-checkbox;
+    input{
+        font-size: $input-large-font-size;
+        padding-bottom: $input-large-border-vertical-padding;
+
+    }
+    label{
+        bottom: - ($input-large-border-vertical-padding*3 + 2px);
+        margin: $input-large-border-vertical-padding 0;
+        font-size: $input-large-label-font-size;
+    }
+    .input-error-message{
+        font-size: $input-error-message-font-size;
+        top: ($input-large-border-vertical-padding*3 + $input-large-label-font-size*2 + $content-padding + 2px);
+    }
+}
+
+
+
+
+
+

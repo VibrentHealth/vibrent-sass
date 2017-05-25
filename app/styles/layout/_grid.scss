@@ -1,8 +1,32 @@
-/**
-  Grid Layout used throughout framework defined here
 
-  created by: Moustafa Baiou
- */
+/*
+---
+name: Grid
+category: layout/grid
+---
+
+Color classes can be used to attribute to:
+* text color like so `vbr-candy-red`
+
+```html
+<h1 class="vbr-candy-red">example</span>
+```
+
+* background color like so `vbr-candy-red-bg`
+
+```html
+<button class="vbr-btn btn-large vbr-candy-red-bg">example</span>
+```
+
+* border color like so `vbr-candy-red-br`
+
+```html
+<button class="vbr-btn btn-large vbr-candy-red-br">example</span>
+```
+
+!![](./grid_example.html)
+*/
+
 
 .padding{
     padding: $content-padding;

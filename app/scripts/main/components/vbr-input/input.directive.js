@@ -25,6 +25,8 @@
                         ngPattern: '@?',
                         ngTrim: '=?',
                         ngDisabled: '=?',
+                        type: '@',
+                        form: '=',
                         inputId: '@?id',
                         label: '@?',
                         placeholder: '@?',
