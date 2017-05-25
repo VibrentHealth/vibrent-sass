@@ -150,10 +150,22 @@ gulp.task('delayed-reload', function () {
     setTimeout(reload, 5000);
 });
 
-gulp.task('build', ['clean'], function () {
-    gulp.src('app/styles/**/*.scss')
+function buildStyles() {
+    return gulp.src('app/styles/**/*.scss')
         .pipe($.size())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/scss'));
+}
+
+function buildScripts() {
+    return gulp.src(['app/scripts/main/components/**/*', 'app/scripts/main/styleguide.*.js'])
+        .pipe($.size())
+        .pipe(gulp.dest('dist/scripts'));
+}
+
+gulp.task('build', ['clean'], function () {
+    buildStyles();
+    buildScripts();
+    return gulp.src('bower.json').pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', ['clean'], function () {
