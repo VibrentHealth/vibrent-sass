@@ -48,6 +48,20 @@
                 };
 
                 ex.tooltipTesting = 'Some instructions for the input';
+
+
+                ex.somePhotoModel = null;
+                ex.photoValidations = {
+                    'required': {
+                        message: 'please add a photo'
+                    },
+                    'pattern': {
+                        message: 'This file must be an image'
+                    },
+                    'maxSize': {
+                        message: 'The file is too big'
+                    }
+                };
             });
 
 })();

@@ -1,0 +1,20 @@
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="display: inline-flex;">
+            <vbr-photo-uploader
+                id="somePhoto"
+                form="someForm"
+                label="change"
+                ng-model="ex.somePhotoModel"
+                ng-required="true"
+                ng-change="ex.someFunction()"
+                ng-disabled="ex.disabled"
+                validations="ex.photoValidations"
+                tooltip="ex.tooltipTesting">
+            </vbr-photo-uploader>
+            <button type="submit" class="vbr-btn">test</button>
+        </div>
+    </form>
+
+</div>
+

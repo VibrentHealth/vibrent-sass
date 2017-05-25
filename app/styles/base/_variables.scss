@@ -330,5 +330,22 @@ $avatar-large-width:                        $avatar-large-height !default;
 
 // UPLOAD PHOTO
 
-//TODO WRITE THIS
+$uploader-border-radius:                    $avatar-border-radius !default;
+$uploader-border-color:                     $avatar-border-color !default;
+$uploader-border-style:                     $avatar-border-style !default;
+$uploader-border-width:                     $avatar-border-width !default;
+
+$uploader-height:                           $avatar-large-height !default;
+$uploader-width:                            $avatar-large-width !default;
+
+$uploader-label-color:                      $uploader-border-color !default;
+$uploader-label-bg-color:                   $default-bg-color !default;
+$uploader-label-opacity:                    0.5 !default;
+$uploader-label-font-size:                  $button-mini-font-size !default;
+
+$uploader-error-message-font-size:          $input-error-message-font-size !default;
+$uploader-error-message-color:              $input-error-message-color !default;
+$uploader-error-message-bg-color:           $input-error-message-bg-color;
+
+
 

@@ -15,7 +15,7 @@ dependencies:
   - ./app/fonts
   - ./app/images
   - ./app/styles/main.css
-  - ./app/styles/_variables.json
+  - ./app/styles/variables.json
   - ./bower_components
   - ./app/scripts/main.js
 

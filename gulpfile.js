@@ -16,8 +16,7 @@ gulp.task('styles', ['sassvars'], function () {
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest('app/styles'))
         .pipe(reload({ stream: true }))
-        .pipe($.size())
-        .pipe($.notify("Compilation complete."));
+        .pipe($.size());
 });
 
 gulp.task('sassvars', function () {

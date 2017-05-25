@@ -9,6 +9,7 @@
             'ngAria',
             'ngMessages',
             'ngTouch',
-            'ui.bootstrap'
+            'ui.bootstrap',
+            'ngFileUpload'
         ]);
 })();
