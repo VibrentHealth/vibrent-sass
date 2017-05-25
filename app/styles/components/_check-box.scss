@@ -96,7 +96,7 @@ category: components/check-box
             color:#FFFFFF;
         }
         &:disabled+label{
-            color:$input-default-color;
+            color: $input-disabled-label-color;
         }
         &:checked+label{
             color:$input-checked-color;
