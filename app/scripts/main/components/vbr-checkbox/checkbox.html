@@ -1,33 +1,15 @@
+<div ng-repeat="option in cb.options" ng-class="{ vertical: !cb.horizontal}">
 
+    <input type="checkbox"
+           ng-model="option.checked"
+           id="{{cb.inputId}}-{{option.$index}}"
+           name="{{cb.inputId}}-{{option.$index}}"
+           ng-change="cb.checkedWrapper(option)"
+           ng-disabled="cb.ngDisabled" />
 
-
-<!--<input-->
-    <!--id="{{cb.inputId}}"-->
-    <!--name="{{cb.inputId}}"-->
-    <!--type="{{cb.type}}"-->
-    <!--ng-model="cb.ngModel"-->
-    <!--ng-trim="cb.ngTrim"-->
-    <!--ng-disabled="cb.ngDisabled"-->
-    <!--ng-checked="cb.ngChecked"-->
-<!--/>-->
-
-<!--<label-->
-    <!--ng-if="cb.label"-->
-    <!--for="{{cb.inputId}}"-->
-<!--&gt;-->
-    <!--{{cb.label}}-->
-<!--</label>-->
-
-<div ng-repeat="(fruit,enabled) in cb.fruits">
-    <input
-        ng-model="fruits[fruit]"
-        ng-checked="fruits[fruit]==(fruit,enabled)"
-        ng-disabled="cb.ngDisabled"
-        type="{{cb.type}}"
-    />
-    <label>
-    {{fruit}}
+    <label for="{{cb.inputId}}-{{option.$index}}">
+        {{option.displayValue}}
     </label>
+
 </div>
 
-<!-----TEMPLATE GET PASSED IN FROM THE DIRECTIVE------>

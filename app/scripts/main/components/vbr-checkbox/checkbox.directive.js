@@ -14,23 +14,18 @@
                     link: link,
                     restrict: 'E',
                     scope:{
-                        class: '=',
-                        ngModel: '=',
-                        ngRequired: '=?',
-                        ngChecked:'=?',
-                        ngChange: '&?',
-                        ngTrim: '=?',
-                        ngDisabled: '=?',
-                        type: '@',
-                        value: '=',
                         form: '=',
-                        inputId: '@?id',
-                        label: '@?'
+                        options: '=',//array of possible options (for checkboxes)
+                        inputId: '=?id',
+                        ngDisabled: '=?',
+                        horizontal: '=?', //horizontal is default, pass in false for vertical
+                        change: '&?'
                     },
                     templateUrl:TEMPLATES+'/vbr-checkbox/checkbox.html'
                 };
                 return directive;
                 function link(scope, element, attrs) {
+
                 }
             });
 
@@ -38,34 +33,30 @@
 
     /* @ngInject */
     function CheckboxCtrl() {
-        var cb =  this;
 
-        cb.customer = {
-            name:'Naomi',
-            address:'1600 Archetictecure'
+        var vm =  this;
+
+        vm.horizontal = vm.horizontal === undefined ? true : vm.horizontal;
+
+        vm.checkedWrapper = function(option){
+            if(option){
+                return vm.change({option: option});
+            }
         };
-        cb.fruits = {Apple: false, Orange: false, Lemon:false, Lime:false};
-        // cb.isChecked = true;
-        //
-        // cb.toggleMe = function(){
-        //     cb.isChecked = !(cb.isChecked);
-        // };
-        //
-        // if(cb.validations){
-        //     angular.forEach(cb.validations, function (error, key) {
-        //         if(typeof (error.message) == 'string' && error.message.length > 0){
-        //             cb.validations[key].key = key;
-        //         }
-        //     });
-        // }
-        //
-        // cb.errorClass = function () {
-        //     if (!cb.ngDisabled && cb.validations) {
-        //         return cb.form[cb.inputId].$invalid && (cb.form[cb.inputId].$dirty || cb.form.$submitted)
-        //     } else {
-        //         return cb.form[cb.inputId].$invalid;
-        //     }
-        // };
+
+        //standardize the options
+        angular.forEach(vm.options, function (option) {
+            if(option.checked === undefined){
+                option.checked = false;
+            }
+            if(option.displayValue === undefined && option.value !== undefined){
+                option.displayValue = option.value;
+            }
+            if(option.value === undefined && option.displayValue !== undefined){
+                option.value = option.displayValue;
+            }
+        });
+
     }
 
 })();

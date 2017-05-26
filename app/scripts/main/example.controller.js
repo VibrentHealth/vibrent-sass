@@ -68,9 +68,9 @@
                     }
                 };
 
-                ex.banner = {
+                ex.errorBanner = {
                     type: 'error',
-                    message: 'st is a yuuuuge <a href="">success</a> Your request is a yuuuuge success',
+                    message: 'Some error occured <a href="">here</a>!',
                     autoClose: false,
                     onCloseFn: function (args) {
                         console.log('banner close callback fn fired: ' + args.firstThing);
@@ -78,16 +78,67 @@
                     animated: true,
                     animationDuration: 3000,
                     animationName: 'squeeze-up'
+                };
 
+                ex.successBanner = {
+                    type: 'success',
+                    message: 'Congratulations, your request is a yuuuuge <a href="">success</a>',
+                    autoClose: false,
+                    onCloseFn: function (args) {
+                        console.log('banner close callback fn fired: ' + args.firstThing);
+                    },
+                    animated: true,
+                    animationDuration: 3000,
+                    animationName: 'squeeze-up'
+                };
+
+                ex.checkboxDisabled = false;
+
+                ex.disableCheckbox = function () {
+                    ex.checkboxDisabled = !ex.checkboxDisabled;
+                };
+
+                ex.checkedCallback = function (option) {
+                    console.log('the checkbox callback is being called for option:', option);
                 };
 
                 ex.fruits =
                     [
-                        {name:'Apple',selected:true},
-                        {name:'Orange',selected:true},
-                        {name:'Pear',selected:true},
-                        {name:'Grapes',selected:true}
+                        {
+                            value:'Apple',
+                            checked: false
+                        },
+                        {
+                            value:'Orange',
+                            checked: false
+                        },
+                        {
+                            value:'Pear',
+                            checked: true
+                        },
+                        {
+                            value:'Grapes',
+                            checked: true
+                        }
                     ];
+
+                ex.vegetables = [
+                    {
+                        displayValue: 'carrot',
+                        value: 'ACS12345',
+                        checked: false
+                    },
+                    {
+                        displayValue: 'brussel sprouts',
+                        value: 'a;lskdf;',
+                        checked: true
+                    },
+                    {
+                        displayValue: 'potato',
+                        value: 'sjvjs',
+                        checked: false
+                    }
+                ];
 
                 ex.toggleOptions = [
                     {display:"don't know"},
