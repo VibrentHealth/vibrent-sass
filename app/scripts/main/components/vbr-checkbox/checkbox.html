@@ -1,13 +1,14 @@
-<div ng-repeat="option in cb.options" ng-class="{ vertical: !cb.horizontal}">
+<div ng-repeat="option in cb.options track by $index" ng-class="{ vertical: !cb.horizontal}" class="vbr-checkbox-group">
 
-    <input type="checkbox"
-           ng-model="option.checked"
-           id="{{cb.inputId}}-{{option.$index}}"
-           name="{{cb.inputId}}-{{option.$index}}"
-           ng-change="cb.checkedWrapper(option)"
-           ng-disabled="cb.ngDisabled" />
+    <label for="{{cb.inputId}}-{{$index}}" class="checkbox" ng-class="{ checked: option.checked, disabled: cb.ngDisabled }" tabindex="0">
+        <span></span>
+        <input type="checkbox"
+                            ng-model="option.checked"
+                            id="{{cb.inputId}}-{{$index}}"
+                            name="{{cb.inputId}}-{{$index}}"
+                            ng-change="cb.checkedWrapper(option)"
+                            ng-disabled="cb.ngDisabled" />
 
-    <label for="{{cb.inputId}}-{{option.$index}}">
         {{option.displayValue}}
     </label>
 

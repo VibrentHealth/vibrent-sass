@@ -364,7 +364,7 @@
     }
 }
 
-// SELECT mixins
+// Appearance mixins
 
 @mixin hideSelectToggle {
     -webkit-appearance: none;
@@ -372,5 +372,15 @@
     appearance: none;
     ::-ms-expand { /* for IE 11 */
         display: none;
+    }
+}
+
+
+@mixin appearance($appearance){
+    -webkit-appearance: $appearance;
+    -moz-appearance: $appearance;
+    appearance: $appearance;
+    ::-ms-expand { /* for IE 11 */
+        display: $appearance;
     }
 }

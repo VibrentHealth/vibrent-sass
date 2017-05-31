@@ -9,94 +9,64 @@ category: components/check-box
 */
 
 .vbr-checkbox, vbr-checkbox{
-    margin: $content-padding;
     font-family: $font-family-regular;
-    position: relative;
-    @include display-flex;
-    input[type="checkbox"]{
-        -webkit-appearance: none;
-        background-color: $input-background-color;
-        color:#666666;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-        padding: $checkbox-default-padding;
-        border-radius: $checkbox-border-radius;
-        display: inline-block;
-        position: relative;
+    .vbr-checkbox-group{
+        @include display-inline-flex();
+        &.vertical {
+            @include display-flex();
+        }
+        margin: $content-padding;
 
-        &:active,&:checked:active{
-            box-shadow:$input-default-box-shadow;
-        }
-        &:checked{
-            background-color:$input-checked-color;
-            border: 1px solid #adb8c0;
-            box-shadow: $input-default-box-shadow, inset 15px 10px -12px rgba(255,255,255,0.1);
-            color: #99a1a7;
-        }
-        &:checked:after{
-            content: '\2713';
-            color: #FFFFFF;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-        }
-        &:disabled{
-            border: 1px dotted #e0e0e0;
-            background-color:#FFFFFF;
-            color:#FFFFFF;
-        }
-        &:disabled+label{
-            color: $input-disabled-label-color;
-        }
-        &:checked+label{
-            color:$input-checked-color;
-        }
-        :focus{
-            outline: 0;
-        }
-    }
+        .checkbox{
+            color: $checkbox-default-font-color;
+            font-size: $checkbox-default-label-font-size;
+            &:focus{
+                outline: $checkbox-focused-border-color $checkbox-focused-border-width $checkbox-default-border-style !important;
+            }
+            input[type="checkbox"]{
+                display: none !important;
+            }
+            span{
+                background-color: $checkbox-default-bg-color;
+                padding: $checkbox-default-height/2 $checkbox-default-width/2;
+                @include border-radius($checkbox-border-radius);
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                margin-top: $checkbox-default-label-font-size - $checkbox-default-height;//hack to get this too look exactly centered
+                border-width: $checkbox-default-border-width;
+            }
+            &.checked{
+                span{
+                    background-color: $checkbox-selected-bg-color;
+                    &::after {
+                        content: '\2713';
+                        font-size: 12px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        color: $checkbox-selected-check-color;
+                        text-align: center;
+                    }
+                }
+            }
+            &.disabled{
+                color: $checkbox-disabled-font-color;
+                cursor: not-allowed;
+                span{
+                    background-color: $checkbox-disabled-bg-color;
+                    border-color: $checkbox-disabled-border-color;
+                    border-style: $checkbox-disabled-border-style;
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
 
-    label{
-        display:inline;
-        font-weight:200;
-        margin-left:10px;
-        &:disabled{
-            color:#e0e0e0;
         }
-    }
-
-    input:disabled:checked+label{
-        color:#e0e0e0;
-    }
-    input:disabled+label{
-        color:#e0e0e0;
-    }
-    input:checked+label{
-        color:#0098db;
-    }
-
-}
-
-.vbr-checkbox-large{
-    @extend .vbr-checkbox;
-    input{
-        font-size: $input-large-font-size;
-        padding-bottom: $input-large-border-vertical-padding;
-
-    }
-    label{
-        bottom: - ($input-large-border-vertical-padding*3 + 2px);
-        margin: $input-large-border-vertical-padding 0;
-        font-size: $input-large-label-font-size;
-    }
-    .input-error-message{
-        font-size: $input-error-message-font-size;
-        top: ($input-large-border-vertical-padding*3 + $input-large-label-font-size*2 + $content-padding + 2px);
     }
 }
-
-
-
 
 
 

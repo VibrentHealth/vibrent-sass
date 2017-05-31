@@ -105,36 +105,32 @@
                 ex.fruits =
                     [
                         {
-                            value:'Apple',
+                            value:'apple',
                             checked: false
                         },
                         {
-                            value:'Orange',
+                            value: 'banana',
                             checked: false
                         },
                         {
-                            value:'Pear',
-                            checked: true
-                        },
-                        {
-                            value:'Grapes',
+                            value: 'pear',
                             checked: true
                         }
                     ];
 
                 ex.vegetables = [
                     {
-                        displayValue: 'carrot',
+                        displayValue: 'apple',
                         value: 'ACS12345',
                         checked: false
                     },
                     {
-                        displayValue: 'brussel sprouts',
+                        displayValue: 'banana',
                         value: 'a;lskdf;',
                         checked: true
                     },
                     {
-                        displayValue: 'potato',
+                        displayValue: 'pear',
                         value: 'sjvjs',
                         checked: false
                     }

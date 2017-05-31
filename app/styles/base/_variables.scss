@@ -188,15 +188,6 @@ $banner-icon-default-width:                 $banner-icon-default-height;
 // INPUTS
 
 $input-font:                                $font-family-base !default;
-//checked color variable
-//disabled border variable
-//disabled color variable
-$default-input-height:                      16px;//input height
-$default-input-width:                       16px;//input width
-$input-background-color:                    #FFFFFF;
-
-$input-default-box-shadow:                   0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
-$input-checked-color:                       #0089db;
 
 $input-default-font-size:                   $font-size-base !default;
 $input-default-label-font-size:             10px !default;
@@ -282,43 +273,31 @@ $select-disabled-border-style:              $input-disabled-border-style !defaul
 
 // CHECKBOX
 
-//$checkbox-font:                                $input-font !default;
-//$checkbox-default-font-size                    $input-default-font-size !default;
+$checkbox-font:                                $input-font !default;
 
-$checkbox-default-height:                       16px;
-$checkbox-default-width:                        16px;
-$checkbox-default-padding:                      10px;
-$checkbox-default-color:                        #E0E0E0;
+$checkbox-default-height:                      16px !default;
+$checkbox-default-width:                       $checkbox-default-height !default;
+$checkbox-default-bg-color:                    color('line-color') !default;
+$checkbox-default-label-font-size:             $checkbox-default-height - 2px !default;
+$checkbox-default-border-vertical-padding:     $input-default-border-vertical-padding !default;
 
-$checkbox-default-label-font-size:             10px !default;
-$checkbox-default-border-vertical-padding:     6px !default;
-
-$checkbox-large-font-size:                     $font-size-large !default;
-$checkbox-large-label-font-size:               10px !default;
-$checkbox-large-border-vertical-padding:       8px !default;
-
-$checkbox-default-font-color:                  $font-text-color !default;
-$checkbox-default-label-color:                 color("stone") !default;
-$checkbox-default-placeholder-color:           color("grey") !default;
+$checkbox-default-font-color:                  $input-default-font-color !default;
 
 $checkbox-default-border-color:                $input-default-label-color !default;
-$checkbox-default-border-width:                $border-width-thin !default;
-$checkbox-default-border-style:                solid !default;
+$checkbox-default-border-width:                $input-default-border-width !default;
+$checkbox-default-border-style:                $input-default-border-style !default;
+$checkbox-border-radius:                       $base-border-radius !default;
 
 $checkbox-focused-border-color:                $button-default-color !default;
 $checkbox-focused-border-width:                $border-width-base !default;
-$checkbox-border-radius:                       3px;
-$checkbox-selected-font-color:                 color("heather") !default;
-$checkbox-selected-label-color:                color("heather") !default;
 
-$checkbox-disabled-font-color:                 color("heather") !default;
-$checkbox-disabled-label-color:                $input-disabled-font-color !default;
-$checkbox-disabled-border-color:               $input-disabled-label-color !default;
-$checkbox-disabled-border-style:               dotted !default;
+$checkbox-selected-bg-color:                   $input-focused-border-color !default;
+$checkbox-selected-check-color:                color('white') !default;
 
-$checkbox-error-message-font-size:             $font-size-small !default;
-$checkbox-error-message-color:                 $error-font-color !default;
-$checkbox-error-message-bg-color:              $error-bg-color !default;
+$checkbox-disabled-font-color:                 $input-disabled-label-color !default;
+$checkbox-disabled-bg-color:                   transparent !default;
+$checkbox-disabled-border-color:               $input-disabled-border-color !default;
+$checkbox-disabled-border-style:               $input-disabled-border-style !default;
 
 // TOGGLE
 

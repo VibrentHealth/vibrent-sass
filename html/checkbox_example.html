@@ -1,6 +1,7 @@
 <div ng-controller="ExampleController as ex">
     <form name="someForm">
-        <div style="display: inline-flex;">
+        <div style="border: black 1px solid; padding: 30px;">
+            Horizontal default checkbox group
             <vbr-checkbox form="someForm"
                           options="ex.fruits"
                           id="checkboxGroup1"
@@ -9,12 +10,14 @@
 
             </vbr-checkbox>
         </div>
-        <div style="">
+        <div style="border: black 1px solid; padding: 30px;">
+            Vertical checkbox group
             <vbr-checkbox form="someForm"
                           options="ex.vegetables"
                           id="checkboxGroup2"
                           change="ex.checkedCallback(option)"
-                          ng-disabled="ex.checkboxDisabled">
+                          ng-disabled="ex.checkboxDisabled"
+                          horizontal="false">
 
             </vbr-checkbox>
         </div>

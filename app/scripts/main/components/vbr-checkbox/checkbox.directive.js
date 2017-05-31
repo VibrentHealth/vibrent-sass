@@ -16,7 +16,7 @@
                     scope:{
                         form: '=',
                         options: '=',//array of possible options (for checkboxes)
-                        inputId: '=?id',
+                        inputId: '@?id',
                         ngDisabled: '=?',
                         horizontal: '=?', //horizontal is default, pass in false for vertical
                         change: '&?'
@@ -57,6 +57,7 @@
             }
         });
 
+        console.log(vm);
     }
 
 })();
