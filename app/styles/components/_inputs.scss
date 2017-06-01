@@ -15,6 +15,7 @@ category: components/inputs
 
 
     .vbr-tooltip{
+        font-family: $input-font;
         /* Specify styling for tooltip contents */
         .tooltip-inner {
             background-color: $input-tooltip-bg-color;
