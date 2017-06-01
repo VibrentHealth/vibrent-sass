@@ -187,7 +187,7 @@ $banner-icon-default-width:                 $banner-icon-default-height;
 
 // INPUTS
 
-$input-font:                                $font-family-base !default;
+$input-font:                                $base-font-family !default;
 
 $input-default-font-size:                   $font-size-base !default;
 $input-default-label-font-size:             10px !default;
@@ -266,11 +266,6 @@ $select-disabled-icon-color:                $select-disabled-font-color !default
 $select-disabled-border-color:              $select-disabled-font-color !default;
 $select-disabled-border-style:              $input-disabled-border-style !default;
 
-
-// RADIO BUTTON
-
-//TODO WRITE THIS
-
 // CHECKBOX
 
 $checkbox-font:                                $input-font !default;
@@ -299,13 +294,26 @@ $checkbox-disabled-bg-color:                   transparent !default;
 $checkbox-disabled-border-color:               $input-disabled-border-color !default;
 $checkbox-disabled-border-style:               $input-disabled-border-style !default;
 
-// TOGGLE
+// RADIO BUTTON
 
-//TODO write this
+$radio-font:                                $input-font !default;
 
-// MEDIA PLAYER
+$radio-default-height:                      $checkbox-default-height !default;
+$radio-default-width:                       $radio-default-height !default;
 
-//TODO write this
+$radio-default-font-color:                  $checkbox-default-font-color !default;
+$radio-default-label-font-size:             $checkbox-default-label-font-size !default;
+
+$radio-focused-border-color:                $checkbox-focused-border-color !default;
+$radio-focused-border-width:                $checkbox-focused-border-width !default;
+$radio-focused-border-style:                $checkbox-default-border-style !default;
+
+$radio-unselected-url:                      url($images-assets-path + '/radio_unselected.svg') !default;
+$radio-selected-url:                        url($images-assets-path + '/radio_selected.svg') !default;
+$radio-disabled-url:                        url($images-assets-path + '/radio_disabled.svg') !default;
+
+$radio-disabled-font-color:                 $checkbox-disabled-font-color !default;
+
 
 // NAVBAR
 

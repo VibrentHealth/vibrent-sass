@@ -11,16 +11,12 @@
                     link: link,
                     restrict: 'E',
                     scope:{
-                        class: '=',
-                        name:'@',
                         ngModel: '=',
-                        ngChecked:'=?',
-                        ngDisabled: '=?',
-                        type: '@',
-                        value: '=',
-                        form: '=',
+                        options: '=',
                         inputId: '@?id',
-                        label: '@?'
+                        ngDisabled: '=?',
+                        vertical: '=?', //horizontal is default, pass in true for vertical
+                        change: '&?'
                     },
                     templateUrl:TEMPLATES+'/vbr-radio/radio-button.html'
                 };
@@ -34,28 +30,14 @@
 
     /* @ngInject */
     function RadioCtrl() {
-        var rb = this;
 
-        rb.stores={
-            Locations:[
-                {
-                    name: 'Target', id: 1, isDefault: true
-                },
-                {
-                    name:'Best Buy',id:2,isDefault:false
-                },
-                {
-                    name:'WalMart',id:3,isDefault:false
-                }
-            ]
-        };
+        var vm = this;
 
-        for(var i =0;i<rb.stores.Locations.length;i++){
-            if(rb.stores.Locations[i].isDefault){
-                rb.storeDefault = rb.stores.Locations[i].id;
-                break;
+        vm.selectedWrapper = function(option){
+            if(option){
+                return vm.change({option: option});
             }
-        }
+        };
 
     }
 })();

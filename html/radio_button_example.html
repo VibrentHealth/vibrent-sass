@@ -1,0 +1,24 @@
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="">
+            {{ex.radioModel}}
+            <vbr-radio id="radioButtonGroup1"
+                       options="ex.radioOptions"
+                       ng-model="ex.radioModel"
+                       ng-disabled="ex.radioDisabled"
+                       change="ex.radioChange(option)">
+            </vbr-radio>
+        </div>
+        <div>
+            {{ex.radioModel2}}
+            <vbr-radio id="radioButtonGroup2"
+                       options="ex.radioOptions"
+                       ng-model="ex.radioModel2"
+                       ng-disabled="ex.radioDisabled"
+                       change="ex.radioChange(option)"
+                       vertical="true">
+            </vbr-radio>
+        </div>
+        <button type="button" class="vbr-btn" ng-click="ex.disableRadio()">Disable Input</button>
+    </form>
+</div>

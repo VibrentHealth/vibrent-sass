@@ -18,7 +18,7 @@
                         options: '=',//array of possible options (for checkboxes)
                         inputId: '@?id',
                         ngDisabled: '=?',
-                        horizontal: '=?', //horizontal is default, pass in false for vertical
+                        vertical: '=?', //horizontal is default, pass in true for vertical
                         change: '&?'
                     },
                     templateUrl:TEMPLATES+'/vbr-checkbox/checkbox.html'
@@ -36,7 +36,6 @@
 
         var vm =  this;
 
-        vm.horizontal = vm.horizontal === undefined ? true : vm.horizontal;
 
         vm.checkedWrapper = function(option){
             if(option){
@@ -56,8 +55,6 @@
                 option.value = option.displayValue;
             }
         });
-
-        console.log(vm);
     }
 
 })();

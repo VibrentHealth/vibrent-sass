@@ -136,10 +136,24 @@
                     }
                 ];
 
-                ex.toggleOptions = [
-                    {display:"don't know"},
-                    {display:"prefer not to answer"}
+                ex.radioOptions = [
+                    'option 1',
+                    'option 2',
+                    'option 3'
                 ];
+
+                ex.radioDisabled = false;
+
+                ex.disableRadio = function () {
+                    ex.radioDisabled = !ex.radioDisabled;
+                };
+
+                ex.radioModel = null;
+
+                ex.radioChange = function(option){
+                    console.log('the radio callback is being called for option:', option);
+                }
+
             });
 })();
 
