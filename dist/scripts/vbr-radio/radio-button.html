@@ -1,0 +1,14 @@
+<div ng-repeat="option in rb.options" ng-class="{ vertical: rb.vertical}" class="vbr-radio-group">
+    <label for="{{rb.inputId}}-{{$index}}" class="radio-button" ng-class="{ checked: rb.ngModel === option, disabled: rb.ngDisabled }" tabindex="0">
+        <span></span>
+        <input type="radio"
+               ng-model="rb.ngModel"
+               ng-value="option"
+               ng-disabled="rb.ngDisabled"
+               id="{{rb.inputId}}-{{$index}}"
+               name="{{rb.inputId}}-{{$index}}"
+               ng-change="rb.selectedWrapper(option)">
+        {{option}}
+    </label>
+</div>
+

@@ -1,0 +1,35 @@
+<div class="vbr-uploader"
+     ngf-select ngf-drop
+     id="{{vm.inputId}}"
+     ng-model="vm.ngModel"
+     name="{{vm.name}}"
+     ngf-pattern="'image/*'"
+     ngf-accept="'image/*'"
+     ngf-max-size="vm.maxFileSize"
+     ngf-change="vm.ngChangeWrapper($files, $file, $duplicateFiles, $invalidFiles, $event)"
+     ng-disabled="vm.ngDisabled"
+     ngf-resize="{ratio: '1:1'}"
+     ngf-resize-if="$width != $height"
+     ng-required="vm.ngRequired">
+
+
+    <label class="uploader-label" for="{{vm.inputId}}">
+        {{vm.label}}
+    </label>
+
+    <img ngf-src="vm.ngModel" ng-if="vm.ngModel">
+    <img ng-src="{{vm.default}}" ng-if="!vm.ngModel">
+
+</div>
+<div class="vbr-uploader-errors" role="alert"
+     ng-if="vm.shouldShowErrors()"
+     ng-hide="vm.ngDisabled"
+     ng-messages="vm.form[vm.inputId].$error">
+
+    <span ng-repeat="error in vm.validations"
+          ng-message="{{error.key}}">
+        {{ error.message }}
+    </span>
+
+
+</div>
