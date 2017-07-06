@@ -1,6 +1,10 @@
 # Vibrent Sass Framework 
 
-## Installing
+## Installing For Users 
+
+``bower install vibrent-sass``
+
+## Installing For Developers
 ``npm install ; bower install``
 
 ## Building
