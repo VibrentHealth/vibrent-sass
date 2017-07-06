@@ -1,7 +1,13 @@
 # Vibrent Sass Framework 
 
-## Launching
-``npm install ; bower install ; gulp``
+## Installing
+``npm install ; bower install``
+
+## Building
+``gulp build``
+
+## Serving
+``gulp``
 
 The styleguide will be available at port 3000 by default. 
 
@@ -16,8 +22,6 @@ Good things to do:
 * document your code for your team mates
 
 ### Commit Messages <a name="commitMessages"></a>
-
-We will be using a [changelog generator](https://github.com/conventional-changelog/conventional-changelog) so we would like to format our commit messages in certain way so that our changelog generator picks the messages up properly.
 
 Commit Messages should be formatted as such:
 ```
@@ -59,10 +63,5 @@ specific commit message
 
 Fixes JIRA AC-TICKETNUMBERHERE
 ```
-
-For more details look [here](https://github.com/conventional-changelog/conventional-commits-parser).
-
-We will use this [changelog](CHANGELOG.MD) so that everyone from QA to management to development will know what is in what build without any confusion.
-
 
 #### Updated by Kyle Mills 07/06/2017 
