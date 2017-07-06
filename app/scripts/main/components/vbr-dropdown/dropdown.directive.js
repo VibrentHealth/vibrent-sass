@@ -51,15 +51,19 @@
         };
 
         vm.flipDownArrow = function () {
-            vm.active = !vm.active;
+            if(!vm.ngDisabled) {
+                vm.active = !vm.active;
+            }
         };
 
         vm.resetDownArrow = function () {
             //give this a timeout so that blur events
             // don't occur before click events select options
-            $timeout(function () {
-                vm.active = false;
-            }, 100);
+            if(!vm.ngDisabled) {
+                $timeout(function () {
+                    vm.active = false;
+                }, 100);
+            }
         };
 
         vm.ngChangeWrapper = function () {

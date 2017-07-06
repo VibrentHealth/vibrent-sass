@@ -58,7 +58,7 @@ category: components/dropdown
             border-bottom-color: $select-disabled-border-color;
             background-image: url($images-assets-path + '/dropdown-disabled.svg');
         }
-        &:active, &.active{
+        &:active:not(.disabled), &.active:not(.disabled){
             background-image: url($images-assets-path + '/dropdown-close.svg');
         }
     }

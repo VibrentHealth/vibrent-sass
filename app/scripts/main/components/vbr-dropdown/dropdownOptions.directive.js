@@ -21,6 +21,7 @@
                     scope: {
                         options: '=',
                         modelValue: '=',
+                        disabled: '=',
                         changeWrapper: '&'
                     },
                     templateUrl: TEMPLATES + '/vbr-dropdown/dropdownOptions.html'
@@ -40,8 +41,10 @@
         var vm = this;
 
         vm.setModelValue = function (option) {
-            vm.modelValue = option;
-            vm.changeWrapper()();
+            if(!vm.disabled) {
+                vm.modelValue = option;
+                vm.changeWrapper()();
+            }
         };
 
     }
