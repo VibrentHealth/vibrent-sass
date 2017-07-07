@@ -167,16 +167,12 @@ gulp.task('buildStyles',function(cb){
     pump([
         gulp.src('app/styles/**/*.scss'),
         $.size(),
-        gulp.dest('dist/scss')
+        gulp.dest('dist/scss/')
     ],
     cb);
 });
 
-gulp.task('copyTemplates',function(){
-    gulp.src(['app/scripts/**/*.html']).pipe(gulp.dest('dist'));
-});
-
-gulp.task('build', ['clean','buildScripts','buildStyles','copyTemplates'], function () {
+gulp.task('build', ['clean','buildScripts','buildStyles'], function () {
     return gulp.src('bower.json').pipe(gulp.dest('dist'));
 });
 
