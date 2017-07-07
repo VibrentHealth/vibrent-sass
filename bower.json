@@ -3,7 +3,7 @@
     "private": false,
     "main":[
       "./dist/scripts/index.min.js",
-      "./dist/scss/main.scss"
+      "./dist/scss/**/*.scss"
     ],
     "dependencies": {
         "bootstrap-sass": "^3.3.7",
