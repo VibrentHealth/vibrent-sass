@@ -3,6 +3,7 @@
 
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
+var pump = require('pump');
 var reload = browserSync.reload;
 var gutil = require('gulp-util');
 var sassJson = require('gulp-sass-json');
@@ -150,21 +151,29 @@ gulp.task('delayed-reload', function () {
     setTimeout(reload, 5000);
 });
 
-function buildStyles() {
-    return gulp.src('app/styles/**/*.scss')
-        .pipe($.size())
-        .pipe(gulp.dest('dist/scss'));
-}
 
-function buildScripts() {
-    return gulp.src(['app/scripts/main/components/**/*', 'app/scripts/main/styleguide.*.js'])
-        .pipe($.size())
-        .pipe(gulp.dest('dist/scripts'));
-}
+gulp.task('buildScripts',function(cb){
+    pump([
+            gulp.src(['app/scripts/main/*.module.js','app/scripts/main/*.controller.js','app/scripts/main/templates.js','app/scripts/main/*.controller.js','app/scripts/main/components/**/*.js']),
+            $.ngAnnotate(),
+            $.uglify(),
+            $.concat('index.min.js'),
+            gulp.dest('dist/scripts/')
+        ],
+        cb
+    );
+});
 
-gulp.task('build', ['clean'], function () {
-    buildStyles();
-    buildScripts();
+gulp.task('buildStyles',function(cb){
+    pump([
+        gulp.src('app/styles/**/*.scss'),
+        $.size(),
+        gulp.dest('dist/scss/')
+    ],
+    cb);
+});
+
+gulp.task('build', ['clean','buildScripts','buildStyles'], function () {
     return gulp.src('bower.json').pipe(gulp.dest('dist'));
 });
 
