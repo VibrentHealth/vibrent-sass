@@ -154,7 +154,8 @@ gulp.task('delayed-reload', function () {
 
 gulp.task('buildScripts',function(cb){
     pump([
-            gulp.src(['app/scripts/main/*.js','app/scripts/main/components/**/*.js']),
+            gulp.src(['app/scripts/main/*.module.js','app/scripts/main/*.controller.js','app/scripts/main/templates.js','app/scripts/main/*.controller.js','app/scripts/main/components/**/*.js']),
+            $.ngAnnotate(),
             $.uglify(),
             $.concat('index.min.js'),
             gulp.dest('dist/scripts/')
