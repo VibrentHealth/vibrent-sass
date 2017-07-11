@@ -36,6 +36,7 @@ category: components/inputs
         font-size: $input-default-font-size;
         color: $input-default-font-color;
         border: 0;
+        width:100%;
         @include vbr-bottom-border($input-default-border-color, $input-default-border-style, $input-default-border-width);
         padding-bottom: $input-default-border-vertical-padding;
         @include vbr-placeholder($input-default-placeholder-color, $input-disabled-font-color);

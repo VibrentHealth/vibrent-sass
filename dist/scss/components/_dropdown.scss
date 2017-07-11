@@ -22,7 +22,8 @@ category: components/dropdown
         padding-bottom: $select-default-border-vertical-padding;
         //for styling select arrow
         @include hideSelectToggle;
-        background: url($images-assets-path + '/dropdown.svg') no-repeat right transparent;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjY1IDYuODQiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMDA5OGRiO308L3N0eWxlPjwvZGVmcz48dGl0bGU+ZHJvcGRvd248L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJiYWNrZ3JvdW5kIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00LjgyLDYuODQuMS43NEEuNTMuNTMsMCwwLDEsLjEuMTNhLjI5LjI5LDAsMCwxLC40OCwwTDQuODIsNS42MSw5LjA3LjEzYS4yOS4yOSwwLDAsMSwuNDgsMCwuNTMuNTMsMCwwLDEsMCwuNjJaIi8+PC9nPjwvZz48L3N2Zz4=);
+        background-repeat:no-repeat;
         background-size: 12px 12px;
         background-position: 95% 40%;
         min-width: 100px;
@@ -56,10 +57,10 @@ category: components/dropdown
             color: $select-disabled-font-color;
             border-bottom-style: $select-disabled-border-style;
             border-bottom-color: $select-disabled-border-color;
-            background-image: url($images-assets-path + '/dropdown-disabled.svg');
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjY1IDYuODQiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojY2NjY2NjO308L3N0eWxlPjwvZGVmcz48dGl0bGU+ZHJvcGRvd24tZGlzYWJsZWQ8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJiYWNrZ3JvdW5kIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00LjgyLDYuODQuMS43NEEuNTMuNTMsMCwwLDEsLjEuMTNhLjI5LjI5LDAsMCwxLC40OCwwTDQuODIsNS42MSw5LjA3LjEzYS4yOS4yOSwwLDAsMSwuNDgsMCwuNTMuNTMsMCwwLDEsMCwuNjJaIi8+PC9nPjwvZz48L3N2Zz4=);
         }
         &:active:not(.disabled), &.active:not(.disabled){
-            background-image: url($images-assets-path + '/dropdown-close.svg');
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjY1IDYuODQiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMGM0NzZiO308L3N0eWxlPjwvZGVmcz48dGl0bGU+ZHJvcGRvd24tY2xvc2U8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJiYWNrZ3JvdW5kIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00LjgyLDAsLjEsNi4xYS41My41MywwLDAsMCwwLC42Mi4yOS4yOSwwLDAsMCwuNDgsMEw0LjgyLDEuMjMsOS4wNyw2LjcyYS4yOS4yOSwwLDAsMCwuNDgsMCwuNTMuNTMsMCwwLDAsMC0uNjJaIi8+PC9nPjwvZz48L3N2Zz4=);
         }
     }
 
