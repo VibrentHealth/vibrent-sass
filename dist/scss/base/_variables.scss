@@ -308,9 +308,9 @@ $radio-focused-border-color:                $checkbox-focused-border-color !defa
 $radio-focused-border-width:                $checkbox-focused-border-width !default;
 $radio-focused-border-style:                $checkbox-default-border-style !default;
 
-$radio-unselected-url:                      url($images-assets-path + '/radio_unselected.svg') !default;
-$radio-selected-url:                        url($images-assets-path + '/radio_selected.svg') !default;
-$radio-disabled-url:                        url($images-assets-path + '/radio_disabled.svg') !default;
+$radio-unselected-url:                      url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNS4wOSAxNS4wOSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNlZGVkZWQ7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT51bnNlbGVjdGVkPC90aXRsZT48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iYmFja2dyb3VuZCI+PGNpcmNsZSBjbGFzcz0iY2xzLTEiIGN4PSI3LjU0IiBjeT0iNy41NCIgcj0iNy41NCIvPjwvZz48L2c+PC9zdmc+) !default;
+$radio-selected-url:                        url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNS4wOSAxNS4wOSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNlZGVkZWQ7fS5jbHMtMntmaWxsOiMwMDk4ZGI7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5zZWxlY3RlZDwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9ImJhY2tncm91bmQiPjxjaXJjbGUgY2xhc3M9ImNscy0xIiBjeD0iNy41NCIgY3k9IjcuNTQiIHI9IjcuNTUiLz48Y2lyY2xlIGNsYXNzPSJjbHMtMiIgY3g9IjcuNTUiIGN5PSI3LjU0IiByPSI0LjQ1Ii8+PC9nPjwvZz48L3N2Zz4=) !default;
+$radio-disabled-url:                        url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiNjY2M7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjAuNXB4O3N0cm9rZS1kYXNoYXJyYXk6MiAyO308L3N0eWxlPjwvZGVmcz48dGl0bGU+ZGlzYWJsZWQ8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJiYWNrZ3JvdW5kIj48Y2lyY2xlIGNsYXNzPSJjbHMtMSIgY3g9IjcuNzkiIGN5PSI3Ljc5IiByPSI3LjU1Ii8+PC9nPjwvZz48L3N2Zz4=) !default;
 
 $radio-disabled-font-color:                 $checkbox-disabled-font-color !default;
 
