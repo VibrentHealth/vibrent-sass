@@ -12,7 +12,7 @@ category: components/inputs
     font-family: $input-font;
     position: relative;
     @include display-flex;
-
+    @include flex-direction(column);
 
     .vbr-tooltip{
         font-family: $input-font;
@@ -69,10 +69,12 @@ category: components/inputs
         color: $input-error-message-color;
         background-color: $input-error-message-bg-color;
         border-radius: $large-border-radius;
-        position: absolute;
+        position: relative;
         top: ($input-default-border-vertical-padding*3 + $input-default-label-font-size*2 + $content-padding + 2px);
         width: 100%;
         padding: $content-padding/2 $content-padding;
+        margin-bottom: 5px;
+        margin-top: 5px;
     }
 }
 

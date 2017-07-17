@@ -1,10 +1,3 @@
-<label
-    ng-if="vm.label"
-    for="{{vm.inputId}}"
-    ng-class="{ disabled: vm.ngDisabled}">
-    {{vm.label}}
-</label>
-
 <input
     id="{{vm.inputId}}"
     name="{{vm.inputId}}"
@@ -26,6 +19,13 @@
     ng-focus="vm.focused()"
     ng-blur="vm.blurred()"
 />
+
+<label
+    ng-if="vm.label"
+    for="{{vm.inputId}}"
+    ng-class="{ disabled: vm.ngDisabled}">
+    {{vm.label}}
+</label>
 
 <div class="input-error-message" role="alert"
      ng-if="vm.shouldShowErrors()"

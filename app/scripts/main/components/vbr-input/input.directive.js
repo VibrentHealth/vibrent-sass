@@ -49,7 +49,7 @@
 
         if(vm.validations){
             angular.forEach(vm.validations, function (error, key) {
-                if(typeof (error.message) == 'string' && error.message.length > 0){
+                if(typeof (error.message) === 'string' && error.message.length > 0){
                     vm.validations[key].key = key;
                 }
             })
