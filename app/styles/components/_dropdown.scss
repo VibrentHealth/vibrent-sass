@@ -9,6 +9,7 @@ category: components/dropdown
 
 .vbr-select{
     margin: $content-padding;
+    margin-top: 0;
     position: relative;
     font-family: $select-font;
     @include display-flex;
