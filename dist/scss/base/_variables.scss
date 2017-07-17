@@ -1,0 +1,392 @@
+/**
+  Variables used throughout framework defined here
+
+  created by: Moustafa Baiou
+ */
+
+
+// COLORS
+$colors: (
+    "black":                      #333,
+    "charcoal":                   #666,
+    "stone":                      #999,
+    "grey":                       #ADADAD,
+    "heather":                    #CCC,
+    "line-color":                 #E0E0E0,
+    "silver-sand":                #F3F3F3,
+    "white":                      #FFF,
+
+    "sky":                        #27C2FF,
+    "space":                      #09395C,
+
+    "vibrent-blue":               #0098DB,
+    "vibrent-dark-blue":          #006AAB,
+
+    // for use on dark bg --START
+    "vibrent-light-blue":         #88E9FF,
+    "vibrent-sea-blue":           #3ED2FF,
+    "vibrent-teal":               #00AAFF,
+    // for use on dark bg --END
+
+    "blueberry":                  #262261,
+    "wind":                       #6CACE4,
+
+    "pastel-light":               #D9E6F0,
+    "pastel-medium":              #7FB0D2,
+
+    "navy":                       #0C476B,
+
+    "grass":                      #7BB51F,
+    "orange":                     #F98506,
+    "candy-red":                  #E63900,
+    "grape":                      #8C2580,
+
+    "highlight-red":              #F4E0DC,
+    "success":                    #5DA31F
+);
+
+@function color($name) {
+    @return map-get($colors, $name);
+}
+
+// PADDING AND RADIUS defaults
+
+$content-padding:                           10px !default;
+$content-padding-vertical:                  16px !default;
+$content-padding-horizontal:                15px !default;
+
+$padding-base-vertical:                     6px !default;
+$padding-base-horizontal:                   12px !default;
+
+$padding-large-vertical:                    8px !default;
+$padding-large-horizontal:                  16px !default;
+
+$padding-small-vertical:                    5px !default;
+$padding-small-horizontal:                  10px !default;
+
+$border-width-base:                         1px !default;
+$border-width-thin:                         0.5px !default;
+$border-width-thick:                        2px !default;
+
+$base-border-radius:                        3px !default;
+$large-border-radius:                       5px !default;
+$small-border-radius:                       1px !default;
+
+
+
+// FONT AND TYPOGRAPHY
+
+$images-assets-path:                        '../images';
+$font-assets-path:                          '../fonts';
+$custom-font:                               'vibrent';
+
+$font-family-regular:                       "AvenirNext-Regular", serif !default;
+$font-family-medium:                        "AvenirNext-Medium", serif !default;
+$font-family-bold:                          "AvenirNext-DemiBold", serif !default;
+
+$base-font-family:                          $font-family-regular !default;
+$base-font-size:                            19px !default;
+$large-font-size:                           22px !default;
+$small-font-size:                           15px !default;
+$font-text-color:                           color("charcoal");
+
+$base-line-height:                          1.428571429 !default; // 20/14
+$computed-line-height:                      floor($font-size-base * $line-height-base) !default; // ~20px
+$large-line-height:                         1.25 !default;
+$small-line-height:                         1.81818182 !default;
+
+$font-family-headings:                      $font-family-medium !default;
+$font-weight-headings:                      500 !default;
+$line-height-headings:                      1.2 !default;
+$text-color-headings:                       color("space");
+
+$h1-font-size:                              32px !default;
+$h2-font-size:                              26px !default;
+$h3-font-size:                              22px !default;
+$h4-font-size:                              19px !default;
+$h5-font-size:                              16px !default;
+$h6-font-size:                              12px !default;
+
+$error-font-color:                          color("candy-red") !default;
+
+
+// BACKGROUNDS
+
+$default-bg-color:                          color("white") !default;
+$mobile-nav-bg-color:                       color("pastel-light") !default;
+$error-bg-color:                            color("highlight-red") !default;
+
+// BUTTONS
+
+$button-default-color:                      color("vibrent-blue") !default;
+$button-hover-color:                        color("vibrent-dark-blue") !default;
+$button-clicked-color:                      color("navy") !default;
+$button-disabled-bg-color:                  color("line-color") !default;
+$button-disabled-color:                     color("grey") !default;
+
+$button-secondary-bg-color:                 $default-bg-color !default;
+
+$button-default-height:                     34px !default;
+$button-large-height:                       46px !default;
+$button-small-height:                       30px !default;
+$button-mini-height:                        22px !default;
+
+$button-default-font-size:                  16px !default;
+$button-large-font-size:                    20px !default;
+$button-small-font-size:                    14px !default;
+$button-mini-font-size:                     11px !default;
+
+$button-default-hz-padding:                 30px !default;
+$button-large-hz-padding:                   50px !default;
+$button-small-hz-padding:                   25px !default;
+$button-mini-hz-padding:                    20px !default;
+
+
+// LINKS
+
+$link-default-color-light-bg:               $button-default-color !default;
+$link-hover-color-light-bg:                 $button-hover-color !default;
+$link-clicked-color-light-bg:               $button-clicked-color !default;
+
+$link-default-color-dark-bg:                color("vibrent-light-blue") !default;
+$link-hover-color-dark-bg:                  color("vibrent-sea-blue") !default;
+$link-clicked-color-dark-bg:                color("vibrent-teal") !default;
+
+$link-default-font-size:                    $base-font-size !default;
+$link-large-font-size:                      24px !default;
+$link-small-font-size:                      15px !default;
+
+
+// ICONS
+
+$icon-default-color:                        $button-default-color !default;
+$icon-hover-color:                          $button-hover-color !default;
+$icon-clicked-color:                        $button-clicked-color !default;
+
+$icon-default-gray-color:                   color("heather") !default;
+$icon-hover-gray-color:                     color("stone") !default;
+$icon-clicked-gray-color:                   color("charcoal") !default;
+
+$mobile-nav-icon-unselected-color:          color("pastel-medium") !default;
+$mobile-nav-icon-selected-color:            color("navy") !default;
+$mobile-nav-icon-height:                    36px !default;
+$mobile-nav-icon-width:                     $mobile-nav-icon-height !default;
+
+$form-icon-default-height:                  83px !default;
+$form-icon-default-width:                   $form-icon-default-height !default;
+$form-icon-small-height:                    32px !default;
+$form-icon-small-width:                     $form-icon-small-height !default;
+
+$input-icon-default-height:                 26px !default;
+$input-icon-default-width:                  $input-icon-default-height !default;
+$input-icon-small-height:                   20px !default;
+$input-icon-small-width:                    $input-icon-small-height !default;
+
+$banner-icon-default-height:                24px !default;
+$banner-icon-default-width:                 $banner-icon-default-height;
+
+// INPUTS
+
+$input-font:                                $base-font-family !default;
+
+$input-default-font-size:                   $font-size-base !default;
+$input-default-label-font-size:             10px !default;
+$input-default-border-vertical-padding:     6px !default;
+
+$input-large-font-size:                     $font-size-large !default;
+$input-large-label-font-size:               10px !default;
+$input-large-border-vertical-padding:       8px !default;
+
+$input-default-font-color:                  $font-text-color !default;
+$input-default-label-color:                 color("stone") !default;
+$input-default-placeholder-color:           color("grey") !default;
+
+$input-default-border-color:                $input-default-label-color !default;
+$input-default-border-width:                $border-width-thin !default;
+$input-default-border-style:                solid !default;
+
+$input-focused-border-color:                $button-default-color !default;
+$input-focused-border-width:                $border-width-base !default;
+
+$input-error-border-color:                  $error-font-color !default;
+$input-error-border-width:                  $border-width-base !default;
+
+$input-disabled-font-color:                 color("heather") !default;
+$input-disabled-label-color:                $input-disabled-font-color !default;
+$input-disabled-border-color:               $input-disabled-label-color !default;
+$input-disabled-border-style:               dotted !default;
+
+$input-error-message-font-size:             $font-size-small !default;
+$input-error-message-color:                 $error-font-color !default;
+$input-error-message-bg-color:              $error-bg-color !default;
+
+$input-tooltip-font-size:                   $input-default-font-size !default;
+$input-tooltip-color:                       $default-bg-color !default;
+$input-tooltip-bg-color:                    $button-default-color !default;
+$input-tooltip-border-radius:               $small-border-radius !default;
+
+// SELECT (DROPDOWN)
+
+$select-font:                               $input-font !default;
+$select-options-font:                       $select-font !default;
+
+$select-default-font-size:                  $input-default-font-size !default;
+$select-default-label-font-size:            $input-default-label-font-size !default;
+$select-default-border-vertical-padding:    $input-default-border-vertical-padding !default;
+
+$select-large-font-size:                    $input-large-font-size !default;
+$select-large-label-font-size:              $input-large-label-font-size !default;
+$select-large-border-vertical-padding:      $input-large-border-vertical-padding !default;
+
+$select-default-font-color:                 $input-default-font-color !default;
+$select-default-label-color:                $input-default-label-color !default;
+$select-default-placeholder-color:          $input-default-placeholder-color !default;
+$select-default-icon-color:                 $icon-default-color !default;
+
+$select-default-border-color:               $select-default-label-color !default;
+$select-default-border-width:               $input-default-border-width !default;
+$select-default-border-style:               $input-default-border-style !default;
+
+$select-options-border-color:               $select-default-label-color !default;
+$select-options-border-width:               $select-default-border-width !default;
+$select-options-border-style:               $input-default-border-style !default;
+$select-options-font-color:                 $select-default-font-color !default;
+$select-options-bg-color:                   $default-bg-color !default;
+
+$select-hover-icon-color:                   $icon-hover-color !default;
+
+$select-clicked-icon-color:                 $icon-clicked-color !default;
+
+$select-options-hover-font-color:           $select-options-bg-color !default;
+$select-options-hover-bg-color:             $select-default-icon-color !default;
+
+$select-disabled-font-color:                $input-disabled-font-color !default;
+$select-disabled-label-color:               $select-disabled-font-color !default;
+$select-disabled-icon-color:                $select-disabled-font-color !default;
+$select-disabled-border-color:              $select-disabled-font-color !default;
+$select-disabled-border-style:              $input-disabled-border-style !default;
+
+// CHECKBOX
+
+$checkbox-font:                                $input-font !default;
+
+$checkbox-default-height:                      16px !default;
+$checkbox-default-width:                       $checkbox-default-height !default;
+$checkbox-default-bg-color:                    color('line-color') !default;
+$checkbox-default-label-font-size:             $checkbox-default-height - 2px !default;
+$checkbox-default-border-vertical-padding:     $input-default-border-vertical-padding !default;
+
+$checkbox-default-font-color:                  $input-default-font-color !default;
+
+$checkbox-default-border-color:                $input-default-label-color !default;
+$checkbox-default-border-width:                $input-default-border-width !default;
+$checkbox-default-border-style:                $input-default-border-style !default;
+$checkbox-border-radius:                       $base-border-radius !default;
+
+$checkbox-focused-border-color:                $button-default-color !default;
+$checkbox-focused-border-width:                $border-width-base !default;
+
+$checkbox-selected-bg-color:                   $input-focused-border-color !default;
+$checkbox-selected-check-color:                color('white') !default;
+
+$checkbox-disabled-font-color:                 $input-disabled-label-color !default;
+$checkbox-disabled-bg-color:                   transparent !default;
+$checkbox-disabled-border-color:               $input-disabled-border-color !default;
+$checkbox-disabled-border-style:               $input-disabled-border-style !default;
+
+// RADIO BUTTON
+
+$radio-font:                                $input-font !default;
+
+$radio-default-height:                      $checkbox-default-height !default;
+$radio-default-width:                       $radio-default-height !default;
+
+$radio-default-font-color:                  $checkbox-default-font-color !default;
+$radio-default-label-font-size:             $checkbox-default-label-font-size !default;
+
+$radio-focused-border-color:                $checkbox-focused-border-color !default;
+$radio-focused-border-width:                $checkbox-focused-border-width !default;
+$radio-focused-border-style:                $checkbox-default-border-style !default;
+
+$radio-unselected-url:                      url($images-assets-path + '/radio_unselected.svg') !default;
+$radio-selected-url:                        url($images-assets-path + '/radio_selected.svg') !default;
+$radio-disabled-url:                        url($images-assets-path + '/radio_disabled.svg') !default;
+
+$radio-disabled-font-color:                 $checkbox-disabled-font-color !default;
+
+
+// NAVBAR
+
+$nav-bar-height:                            56px !default;
+$nav-bar-padding-vertical:                  $content-padding-vertical !default;
+$nav-bar-padding-horizontal:                $content-padding-horizontal !default;
+
+$nav-bar-bottom-margin:                     $nav-bar-padding-vertical !default;
+
+
+// FOOTER
+
+$footer-bar-height:                         136px !default;
+$footer-bar-padding-vertical:               44px !default;
+
+$footer-content-margin-bottom:              $content-padding * 2 !default;//20px
+
+// PAGE
+
+$page-content-margin:                       $content-padding-vertical !default;//16px
+$page-content-margin-top:                   $page-content-margin !default;
+$page-content-margin-bottom:                $footer-bar-padding-vertical !default;
+
+$page-content-padding:                      $content-padding !default;
+
+// MODALS
+
+$modal-content-padding:                     26px !default;
+
+
+// HAMBURGER MENU
+
+//TODO WRITE THIS
+
+// AVATAR PHOTO
+
+$avatar-border-radius:                      50% !default;
+$avatar-border-color:                       color('vibrent-blue') !default;
+$avatar-border-style:                       solid !default;
+$avatar-border-width:                       $small-border-radius !default;
+
+$avatar-small-height:                       32px !default;
+$avatar-small-width:                        $avatar-small-height !default;
+
+$avatar-medium-height:                      83px !default;
+$avatar-medium-width:                       $avatar-medium-height !default;
+
+$avatar-large-height:                       113px !default;
+$avatar-large-width:                        $avatar-large-height !default;
+
+// UPLOAD PHOTO
+
+$uploader-border-radius:                    $avatar-border-radius !default;
+$uploader-border-color:                     $avatar-border-color !default;
+$uploader-border-style:                     $avatar-border-style !default;
+$uploader-border-width:                     $avatar-border-width !default;
+
+$uploader-height:                           $avatar-large-height !default;
+$uploader-width:                            $avatar-large-width !default;
+
+$uploader-label-color:                      $uploader-border-color !default;
+$uploader-label-bg-color:                   $default-bg-color !default;
+$uploader-label-opacity:                    0.5 !default;
+$uploader-label-font-size:                  $button-mini-font-size !default;
+
+$uploader-error-message-font-size:          $input-error-message-font-size !default;
+$uploader-error-message-color:              $input-error-message-color !default;
+$uploader-error-message-bg-color:           $input-error-message-bg-color;
+
+
+
+// BANNER
+
+$banner-icon-size:                          $banner-icon-default-height;
+$banner-icon-padding:                       ($banner-icon-size / 2);
+$banner-font-size:                          16px !default;

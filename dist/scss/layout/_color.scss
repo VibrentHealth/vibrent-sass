@@ -1,0 +1,39 @@
+/*
+---
+name: colors
+category: layout/colors
+---
+
+Color classes can be used to attribute to:
+* text color like so `vbr-candy-red`
+
+```html
+<h1 class="vbr-candy-red">example</span>
+```
+
+* background color like so `vbr-candy-red-bg`
+
+```html
+<button class="vbr-btn btn-large vbr-candy-red-bg">example</span>
+```
+
+* border color like so `vbr-candy-red-br`
+
+```html
+<button class="vbr-btn btn-large vbr-candy-red-br">example</span>
+```
+
+!![](./color_example.html)
+*/
+
+@each $name, $color in $colors {
+    .vbr-#{$name} {
+        color: $color !important;
+    }
+    .vbr-#{$name}-bg {
+        background-color: $color !important;
+    }
+    .vbr-#{$name}-br {
+        border-color: $color !important;
+    }
+}
