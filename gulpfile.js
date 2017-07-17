@@ -174,7 +174,7 @@ gulp.task('buildStyles',function(cb){
 });
 
 gulp.task('build', ['clean','buildScripts','buildStyles'], function () {
-    return gulp.src('bower.json').pipe(gulp.dest('dist'));
+    return true;
 });
 
 gulp.task('default', ['clean'], function () {

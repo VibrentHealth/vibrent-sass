@@ -1,10 +1,4 @@
 <div ng-if="vm.customSelect">
-    <span
-        ng-if="vm.label"
-        class="label"
-        ng-class="{ disabled: vm.ngDisabled}">
-    {{vm.label}}
-</span>
     <div
         id="{{vm.inputId}}"
         class="selector"
@@ -18,6 +12,12 @@
         <span ng-if="vm.ngModel">{{vm.ngModel.display}}</span>
         <vbr-dropdown-options options="vm.options" ng-if="vm.active" model-value="vm.ngModel" change-wrapper="vm.ngChangeWrapper" disabled="vm.ngDisabled"></vbr-dropdown-options>
     </div>
+    <span
+        ng-if="vm.label"
+        class="label"
+        ng-class="{ disabled: vm.ngDisabled}">
+    {{vm.label}}
+</span>
 </div>
 <div ng-if="!vm.customSelect">
     <select
