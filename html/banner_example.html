@@ -1,5 +1,6 @@
 <div ng-controller="ExampleController as ex">
     <vbr-banner
+        name="banner1"
         type="ex.errorBanner.type"
         message="ex.errorBanner.message"
         auto-close="ex.errorBanner.autoClose"
@@ -9,6 +10,7 @@
         animation-name="ex.errorBanner.animationName">
     </vbr-banner>
     <vbr-banner
+        name="banner2"
         type="ex.successBanner.type"
         message="ex.successBanner.message"
         auto-close="ex.successBanner.autoClose"
@@ -17,4 +19,10 @@
         animation-duration="ex.successBanner.animationDuration"
         animation-name="ex.successBanner.animationName">
     </vbr-banner>
+    <div>
+        <button class="vbr-btn" ng-click="ex.showBanner('banner1')">Show Banner 1 </button>
+        <button class="vbr-btn" ng-click="ex.showBanner('banner2')">Show Banner 2</button>
+    </div>
+
 </div>
+
