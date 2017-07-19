@@ -22,7 +22,7 @@
                         ngChange: '&?',
                         ngMinlength: '=?',
                         ngMaxlength: '=?',
-                        ngPattern: '@?',
+                        ngPattern: '=?',
                         ngTrim: '=?',
                         ngDisabled: '=?',
                         inputId: '@?id',

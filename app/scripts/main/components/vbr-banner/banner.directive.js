@@ -110,7 +110,7 @@
 
         function VisibilityDurationUpdates(data){
             if(data.hasOwnProperty('visibilityDuration')){
-                vm.animationDuration = data.visibilityDuration;
+                vm.visibilityDuration = data.visibilityDuration;
             }
         }
 
