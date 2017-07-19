@@ -1,20 +1,14 @@
 <div ng-controller="ExampleController as ex">
     <vbr-banner
-        type="ex.errorBanner.type"
-        message="ex.errorBanner.message"
-        auto-close="ex.errorBanner.autoClose"
-        on-close="ex.errorBanner.onCloseFn(ex.someValue)"
-        animated="ex.errorBanner.animated"
-        animation-duration="ex.errorBanner.animationDuration"
-        animation-name="ex.errorBanner.animationName">
+        name="banner1">
     </vbr-banner>
     <vbr-banner
-        type="ex.successBanner.type"
-        message="ex.successBanner.message"
-        auto-close="ex.successBanner.autoClose"
-        on-close="ex.successBanner.onCloseFn(ex.someValue)"
-        animated="ex.successBanner.animated"
-        animation-duration="ex.successBanner.animationDuration"
-        animation-name="ex.successBanner.animationName">
+        name="banner2">
     </vbr-banner>
+    <div>
+        <button class="vbr-btn" ng-click="ex.showBanner('banner1')">Show Banner 1 </button>
+        <button class="vbr-btn" ng-click="ex.showBanner('banner2')">Show Banner 2</button>
+    </div>
+
 </div>
+

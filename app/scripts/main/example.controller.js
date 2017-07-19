@@ -8,7 +8,7 @@
         .module('vbr-style-guide')
         .controller('ExampleController',
 
-            function ExampleController() {
+            function ExampleController(BannerService) {
                 var ex = this;
 
                 ex.someValue = {
@@ -150,9 +150,35 @@
 
                 ex.radioModel = null;
 
+                ex.hideBanner = function (name) {
+                    BannerService.set(name,{hidden:true});
+                };
+
+                ex.clickNum = 0;
+
+                ex.showBanner = function (name) {
+
+                    var configurationObj = {
+                        visible: true,
+                        message: "Hey!" + " " + name + " " + "clicked:" + ex.clickNum,
+                        icon: "icon_vibrent_check",
+                        type: "success",
+                        hiddenCallback: function () {
+                            alert("Im hidden");
+                        },
+                        shownCallback: function () {
+                            alert("Im Shown");
+                        },
+                        visibilityDuration: 2000,
+                        cssClassList: ""
+                    };
+                    ex.clickNum++;
+                    BannerService.set(name,configurationObj);
+                };
+
                 ex.radioChange = function(option){
                     console.log('the radio callback is being called for option:', option);
-                }
+                };
 
             });
 })();
