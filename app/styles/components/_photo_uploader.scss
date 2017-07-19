@@ -6,6 +6,44 @@ category: components/photo-uploader
 
 * Use for uploading photos
 
+```
+            <vbr-photo-uploader
+                id="somePhoto"
+                form="someForm"
+                label="change"
+                ng-model="ex.somePhotoModel"
+                ng-required="true"
+                ng-change="ex.someFunction()"
+                ng-disabled="ex.disabled"
+                validations="ex.photoValidations"
+                tooltip="ex.tooltipTesting">
+            </vbr-photo-uploader>
+```
+
+The PhotoUploader has the following properties that can be configured during initialization.
+
+---
+
+
+`id` - *String* - An HTML ID to be associated with the input
+
+`form` - *String* - The name of the form this input is under in the DOM.
+
+`label` - *String* - Label corresponding to the input
+
+`ng-model` - *Angular Model* - Angular model that will be updated via 2 way data binding.
+
+`ng-required` - *Boolean* - A boolean representing whether or not the input is required
+
+`ng-change` - *Function* - A function to be called when the photo uploader changes state
+
+`ng-disabled` - *Boolean* - A Boolean representing whether or not the input is disabled
+
+`validations` - *Object* - Object with all of the validations for an input `'email': {message: 'Email is invalid'}`
+
+`tooltip` - *String* - A String representing the tooltip text that will be displayed.
+
+
 !![](./photo_uploader_example.html)
  */
 vbr-photo-uploader{
