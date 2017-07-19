@@ -28,13 +28,20 @@
 
     BannerCtrl.$inject = ['$sce', '$timeout', '$q', '$log'];
 
-    function BannerCtrl ($sce, $timeout, $q, $log, BannerService) {
+    function BannerCtrl ($sce, $timeout, BannerService) {
         var vm = this;
 
         /* A List of classes that is piped to ng-class directive */
         vm.cssClassList = "";
-        vm.type = "";
+        vm.type = "success";
+        vm.visibilityDuration = 2000;
         vm.observers = BannerService;
+        vm.shownCallback = function () {
+            return true;
+        };
+        vm.hiddenCallback = function () {
+            return true;
+        };
 
         /* generate a GUID */
 
@@ -47,19 +54,16 @@
 
         init();
 
-        if (vm.autoClose) {
-            $timeout(function () {
-                vm.close();
-            }, vm.closeDelay);
-        }
-
-
         /* listen for changes and react to them */
 
         vm.observers.listen(vm.name,function (data) {
 
             if(data.hasOwnProperty('message')){
                 vm.message = $sce.trustAsHtml(data.message);
+            }
+
+            if(data.hasOwnProperty('icon')){
+                vm.icon = data.icon;
             }
 
             if(data.hasOwnProperty('hiddenCallback')){
@@ -94,6 +98,12 @@
                     vm.visible = true;
                     if(data.hasOwnProperty('shownCallback')){
                         vm.shownCallback();
+                    }
+                    if(vm.visibilityDuration !== Infinity) {
+                        $timeout(function () {
+                            vm.visible = false;
+                            vm.hiddenCallback();
+                        }, vm.visibilityDuration);
                     }
                 }
             }

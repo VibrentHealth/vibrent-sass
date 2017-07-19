@@ -1,10 +1,105 @@
 /*
 ---
-name: banners
+name: Banners
 category: components/banners
 ---
 
-* Default banner style.
+## The banner works as a toast, its purpose, to display messages to the end-user.
+-----
+
+In order to use the banner, we must use the `BannerService`.
+
+The `BannerService` takes a configuration object as an argument.
+
+
+
+The configuration object has the following properties:
+
+----
+
+  `visible:`  - `boolean` - Shows or hides the banner
+
+  `message:` - `string` or `HTMLString` - Message to display in the banner (Optional)
+
+  `icon:` - `string` - The vibrent icon to dispaly to the left of the message (Optional)
+
+  `type:` - `string` - Must be one of the following: [success,warning,error]) (Optional Default to Success)
+
+  `hiddenCallback:` - `function() `- A function to be called when visibility is set to false (Optional)
+
+  `shownCallback:` - `function()` - A function to be called when visibility is set to true (Optional)
+
+   `visibilityDuration:` - `integer` - Number of milliseconds the message should be visible. Also accepts `Infinity` which will not hide the banner (Optional default 2000)
+
+   `cssClassList:` - `string` - Any number of css classes to be injected into the banner
+
+
+
+Example:
+
+```
+var config = {
+        visible: true,
+        message: "Hey!",
+        icon: "icon_vibrent_x icon-left",
+        type: "error"
+    }
+
+```
+
+Once we have built the configuration object we may inject and call the service. The code below:
+
+* Establishes a controller
+* Injects the banner service
+* Sets the banner with the name `banner1` to the configuration object config.
+
+```
+(function () {
+    'use strict';
+
+    angular
+        .module('vbr-style-guide')
+        .controller('ExampleController',
+            function ExampleController(BannerService) {
+                    var config = {
+                        visible: true,
+                        message: "Hey, there was an issue!",
+                        icon: "icon_vibrent_x icon-left",
+                        type: "error",
+
+                    };
+                    BannerService.set('banner1',config);
+            })
+
+    })();
+
+```
+
+`BannerService` Methods
+----
+
+`BannerService.set` - Set can be used as in the above to set the value of the banner.
+
+```
+    BannerService.set(key,value);
+```
+
+`BannerService.listen` - Listen makes use of the observer pattern to listen for changes to the state of an object: https://en.wikipedia.org/wiki/Observer_pattern
+
+When that state changes, listen will call the function passed into itself emitting a data object that contains it's new updated state.
+
+```
+    BannerService.listen(key,function(data){})
+```
+
+`BannerService.get` - Retrieves the value of the key
+
+```
+    BannerService.get(key)
+```
+
+## Full Example
+----
 
 !![](./banner_example.html)
 
