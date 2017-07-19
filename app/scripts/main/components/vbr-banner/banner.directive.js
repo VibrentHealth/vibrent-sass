@@ -36,6 +36,7 @@
         vm.type = "success";
         vm.visibilityDuration = 2000;
         vm.observers = BannerService;
+        /* default callbacks */
         vm.shownCallback = function () {
             return true;
         };
@@ -43,10 +44,10 @@
             return true;
         };
 
-        /* generate a GUID */
+        /* name must be unique - enforce this */
+        isNameUnique(vm.name);
 
-        vm.guid = vm.name || Math.random().toString();
-
+        /* expose close function to x icon on DOM */
         vm.close = function () {
             vm.visible = false;
             vm.hiddenCallback();
@@ -58,36 +59,62 @@
 
         vm.observers.listen(vm.name,function (data) {
 
+            /* Check for updates to all properties */
+
+            MessageUpdate(data);
+
+            IconUpdate(data);
+
+            /* checks both hidden and visible */
+            Callbacks(data);
+
+            TypeUpdate(data);
+
+            VisibilityDurationUpdates(data);
+
+            VisibilityUpdates(data);
+
+            CSSUpdates(data);
+
+        });
+
+        function MessageUpdate(data){
             if(data.hasOwnProperty('message')){
                 vm.message = $sce.trustAsHtml(data.message);
             }
+        }
 
+        function IconUpdate(data){
             if(data.hasOwnProperty('icon')){
                 vm.icon = data.icon;
             }
+        }
 
+        function Callbacks(data){
             if(data.hasOwnProperty('hiddenCallback')){
-                 vm.hiddenCallback = data.hiddenCallback.bind(vm);
+                vm.hiddenCallback = data.hiddenCallback.bind(vm);
             }
 
             if(data.hasOwnProperty('shownCallback')){
                 vm.shownCallback = data.shownCallback.bind(vm);
             }
+        }
 
+        function TypeUpdate(data){
             if(data.hasOwnProperty('type')){
                 vm.type = data.type;
             }else{
                 vm.type = "error";
             }
+        }
 
+        function VisibilityDurationUpdates(data){
             if(data.hasOwnProperty('visibilityDuration')){
                 vm.animationDuration = data.visibilityDuration;
             }
+        }
 
-            if(data.hasOwnProperty('cssClassList')){
-                vm.cssClassList = data.cssClassList;
-            }
-
+        function VisibilityUpdates(data){
             if(data.visible === false){
                 vm.visible = false;
                 if(data.hasOwnProperty('hiddenCallback')){
@@ -107,15 +134,30 @@
                     }
                 }
             }
+        }
 
-        });
+        function CSSUpdates(data){
+            if(data.hasOwnProperty('cssClassList')){
+                vm.cssClassList = data.cssClassList;
+            }
+        }
+
+        function isNameUnique(name){
+            var names = vm.observers.getKeys();
+            if(names.indexOf(name) !== -1){
+                throw new Error("Name provided is not unique:" + name + " " + "Matches another vibrent-banner in the DOM");
+                return false;
+            }else{
+                return true;
+            }
+        }
 
         function init(){
             var isStored = false;
-            isStored = vm.observers.get(vm.guid);
+            isStored = vm.observers.get(vm.name);
             if(!isStored){
                 /* initilize an empty object */
-                vm.observers.set(vm.guid,{});
+                vm.observers.set(vm.name,{});
             }
         }
 
