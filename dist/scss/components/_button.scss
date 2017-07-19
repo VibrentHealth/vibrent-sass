@@ -1,0 +1,123 @@
+
+%button-default{
+    @include border-radius($base-border-radius);
+    height: $button-default-height;
+    font-size: $button-default-font-size;
+    padding: 0 $button-default-hz-padding;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: $btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+
+/*
+---
+name: default button
+category: components/buttons
+---
+
+* Default button style.
+* Use `button` tag.
+
+```html
+<button class="vbr-btn">default</a>
+```
+ */
+
+.vbr-btn{
+    @extend %button-default;
+    @include primary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color, $button-disabled-bg-color);
+}
+
+
+/*
+---
+name: clear button
+category: components/buttons
+---
+
+* Clear button style.
+* Use `button` tag.
+
+```html
+<button class="vbr-btn-clear">clear</a>
+```
+ */
+.vbr-btn-clear{
+    @extend %button-default;
+    @include secondary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color);
+}
+
+/*
+---
+name: large button
+category: components/buttons
+---
+
+* Large button style.
+* Use `button` tag.
+
+```html
+<button class="vbr-btn btn-large">large</a>
+```
+```html
+<button class="vbr-btn-clear btn-large">large</a>
+```
+ */
+.btn-large{
+    height: $button-large-height;
+    font-size: $button-large-font-size;
+    padding: 0 $button-large-hz-padding;
+}
+
+
+/*
+---
+name: small button
+category: components/buttons
+---
+
+* Small button style.
+* Use `button` tag.
+
+```html
+<button class="vbr-btn btn-small">small</a>
+```
+```html
+<button class="vbr-btn-clear btn-small">small</a>
+```
+ */
+.btn-small{
+    height: $button-small-height;
+    font-size: $button-small-font-size;
+    padding: 0 $button-small-hz-padding;
+}
+
+
+/*
+---
+name: mini button
+category: components/buttons
+---
+
+* Mini button style.
+* Use `button` tag.
+
+```html
+<button class="vbr-btn btn-mini">mini</a>
+```
+```html
+<button class="vbr-btn-clear btn-mini">mini</a>
+```
+ */
+.btn-mini{
+    height: $button-mini-height;
+    font-size: $button-mini-font-size;
+    padding: 0 $button-mini-hz-padding;
+}
