@@ -4,6 +4,62 @@
 name: inputs
 category: components/inputs
 ---
+
+The Input is initialized via the DOM.
+
+```
+     <vbr-input
+                id="someName"
+                form="someForm"
+                type="email"
+                label="label"
+                placeholder="placeholder"
+                ng-model="ex.someModel"
+                ng-required="false"
+                ng-change="ex.someFunction()"
+                ng-minlength="3"
+                ng-maxlength="8"
+                ng-pattern="/some/i"
+                ng-trim="true"
+                ng-disabled="ex.disabled"
+                validations="ex.someValidations"
+                tooltip="ex.tooltipTesting">
+            </vbr-input>
+```
+
+The Dropdown has the following properties that can be configured during initialization.
+
+---
+
+`id` - *String* - An HTML ID to be associated with the input
+
+`form` - *String* - The name of the form this input is under in the DOM.
+
+`label` - *String* - Label corresponding to the input
+
+`type` - *String* - String representing the type of HTML input email,text, etc.
+
+`placeholder` - *String* - placeholder text inserted in the placeholder attribute.
+
+`ng-model` - *Angular Model* - Angular model that will be updated via 2 way data binding.
+
+`ng-required` - *Boolean* - A boolean representing whether or not the input is required
+
+`ng-change` - *Function* - A function to be called when the input changes state
+
+`ng-minlength` - *Integer* - An integer of the minlength of the field
+
+`ng-maxlength` - *Integer* - An integer of the maxlength of the field
+
+`ng-pattern` - *Regex* - A regex for patten matching
+
+`ng-trim` - *Boolean* - A boolean value of whether or not to trim the input
+
+`ng-disabled` - *Boolean* - A boolean value of whether or not the input should be disabled
+
+`validations` - *Object* - Object with all of the validations for an input `'email': {message: 'Email is invalid'}`
+
+
 !![](./input_example.html)
  */
 

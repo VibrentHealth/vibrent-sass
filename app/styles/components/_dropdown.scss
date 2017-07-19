@@ -4,6 +4,47 @@ name: dropdown
 category: components/dropdown
 ---
 
+
+The Dropdown is initialized via the DOM.
+
+```
+<vbr-dropdown
+                custom-select="true"
+                id="select-1"
+                class="vbr-select"
+                ng-model="ex.dropdownModel"
+                label="label"
+                placeholder="placeholder"
+                ng-required="false"
+                ng-change="ex.someFunction()"
+                options="ex.dropdownOptions"
+                ng-disabled="ex.disabledDropdown"
+
+</vbr-checkbox>
+```
+
+The Dropdown has the following properties that can be configured during initialization.
+
+---
+
+`id` - *String* - An HTML ID to be associated with the input
+
+`class` - *String* - Any number of CSS classes
+
+`custom-select` - *Boolean* - A boolean representing whether or not custom-select mode is enabled. Custom-Select enables a custom list to be injected into the component.
+
+`options` - *Array* - An array of options objects   {display: *String*, value: *String*}, ex: `{display: 'option 1', value: 1}`
+
+`ng-disabled` - *Boolean* - A Boolean representing whether or not the input is disabled
+
+`label` - *String* - Label associated with input
+
+`ng-change` - *Function* - A function to be called when the dropdown changes state
+
+`ng-required` - *Boolean* - A boolean representing whether or not the dropdown is a required input.
+
+
+
 !![](./dropdown_example.html)
  */
 

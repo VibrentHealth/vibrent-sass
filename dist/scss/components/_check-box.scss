@@ -5,6 +5,42 @@ name: Check Boxes
 category: components/check-box
 ---
 
+The CheckBox is initialized via the DOM.
+
+```
+<vbr-checkbox
+                form="nameOfForm",
+                options: 'controller.options',//array of possible options (for checkboxes)
+                input-id: 'myCheckboxID',
+                ng-disabled: 'false',
+                vertical: 'true',
+                change: 'controller.changeFunction'>
+
+</vbr-checkbox>
+```
+
+The CheckBox has the following properties that can be configured during initialization.
+
+---
+
+
+`form` - *String* - The name of the form this input is under in the DOM.
+
+`options` - *Array* - An array of options objects  { value: *String* ,checked: *Boolean*} ex: `{value:'Oranges',checked: false}`
+
+`input-id` - *String* - An HTML ID to be associated with the input
+
+`ng-disabled` - *Boolean* - A Boolean representing whether or not the input is disabled
+
+`vertical` - *Boolean* - A Boolean representing whether or not the checkbox's should be displayed in a vertical fashion. (Default false)
+
+`change` - *Function* - A function to be called when the checkboxes change state
+
+
+
+
+
+
 !![](./checkbox_example.html)
 */
 
