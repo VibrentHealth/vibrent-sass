@@ -26,7 +26,7 @@
                 }
         });
 
-    BannerCtrl.$inject = ['$sce', '$timeout', '$q', '$log'];
+    BannerCtrl.$inject = ['$sce', '$timeout','BannerService'];
 
     function BannerCtrl ($sce, $timeout, BannerService) {
         var vm = this;
