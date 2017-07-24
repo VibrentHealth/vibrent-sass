@@ -20,6 +20,7 @@
                         form: '=',
                         ngRequired: '=?',
                         ngChange: '&?',
+                        ngBlur: '&?',
                         ngMinlength: '=?',
                         ngMaxlength: '=?',
                         ngPattern: '=?',
@@ -74,6 +75,9 @@
         vm.blurred = function () {
             if(!vm.errorsVisible){
                 vm.errorsVisible = true;
+            }
+            if(typeof vm.ngBlur === 'function') {
+                vm.ngBlur();
             }
         };
 

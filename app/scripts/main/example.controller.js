@@ -80,6 +80,10 @@
                     animationName: 'squeeze-up'
                 };
 
+                ex.alert = function () {
+                  console.log("BLUR");
+                };
+
                 ex.successBanner = {
                     type: 'success',
                     message: 'Congratulations, your request is a yuuuuge <a href="">success</a>',
