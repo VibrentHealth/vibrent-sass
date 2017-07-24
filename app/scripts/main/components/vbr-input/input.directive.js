@@ -76,7 +76,9 @@
             if(!vm.errorsVisible){
                 vm.errorsVisible = true;
             }
-            vm.ngBlur();
+            if(typeof vm.ngBlur === 'function') {
+                vm.ngBlur();
+            }
         };
 
 
