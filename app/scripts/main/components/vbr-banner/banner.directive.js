@@ -37,9 +37,6 @@
         vm.visibilityDuration = 2000;
         vm.observers = BannerService;
 
-        vm.alert = function () {
-          alert("dasasddas");
-        };
         /* default callbacks */
         vm.shownCallback = function () {
             return true;
