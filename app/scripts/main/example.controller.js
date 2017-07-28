@@ -15,7 +15,6 @@
                     firstThing: 'thing to be passed'
                 };
 
-
                 //input example
                 ex.someModel = '';
                 ex.someValidations = {
@@ -160,11 +159,15 @@
 
                 ex.clickNum = 0;
 
+                ex.alertfn = function () {
+                    alert("adsdas");
+                };
+
                 ex.showBanner = function (name) {
 
                     var configurationObj = {
                         visible: true,
-                        message: "Hey!" + " " + name + " " + "clicked:" + ex.clickNum,
+                        message: "<a ng-click='ex.alertfn()'>dsaadsasd</a>" + " " + name + " " + "clicked:",
                         icon: "icon_vibrent_check",
                         type: "success",
                         hiddenCallback: function () {
@@ -173,7 +176,7 @@
                         shownCallback: function () {
                             alert("Im Shown");
                         },
-                        visibilityDuration: 2000,
+                        visibilityDuration: Infinity,
                         cssClassList: ""
                     };
                     ex.clickNum++;
