@@ -26,9 +26,9 @@
                 }
         });
 
-    BannerCtrl.$inject = ['$sce', '$timeout','BannerService'];
+    BannerCtrl.$inject = ['$sce', '$timeout','BannerService','$compile'];
 
-    function BannerCtrl ($sce, $timeout, BannerService) {
+    function BannerCtrl ($sce, $timeout, BannerService,$compile) {
         var vm = this;
 
         /* A List of classes that is piped to ng-class directive */
@@ -36,6 +36,7 @@
         vm.type = "success";
         vm.visibilityDuration = 2000;
         vm.observers = BannerService;
+
         /* default callbacks */
         vm.shownCallback = function () {
             return true;
