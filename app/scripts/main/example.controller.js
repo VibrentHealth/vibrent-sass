@@ -160,14 +160,14 @@
                 ex.clickNum = 0;
 
                 ex.alertfn = function () {
-                    alert("adsdas");
+                    alert("This is a recompiled alert");
                 };
 
                 ex.showBanner = function (name) {
 
                     var configurationObj = {
                         visible: true,
-                        message: "<a ng-click='ex.alertfn()'>dsaadsasd</a>" + " " + name + " " + "clicked:",
+                        message: "<a ng-click='ex.alertfn()'>ALERT ME!</a>" + " " + name + " " + "clicked:",
                         icon: "icon_vibrent_check",
                         type: "success",
                         hiddenCallback: function () {
