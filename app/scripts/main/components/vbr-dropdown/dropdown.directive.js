@@ -24,7 +24,7 @@
                         ngModel: '=',
                         customSelect: '=?',
                         ngRequired: '=?',
-                        ngChange: '&?',
+                        change: '&?',
                         ngDisabled: '=?',
                         inputId: '@?id',
                         label: '@?',
@@ -68,7 +68,7 @@
 
         vm.ngChangeWrapper = function () {
             vm.resetDownArrow();
-            return vm.ngChange();
+            return vm.change();
         };
     }
 
