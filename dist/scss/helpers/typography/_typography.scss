@@ -1,0 +1,14 @@
+$sizes: (
+    sm:11px,
+    md:14px,
+    lg: 16px
+);
+
+
+
+@each $size, $s in $sizes {
+  /* Set all padding and all margin*/
+  .font-size-#{$size} {
+     font-size: $s;
+  }
+}

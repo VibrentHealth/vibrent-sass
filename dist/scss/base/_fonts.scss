@@ -1,0 +1,40 @@
+/**
+  Fonts used throughout framework defined here
+
+  created by: Moustafa Baiou
+ */
+
+@font-face {
+  font-family: 'AvenirNext-Regular';
+  src: url("#{$font-assets-path}/AvenirNext-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'AvenirNext-Medium';
+  src: url("#{$font-assets-path}/AvenirNext-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'AvenirNext-DemiBold';
+  src: url("#{$font-assets-path}/AvenirNext-DemiBold.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url("#{$font-assets-path}/OpenSans-Light.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url("#{$font-assets-path}/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: $custom-font;
+  src:  url("#{$font-assets-path}/#{$custom-font}.eot?hnule1#iefix") format('embedded-opentype'),
+        url("#{$font-assets-path}/#{$custom-font}.ttf?hnule1") format('truetype'),
+        url("#{$font-assets-path}/#{$custom-font}.woff?hnule1") format('woff'),
+        url("#{$font-assets-path}/#{$custom-font}.svg?hnule1#vibrent") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
