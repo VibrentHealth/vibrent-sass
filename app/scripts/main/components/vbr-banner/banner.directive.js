@@ -36,6 +36,7 @@
         vm.type = "success";
         vm.visibilityDuration = 2000;
         vm.observers = BannerService;
+        vm.canClose = false;
 
         /* default callbacks */
         vm.shownCallback = function () {
@@ -77,7 +78,15 @@
 
             CSSUpdates(data);
 
+            canClose(data);
+
         });
+
+        function canClose(data){
+            if(data.hasOwnProperty('canClose')){
+                vm.canClose = data.canClose;
+            }
+        }
 
         function MessageUpdate(data){
             if(data.hasOwnProperty('message')){

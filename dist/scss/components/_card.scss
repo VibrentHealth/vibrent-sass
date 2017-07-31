@@ -4,3 +4,8 @@
     border-radius: 1px;
     padding: calculateRem(20px);
 }
+
+.card-container{
+    @extend .col-xs-12;
+    @extend .col-lg-8;
+}

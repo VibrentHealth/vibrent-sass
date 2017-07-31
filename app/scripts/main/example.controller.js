@@ -177,6 +177,7 @@
                             alert("Im Shown");
                         },
                         visibilityDuration: Infinity,
+                        canClose: false,
                         cssClassList: ""
                     };
                     ex.clickNum++;
