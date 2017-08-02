@@ -39,7 +39,7 @@ The PhotoUploader has the following properties that can be configured during ini
 
 `ng-disabled` - *Boolean* - A Boolean representing whether or not the input is disabled
 
-`validations` - *Object* - Object with all of the validations for an input `'email': {message: 'Email is invalid'}`
+`validations` - *Object* - Object with all of the validations for an input `{'email': 'Email is invalid'}`
 
 `tooltip` - *String* - A String representing the tooltip text that will be displayed.
 

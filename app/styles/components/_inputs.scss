@@ -60,7 +60,7 @@ The Dropdown has the following properties that can be configured during initiali
 
 `ng-disabled` - *Boolean* - A boolean value of whether or not the input should be disabled
 
-`validations` - *Object* - Object with all of the validations for an input `'email': {message: 'Email is invalid'}`
+`validations` - *Object* - Object with all of the validations for an input `{'email': 'Email is invalid'}`
 
 
 !![](./input_example.html)
