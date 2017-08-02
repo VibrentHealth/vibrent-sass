@@ -37,13 +37,7 @@
     /* @ngInject */
     function ToggleCtrl() {
         var tc = this;
-        if(tc.validations){
-            angular.forEach(tc.validations, function (error, key) {
-                if(typeof (error.message) === 'string' && error.message.length > 0){
-                    tc.validations[key].key = key;
-                }
-            });
-        }
+
     }
 })();
 

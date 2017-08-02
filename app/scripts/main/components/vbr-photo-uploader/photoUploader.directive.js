@@ -57,13 +57,6 @@
             return vm.form.$invalid && vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty || vm.form.$submitted);
         };
 
-        if(vm.validations){
-            angular.forEach(vm.validations, function (error, key) {
-                if(typeof (error.message) == 'string' && error.message.length > 0){
-                    vm.validations[key].key = key;
-                }
-            })
-        }
     }
 
 })();
