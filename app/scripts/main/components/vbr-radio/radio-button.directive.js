@@ -11,7 +11,7 @@
                     link: link,
                     restrict: 'E',
                     scope:{
-                        ngModel: '=',
+                        ngModel: '=?',
                         options: '=',
                         inputId: '@?id',
                         ngDisabled: '=?',
@@ -38,6 +38,10 @@
                 return vm.change({option: option});
             }
         };
+
+        if(!angular.isDefined(vm.ngModel)){
+            vm.ngModel = {};
+        }
 
     }
 })();
