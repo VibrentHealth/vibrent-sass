@@ -68,7 +68,7 @@
 
         vm.ngChangeWrapper = function () {
             vm.resetDownArrow();
-            return vm.change();
+            return  (vm.change || angular.noop)();
         };
     }
 
