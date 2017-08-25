@@ -13,7 +13,7 @@ category: components/photo-uploader
                 label="change"
                 ng-model="ex.somePhotoModel"
                 ng-required="true"
-                ng-change="ex.someFunction()"
+                change="ex.someFunction()"
                 ng-disabled="ex.disabled"
                 validations="ex.photoValidations"
                 tooltip="ex.tooltipTesting">
@@ -35,7 +35,7 @@ The PhotoUploader has the following properties that can be configured during ini
 
 `ng-required` - *Boolean* - A boolean representing whether or not the input is required
 
-`ng-change` - *Function* - A function to be called when the photo uploader changes state
+`change` - *Function* - A function to be called when the photo uploader changes state
 
 `ng-disabled` - *Boolean* - A Boolean representing whether or not the input is disabled
 

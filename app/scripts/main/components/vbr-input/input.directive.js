@@ -19,7 +19,7 @@
                         type: '@',
                         form: '=',
                         ngRequired: '=?',
-                        ngChange: '&?',
+                        change: '&?',
                         ngBlur: '&?',
                         ngMinlength: '=?',
                         ngMaxlength: '=?',
