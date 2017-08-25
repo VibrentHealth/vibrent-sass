@@ -17,7 +17,7 @@
                     scope: {
                         form: '=',
                         ngModel: '=',
-                        ngChange: '&?',
+                        change: '&?',
                         ngRequired: '=?',
                         maxFileSize: '=?',
                         validations: '=?',
@@ -50,7 +50,7 @@
 
         vm.ngChangeWrapper = function () {
             //do other things
-            return vm.ngChange();
+            return vm.change();
         };
 
         vm.shouldShowErrors = function () {
