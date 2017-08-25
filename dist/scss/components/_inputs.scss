@@ -17,7 +17,7 @@ The Input is initialized via the DOM.
                 ng-model="ex.someModel"
                 ng-required="false"
                 ng-blur="ex.alert()"
-                ng-change="ex.someFunction()"
+                change="ex.someFunction()"
                 ng-minlength="3"
                 ng-maxlength="8"
                 ng-pattern="somePattern"
@@ -46,7 +46,7 @@ The Dropdown has the following properties that can be configured during initiali
 
 `ng-required` - *Boolean* - A boolean representing whether or not the input is required
 
-`ng-change` - *Function* - A function to be called when the input changes state
+`change` - *Function* - A function to be called when the input changes state
 
 `ng-blur` - *Function* - A function to be called when the input looses focus
 

@@ -16,7 +16,7 @@ The Dropdown is initialized via the DOM.
                 label="label"
                 placeholder="placeholder"
                 ng-required="false"
-                ng-change="ex.someFunction()"
+                change="ex.someFunction()"
                 options="ex.dropdownOptions"
                 ng-disabled="ex.disabledDropdown"
 
@@ -39,7 +39,7 @@ The Dropdown has the following properties that can be configured during initiali
 
 `label` - *String* - Label associated with input
 
-`ng-change` - *Function* - A function to be called when the dropdown changes state
+`change` - *Function* - A function to be called when the dropdown changes state
 
 `ng-required` - *Boolean* - A boolean representing whether or not the dropdown is a required input.
 
