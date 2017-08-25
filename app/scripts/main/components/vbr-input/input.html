@@ -1,10 +1,3 @@
-<label
-    ng-if="vm.label"
-    for="{{vm.inputId}}"
-    ng-class="{ disabled: vm.ngDisabled}">
-    {{vm.label}}
-</label>
-
 <input
     id="{{vm.inputId}}"
     name="{{vm.inputId}}"
@@ -27,14 +20,21 @@
     ng-blur="vm.blurred()"
 />
 
+<label
+    ng-if="vm.label"
+    for="{{vm.inputId}}"
+    ng-class="{ disabled: vm.ngDisabled}">
+    {{vm.label}}
+</label>
+
 <div class="input-error-message" role="alert"
      ng-if="vm.shouldShowErrors()"
      ng-hide="vm.ngDisabled"
      ng-messages="vm.form[vm.inputId].$error">
 
-    <span ng-repeat="error in vm.validations"
-        ng-message="{{error.key}}">
-        {{ error.message }}
+    <span ng-repeat="(key, value) in vm.validations"
+        ng-message="{{key}}">
+        {{ value }}
     </span>
 
 </div>

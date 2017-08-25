@@ -1,6 +1,10 @@
 {
     "name": "vibrent-sass",
-    "private": true,
+    "private": false,
+    "main":[
+      "./dist/scripts/index.min.js",
+      "./dist/scss/**/*.scss"
+    ],
     "dependencies": {
         "bootstrap-sass": "^3.3.7",
         "font-awesome": "^4.7.0",

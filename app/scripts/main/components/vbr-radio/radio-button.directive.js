@@ -11,7 +11,7 @@
                     link: link,
                     restrict: 'E',
                     scope:{
-                        ngModel: '=',
+                        ngModel: '=?',
                         options: '=',
                         inputId: '@?id',
                         ngDisabled: '=?',
@@ -35,9 +35,13 @@
 
         vm.selectedWrapper = function(option){
             if(option){
-                return vm.change({option: option});
+                return (vm.change || angular.noop)({option: option});
             }
         };
+
+        if(!angular.isDefined(vm.ngModel)){
+            vm.ngModel = {};
+        }
 
     }
 })();

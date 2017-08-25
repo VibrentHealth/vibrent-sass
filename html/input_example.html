@@ -11,10 +11,10 @@
                 ng-required="false"
                 ng-change="ex.someFunction()"
                 ng-minlength="3"
+                ng-blur="ex.alert()"
                 ng-maxlength="8"
-                ng-pattern="/some/i"
                 ng-trim="true"
-                ng-disabled="ex.disabled"
+                ng-disabled="false"
                 validations="ex.someValidations"
                 tooltip="ex.tooltipTesting">
             </vbr-input>
@@ -30,7 +30,6 @@
                 ng-change="ex.someFunction()"
                 ng-minlength="3"
                 ng-maxlength="8"
-                ng-pattern="/some/i"
                 ng-trim="true"
                 ng-disabled="ex.disabled"
                 validations="ex.someValidations">

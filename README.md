@@ -1,6 +1,12 @@
 # Vibrent Sass Framework 
 
-## Installing
+Preview the styles at https://vibrenthealth.github.io/styleguide/
+
+## Installing For Users 
+
+``bower install vibrent-sass``
+
+## Installing For Developers
 ``npm install ; bower install``
 
 ## Building

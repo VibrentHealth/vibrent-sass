@@ -19,10 +19,11 @@
                         type: '@',
                         form: '=',
                         ngRequired: '=?',
-                        ngChange: '&?',
+                        change: '&?',
+                        ngBlur: '&?',
                         ngMinlength: '=?',
                         ngMaxlength: '=?',
-                        ngPattern: '@?',
+                        ngPattern: '=?',
                         ngTrim: '=?',
                         ngDisabled: '=?',
                         inputId: '@?id',
@@ -46,15 +47,6 @@
     function InputCtrl() {
         var vm = this;
 
-
-        if(vm.validations){
-            angular.forEach(vm.validations, function (error, key) {
-                if(typeof (error.message) == 'string' && error.message.length > 0){
-                    vm.validations[key].key = key;
-                }
-            })
-        }
-
         vm.errorClass = function () {
             if (!vm.ngDisabled && vm.validations) {
                 return vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty || vm.form.$submitted)
@@ -74,6 +66,9 @@
         vm.blurred = function () {
             if(!vm.errorsVisible){
                 vm.errorsVisible = true;
+            }
+            if(typeof vm.ngBlur === 'function') {
+                vm.ngBlur();
             }
         };
 

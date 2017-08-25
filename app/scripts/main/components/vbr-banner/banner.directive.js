@@ -16,15 +16,7 @@
                     restrict: 'AE',
                     link: link,
                     scope: {
-                        type: '=',
-                        message: '=',
-                        autoClose: '=?',
-                        onClose: '&?',
-                        closeDelay: "=?",
-                        animated: '=?',
-                        animationDuration: '=?',
-                        animationName: '=?',
-                        icon: '@?'
+                        name: '@'
                     },
                     templateUrl: TEMPLATES + '/vbr-banner/banner.html'
                 };
@@ -34,66 +26,149 @@
                 }
         });
 
-    BannerCtrl.$inject = ['$sce', '$timeout', '$q', '$log'];
+    BannerCtrl.$inject = ['$sce', '$timeout','BannerService','$compile'];
 
-    function BannerCtrl ($sce, $timeout, $q, $log) {
+    function BannerCtrl ($sce, $timeout, BannerService,$compile) {
         var vm = this;
 
-        vm.type = vm.type === 'success' ? vm.type : 'error';
-        vm.message = vm.message || 'Error';
-        vm.visible = true;
-        vm.animated = vm.animated || false;
-        vm.closeDelay = vm.closeDelay || 3000;
-        vm.animationDuration = vm.animated && vm.animationDuration ? vm.animationDuration : 0;
-        vm.animationName = vm.animationName || 'none';
-        vm.icon = vm.type === 'success' ? vm.icon || 'icon_vibrent_check' : null;
-        vm.autoClose = !vm.autoClose ? vm.autoClose : true;
-        vm.onClose = vm.onClose || angular.noop;
-        vm.messageAsHTML = $sce.trustAsHtml(vm.message);
+        /* A List of classes that is piped to ng-class directive */
+        vm.cssClassList = "";
+        vm.type = "success";
+        vm.visibilityDuration = 2000;
+        vm.observers = BannerService;
+        vm.canClose = false;
 
-        vm.containerEl = angular.element(document.querySelector('#vbr-banner-container'));
+        /* default callbacks */
+        vm.shownCallback = function () {
+            return true;
+        };
+        vm.hiddenCallback = function () {
+            return true;
+        };
 
+        /* name must be unique - enforce this */
+        isNameUnique(vm.name);
+
+        /* expose close function to x icon on DOM */
         vm.close = function () {
-            vm.hideContainer(vm.containerEl, vm.animationName).then(function (resp) {
-                if (resp.isHidden) {
-                    $log.info('container hidden?: ' + resp.isHidden);
-                    vm.visible = false;
-                    vm.onClose();
-                }
-            }, function (errResp) {
-                $log.info('container hidden?: ' + errResp.isHidden);
-                if (!errResp.isHidden) {
-                    vm.close();
-                }
-            });
+            vm.visible = false;
+            vm.hiddenCallback();
         };
 
-        vm.hideContainer = function (container, transitionName) {
-            // var deferred = $q.defer();
+        init();
 
-            // container.toggleClass(transitionName);
-            // $timeout(function () {
-            //     //
-            // }, vm.animationDuration);
-            return $q(function (resolve, reject) {
-                container.toggleClass(transitionName);
-                $log.info('hiding container in - ' + vm.animationDuration);
-                $timeout(function () {
-                    if (container.hasClass(transitionName)) {
-                        resolve({isHidden: true});
-                    } else {
-                        reject({isHidden: false});
+        /* listen for changes and react to them */
+
+        vm.observers.listen(vm.name,function (data) {
+
+            /* Check for updates to all properties */
+
+            MessageUpdate(data);
+
+            IconUpdate(data);
+
+            /* checks both hidden and visible */
+            Callbacks(data);
+
+            TypeUpdate(data);
+
+            VisibilityDurationUpdates(data);
+
+            VisibilityUpdates(data);
+
+            CSSUpdates(data);
+
+            canClose(data);
+
+        });
+
+        function canClose(data){
+            if(data.hasOwnProperty('canClose')){
+                vm.canClose = data.canClose;
+            }
+        }
+
+        function MessageUpdate(data){
+            if(data.hasOwnProperty('message')){
+                vm.message = $sce.trustAsHtml(data.message);
+            }
+        }
+
+        function IconUpdate(data){
+            if(data.hasOwnProperty('icon')){
+                vm.icon = data.icon;
+            }
+        }
+
+        function Callbacks(data){
+            if(data.hasOwnProperty('hiddenCallback')){
+                vm.hiddenCallback = data.hiddenCallback.bind(vm);
+            }
+
+            if(data.hasOwnProperty('shownCallback')){
+                vm.shownCallback = data.shownCallback.bind(vm);
+            }
+        }
+
+        function TypeUpdate(data){
+            if(data.hasOwnProperty('type')){
+                vm.type = data.type;
+            }else{
+                vm.type = "error";
+            }
+        }
+
+        function VisibilityDurationUpdates(data){
+            if(data.hasOwnProperty('visibilityDuration')){
+                vm.visibilityDuration = data.visibilityDuration;
+            }
+        }
+
+        function VisibilityUpdates(data){
+            if(data.visible === false){
+                vm.visible = false;
+                if(data.hasOwnProperty('hiddenCallback')){
+                    vm.hiddenCallback();
+                }
+            }else{
+                if(data.visible === true){
+                    vm.visible = true;
+                    if(data.hasOwnProperty('shownCallback')){
+                        vm.shownCallback();
                     }
-                }, vm.animationDuration);
-            });
+                    if(vm.visibilityDuration !== Infinity) {
+                        $timeout(function () {
+                            vm.visible = false;
+                            vm.hiddenCallback();
+                        }, vm.visibilityDuration);
+                    }
+                }
+            }
+        }
 
-            // return deferred.promise;
-        };
+        function CSSUpdates(data){
+            if(data.hasOwnProperty('cssClassList')){
+                vm.cssClassList = data.cssClassList;
+            }
+        }
 
-        if (vm.autoClose) {
-            $timeout(function () {
-                vm.close();
-            }, vm.closeDelay);
+        function isNameUnique(name){
+            var DOMElements = document.querySelectorAll('vbr-banner[name="'+name+'"]');
+            if(DOMElements.length > 1){
+                console.warn("Name provided is not unique:" + name + " " + "Matches another vibrent-banner in the DOM");
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function init(){
+            var isStored = false;
+            isStored = vm.observers.get(vm.name);
+            if(!isStored){
+                /* initilize an empty object */
+                vm.observers.set(vm.name,{});
+            }
         }
 
     }

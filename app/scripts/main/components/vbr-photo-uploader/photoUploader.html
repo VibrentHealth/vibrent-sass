@@ -26,9 +26,9 @@
      ng-hide="vm.ngDisabled"
      ng-messages="vm.form[vm.inputId].$error">
 
-    <span ng-repeat="error in vm.validations"
-          ng-message="{{error.key}}">
-        {{ error.message }}
+    <span ng-repeat="(key,value) in vm.validations"
+          ng-message="{{key}}">
+        {{ value }}
     </span>
 
 

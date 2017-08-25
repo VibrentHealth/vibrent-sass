@@ -8,13 +8,12 @@
         .module('vbr-style-guide')
         .controller('ExampleController',
 
-            function ExampleController() {
+            function ExampleController(BannerService) {
                 var ex = this;
 
                 ex.someValue = {
                     firstThing: 'thing to be passed'
                 };
-
 
                 //input example
                 ex.someModel = '';
@@ -78,6 +77,10 @@
                     animated: true,
                     animationDuration: 3000,
                     animationName: 'squeeze-up'
+                };
+
+                ex.alert = function () {
+                  console.log("BLUR");
                 };
 
                 ex.successBanner = {
@@ -150,9 +153,40 @@
 
                 ex.radioModel = null;
 
+                ex.hideBanner = function (name) {
+                    BannerService.set(name,{hidden:true});
+                };
+
+                ex.clickNum = 0;
+
+                ex.alertfn = function () {
+                    alert("This is a recompiled alert");
+                };
+
+                ex.showBanner = function (name) {
+
+                    var configurationObj = {
+                        visible: true,
+                        message: "<a ng-click='ex.alertfn()'>ALERT ME!</a>" + " " + name + " " + "clicked:",
+                        icon: "icon_vibrent_check",
+                        type: "success",
+                        hiddenCallback: function () {
+                            alert("Im hidden");
+                        },
+                        shownCallback: function () {
+                            alert("Im Shown");
+                        },
+                        visibilityDuration: Infinity,
+                        canClose: false,
+                        cssClassList: ""
+                    };
+                    ex.clickNum++;
+                    BannerService.set(name,configurationObj);
+                };
+
                 ex.radioChange = function(option){
                     console.log('the radio callback is being called for option:', option);
-                }
+                };
 
             });
 })();

@@ -4,6 +4,7 @@ source:
 - ./app/styles/layout
 - ./app/styles/components
 - ./app/styles/animations
+- ./app/styles/helpers
 
 # The directory that aigis will build to
 dest: ./styleguide
@@ -15,7 +16,6 @@ dependencies:
   - ./app/fonts
   - ./app/images
   - ./app/styles/main.css
-  - ./app/styles/variables.json
   - ./bower_components
   - ./app/scripts/main.js
 
