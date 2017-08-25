@@ -155,7 +155,7 @@
         function isNameUnique(name){
             var DOMElements = document.querySelectorAll('vbr-banner[name="'+name+'"]');
             if(DOMElements.length > 1){
-                throw new Error("Name provided is not unique:" + name + " " + "Matches another vibrent-banner in the DOM");
+                console.warn("Name provided is not unique:" + name + " " + "Matches another vibrent-banner in the DOM");
                 return false;
             }else{
                 return true;
