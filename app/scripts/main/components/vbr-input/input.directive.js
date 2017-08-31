@@ -24,7 +24,7 @@
                         ngMinlength: '=?',
                         ngMaxlength: '=?',
                         ngPattern: '=?',
-                        match: '=?',
+                        match: '@?',
                         ngTrim: '=?',
                         ngDisabled: '=?',
                         inputId: '@?id',
@@ -73,6 +73,7 @@
             }
         };
 
+        vm.debug = "test debug";
         $scope.$watch(angular.bind(vm, function () {
             return this.match;
           }), function (newVal) {
