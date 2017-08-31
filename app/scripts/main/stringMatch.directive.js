@@ -5,7 +5,7 @@
     'use strict';
 
     angular.module('vbr-style-guide')
-        .directive("match", function () {
+        .directive("stringMatch", function () {
             return {
                 require: "ngModel",
                 link: function (scope, element, attrs, ctrl) {
