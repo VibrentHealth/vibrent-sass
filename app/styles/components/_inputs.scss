@@ -21,6 +21,7 @@ The Input is initialized via the DOM.
                 ng-minlength="3"
                 ng-maxlength="8"
                 ng-pattern="somePattern"
+                mßatch="someString"
                 ng-trim="true"
                 ng-disabled="ex.disabled"
                 validations="ex.someValidations"
@@ -55,6 +56,8 @@ The Dropdown has the following properties that can be configured during initiali
 `ng-maxlength` - *Integer* - An integer of the maxlength of the field
 
 `ng-pattern` - *Regex* - A regex for patten matching
+
+`match` - *String* - A string to match exactly
 
 `ng-trim` - *Boolean* - A boolean value of whether or not to trim the input
 
