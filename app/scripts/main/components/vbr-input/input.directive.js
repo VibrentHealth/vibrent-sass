@@ -77,9 +77,13 @@
             return vm.errorsVisible  && vm.form.$invalid && vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty ||vm.form.$submitted);
         };
 
-        $scope.$watch('vm.match', function (nv, ov) {
-            vm.debug = nv;
-        });
+        $scope.$watch('vm.match', matchInput);
+        $scope.$watch('vm.ngModel', matchInput);
+
+        function matchInput() {
+            vm.form[vm.inputId].setValidity('match', vm.match === undefined || vm.match === vm.ngModel);
+            console.log(vm.match, vm.ngModel);
+        };
 
     }
 
