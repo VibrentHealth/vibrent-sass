@@ -24,6 +24,7 @@
                         ngMinlength: '=?',
                         ngMaxlength: '=?',
                         ngPattern: '=?',
+                        match: '@?',
                         ngTrim: '=?',
                         ngDisabled: '=?',
                         inputId: '@?id',
