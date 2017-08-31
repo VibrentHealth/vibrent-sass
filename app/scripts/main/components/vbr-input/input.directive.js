@@ -73,7 +73,7 @@
             }
         };
 
-        $scope.$watch(angular.bind(this, function () {
+        $scope.$watch(angular.bind(vm, function () {
             return this.match;
           }), function (newVal) {
               vm.debug = newVal;
