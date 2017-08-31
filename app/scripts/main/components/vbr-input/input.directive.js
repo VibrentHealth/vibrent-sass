@@ -82,7 +82,6 @@
 
         function matchInput() {
             vm.form[vm.inputId].$setValidity('match', vm.match === undefined || vm.match === vm.ngModel);
-            console.log(vm.match, vm.ngModel);
         };
 
     }
