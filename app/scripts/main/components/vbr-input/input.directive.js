@@ -7,7 +7,7 @@
     angular.module('vbr-style-guide')
         .directive('vbrInput',
 
-            function (TEMPLATES) {
+            function (TEMPLATES, $scope) {
                 var directive = {
                     bindToController: true,
                     controller: InputCtrl,
@@ -38,16 +38,14 @@
                 return directive;
 
                 function link(scope, element, attrs) {
-                    scope.$watch('match', function (nv, ov) {
-                        console.log(nv);
-                    });
+
                 }
             });
 
-    InputCtrl.$inject = [];
+    InputCtrl.$inject = [$scope];
 
     /* @ngInject */
-    function InputCtrl() {
+    function InputCtrl($scope) {
         var vm = this;
 
         vm.errorClass = function () {
@@ -78,6 +76,10 @@
         vm.shouldShowErrors = function () {
             return vm.errorsVisible  && vm.form.$invalid && vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty ||vm.form.$submitted);
         };
+
+        $scope.$watch('vm.match', function (nv, ov) {
+            vm.debug = nv;
+        });
 
     }
 
