@@ -38,12 +38,9 @@
                 return directive;
 
                 function link(scope, element, attrs) {
-                    this.debug = "test debug";
-                    scope.$watch(angular.bind(this, function () {
-                        return this.match;
-                      }), function (newVal) {
-                          this.debug = newVal;
-                      });
+                    scope.$watch('match', function (nv, ov) {
+                        console.log("nv");
+                    });
                 }
             });
 
