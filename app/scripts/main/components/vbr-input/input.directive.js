@@ -38,11 +38,11 @@
                 return directive;
 
                 function link(scope, element, attrs) {
-                    scope.debug = "test debug";
+                    this.debug = "test debug";
                     scope.$watch(angular.bind(this, function () {
                         return this.match;
                       }), function (newVal) {
-                          scope.debug = newVal;
+                          this.debug = newVal;
                       });
                 }
             });
