@@ -7,7 +7,7 @@
     angular.module('vbr-style-guide')
         .directive('vbrInput',
 
-            function (TEMPLATES, $scope) {
+            function (TEMPLATES) {
                 var directive = {
                     bindToController: true,
                     controller: InputCtrl,
@@ -74,7 +74,7 @@
         };
 
         vm.debug = "test debug";
-        $scope.$watch(angular.bind(vm, function () {
+        scope.$watch(angular.bind(vm, function () {
             return this.match;
           }), function (newVal) {
               vm.debug = newVal;
