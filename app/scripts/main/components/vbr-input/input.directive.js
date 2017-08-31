@@ -5,7 +5,7 @@
     'use strict';
 
     angular.module('vbr-style-guide')
-        .directive('vbrInput', [$scope,
+        .directive('vbrInput',
 
             function (TEMPLATES) {
                 var directive = {
@@ -40,12 +40,12 @@
                 function link(scope, element, attrs) {
 
                 }
-            }]);
+            });
 
-    InputCtrl.$inject = [];
+    InputCtrl.$inject = [$scope];
 
     /* @ngInject */
-    function InputCtrl() {
+    function InputCtrl($scope) {
         var vm = this;
 
         vm.errorClass = function () {
