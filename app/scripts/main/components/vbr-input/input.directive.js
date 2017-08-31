@@ -7,7 +7,7 @@
     angular.module('vbr-style-guide')
         .directive('vbrInput',
 
-            function (TEMPLATES) {
+            function (TEMPLATES, $scope) {
                 var directive = {
                     bindToController: true,
                     controller: InputCtrl,
@@ -42,10 +42,10 @@
                 }
             });
 
-    InputCtrl.$inject = [$scope];
+    InputCtrl.$inject = [];
 
     /* @ngInject */
-    function InputCtrl($scope) {
+    function InputCtrl() {
         var vm = this;
 
         vm.errorClass = function () {
