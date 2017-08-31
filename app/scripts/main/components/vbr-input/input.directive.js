@@ -24,7 +24,7 @@
                         ngMinlength: '=?',
                         ngMaxlength: '=?',
                         ngPattern: '=?',
-                        match: '@?',
+                        match: '=?',
                         ngTrim: '=?',
                         ngDisabled: '=?',
                         inputId: '@?id',
@@ -42,10 +42,10 @@
                 }
             });
 
-    InputCtrl.$inject = [];
+    InputCtrl.$inject = ['$scope'];
 
     /* @ngInject */
-    function InputCtrl() {
+    function InputCtrl($scope) {
         var vm = this;
 
         vm.errorClass = function () {
@@ -73,9 +73,15 @@
             }
         };
 
-
         vm.shouldShowErrors = function () {
             return vm.errorsVisible  && vm.form.$invalid && vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty ||vm.form.$submitted);
+        };
+
+        $scope.$watch('vm.match', matchInput);
+        $scope.$watch('vm.ngModel', matchInput);
+
+        function matchInput() {
+            vm.form[vm.inputId].$setValidity('match', vm.match === undefined || vm.match === vm.ngModel);
         };
 
     }
