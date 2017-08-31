@@ -10,7 +10,7 @@
                 require: "ngModel",
                 link: function (scope, element, attrs, ctrl) {
                     ctrl.$parsers.unshift(function (viewValue) {
-                        var origin = scope.$eval(attrs["match"]);
+                        var origin = scope.$eval(attrs["string-match"]);
                         if (origin !== viewValue) {
                             ctrl.$setValidity("match", false);
                             return undefined;
