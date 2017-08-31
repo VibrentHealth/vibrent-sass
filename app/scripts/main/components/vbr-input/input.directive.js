@@ -42,10 +42,10 @@
                 }
             });
 
-    InputCtrl.$inject = [$scope];
+    InputCtrl.$inject = [];
 
     /* @ngInject */
-    function InputCtrl($scope) {
+    function InputCtrl() {
         var vm = this;
 
         vm.errorClass = function () {
