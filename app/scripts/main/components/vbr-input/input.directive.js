@@ -42,7 +42,7 @@
                 }
             }]);
 
-    InputCtrl.$inject = [$scope];
+    InputCtrl.$inject = ['$scope'];
 
     /* @ngInject */
     function InputCtrl($scope) {
