@@ -26,6 +26,7 @@
                         ngPattern: '=?',
                         ngTrim: '=?',
                         ngDisabled: '=?',
+                        match: '@',
                         inputId: '@?id',
                         label: '@?',
                         placeholder: '@?',
