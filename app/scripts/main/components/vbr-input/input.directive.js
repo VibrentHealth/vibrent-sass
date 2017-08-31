@@ -73,7 +73,11 @@
             }
         };
 
-        vm.debug = vm.match;
+        $scope.$watch(angular.bind(this, function () {
+            return this.match;
+          }), function (newVal) {
+              vm.debug = newVal;
+          });
 
         vm.shouldShowErrors = function () {
             return vm.errorsVisible  && vm.form.$invalid && vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty ||vm.form.$submitted);
