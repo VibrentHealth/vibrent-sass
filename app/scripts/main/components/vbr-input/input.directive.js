@@ -73,6 +73,7 @@
             }
         };
 
+        vm.debug = vm.match;
 
         vm.shouldShowErrors = function () {
             return vm.errorsVisible  && vm.form.$invalid && vm.form[vm.inputId].$invalid && (vm.form[vm.inputId].$dirty ||vm.form.$submitted);
