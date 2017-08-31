@@ -39,7 +39,8 @@
 
                 function link(scope, element, attrs) {
                     scope.$watch('match', function (nv, ov) {
-                        console.log("nv");
+                        scope.debug = nv;
+                        console.log(nv);
                     });
                 }
             });
