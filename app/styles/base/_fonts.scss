@@ -6,27 +6,32 @@
 
 @font-face {
   font-family: 'AvenirNext-Regular';
-  src: url("#{$font-assets-path}/AvenirNext-Regular.ttf");
+  src: url("#{$font-assets-path}/AvenirNext-Regular.eot#iefix") format('embedded-opentype'),
+       url("#{$font-assets-path}/AvenirNext-Regular.ttf") format('truetype');
 }
 
 @font-face {
   font-family: 'AvenirNext-Medium';
-  src: url("#{$font-assets-path}/AvenirNext-Medium.ttf");
+    src: url("#{$font-assets-path}/AvenirNext-Medium.eot#iefix") format('embedded-opentype'),
+         url("#{$font-assets-path}/AvenirNext-Medium.ttf") format('truetype');
 }
 
 @font-face {
   font-family: 'AvenirNext-DemiBold';
-  src: url("#{$font-assets-path}/AvenirNext-DemiBold.ttf");
+    src: url("#{$font-assets-path}/AvenirNext-DemiBold.eot#iefix") format('embedded-opentype'),
+         url("#{$font-assets-path}/AvenirNext-DemiBold.ttf") format('truetype');
 }
 
 @font-face {
   font-family: 'OpenSans-Light';
-  src: url("#{$font-assets-path}/OpenSans-Light.ttf");
+    src: url("#{$font-assets-path}/OpenSans-Light.eot#iefix") format('embedded-opentype'),
+         url("#{$font-assets-path}/OpenSans-Light.ttf") format('truetype');
 }
 
 @font-face {
   font-family: 'OpenSans-Regular';
-  src: url("#{$font-assets-path}/OpenSans-Regular.ttf");
+  src: url("#{$font-assets-path}/OpenSans-Regular.eot#iefix") format('embedded-opentype'),
+       url("#{$font-assets-path}/OpenSans-Regular.ttf") format('truetype');
 }
 
 @font-face {
