@@ -3,7 +3,8 @@
     "private": false,
     "main":[
       "./dist/scripts/index.min.js",
-      "./dist/scss/**/*.scss"
+      "./dist/scss/**/*.scss",
+      "./app/fonts/*.*"
     ],
     "dependencies": {
         "bootstrap-sass": "^3.3.7",
