@@ -3,6 +3,10 @@
     "version": "0.0.0",
     "devDependencies": {
         "browser-sync": "^2.18.12",
+        "browserify": "^14.4.0",
+        "browserify-istanbul": "^2.0.0",
+        "chai": "^3.5.0",
+        "chai-as-promised": "^6.0.0",
         "gulp": "3.9.1",
         "gulp-aigis": "^1.3.0",
         "gulp-angular-templatecache": "2.0.0",
@@ -29,8 +33,28 @@
         "gulp-useref": "0.4.3",
         "gulp-util": "2.2.14",
         "jshint-stylish": "0.2.0",
+        "isparta": "^4.0.0",
+        "karma": "^1.7.1",
+        "karma-babel-preprocessor": "^6.0.1",
+        "karma-browserify": "^5.1.1",
+        "karma-chai": "^0.1.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-coverage": "^1.1.1",
+        "karma-firefox-launcher": "^1.0.1",
+        "karma-ie-launcher": "^1.0.0",
+        "karma-mocha": "^1.3.0",
+        "karma-ng-html2js-preprocessor": "^1.0.0",
+        "karma-opera-launcher": "^1.0.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "karma-safari-launcher": "^1.0.0",
+        "lodash": "4.12.0",
+        "main-bower-files": "^2.13.1",
+        "mocha": "^3.3.0",
+        "mochawesome": "^2.1.0",
+        "mochawesome-screenshots": "^1.5.2",
         "pump": "^1.0.2",
         "streamqueue": "0.1.0",
+        "watchify": "^3.9.0",
         "wiredep": "1.7.0"
     },
     "scripts": {
@@ -40,6 +64,7 @@
         "node": ">=0.10.0"
     },
     "dependencies": {
+        "lodash": "^4.17.4",
         "opn": "^5.1.0"
     }
 }
