@@ -77,7 +77,17 @@ describe('Banner Directive', function () {
         expect(isolatedScope.visible).to.equal(false);
     });
 
-    it('Should not allow the user to close the modal when canClose is set to false',function () {
+    it('Should Allow users to close the modal',function () {
+        element = $compile("<vbr-banner name='other-banner'></vbr-banner>")(scope);
+        scope.$digest();
+        BannerService.set('other-banner',{visible:true});
+        scope.$digest();
+        var isolatedScope = element.isolateScope().vm;
+        isolatedScope.close();
+        expect(isolatedScope.visible).to.equal(false);
+    });
+
+    it('Should not allow the user to not close the modal when canClose is set to false',function () {
         element = $compile("<vbr-banner name='other-banner'></vbr-banner>")(scope);
         scope.$digest();
         BannerService.set('other-banner',{visible:true,canClose:false});
@@ -94,5 +104,7 @@ describe('Banner Directive', function () {
         var closeButton = element.find('span')[1];
         expect(closeButton).to.not.equal(undefined);
     });
+
+
 
 });
