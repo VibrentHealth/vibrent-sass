@@ -92,5 +92,15 @@ describe('Radio Button Directive', function () {
         expect(element.find('vbr-radio').find('div')[0].classList.contains('vertical')).to.equal(true);
     });
 
+    it('Should update class based on vertical configuration', function () {
+        scope.options = [{}];
+        scope.vertical = false;
+        element = $compile("<form name='someForm'><vbr-radio id='test-radio' form='someForm' options='options' vertical='vertical'></vbr-radio></form>")(scope);
+        scope.$digest();
+
+        expect(element.find('vbr-radio').find('div')[0].classList.contains('vertical')).to.equal(false);
+    });
+
+
 
 });
