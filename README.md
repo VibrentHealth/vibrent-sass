@@ -27,6 +27,14 @@ Good things to do:
 * document your code for your children
 * document your code for your team mates
 
+### Running Tests
+
+Please run the unit-tests prior to checking in changes. Unit-tests can be run with the command.
+
+``karma start``
+
+Please add additional unit-tests for any additional code added to vibrent-sass. 
+
 ### Commit Messages <a name="commitMessages"></a>
 
 Commit Messages should be formatted as such:
@@ -70,4 +78,4 @@ specific commit message
 Fixes JIRA AC-TICKETNUMBERHERE
 ```
 
-#### Updated by Kyle Mills 07/06/2017 
+#### Updated by Kyle Mills 09/18/2017 
