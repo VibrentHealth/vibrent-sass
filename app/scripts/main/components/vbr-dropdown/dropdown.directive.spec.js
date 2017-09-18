@@ -1,9 +1,7 @@
 /**
  * Created by kylemills on 9/18/17.
  */
-/**
- * Created by kylemills on 9/18/17.
- */
+
 
 var chai = require('chai');
 var chaiAsPromised = require("chai-as-promised");
@@ -84,7 +82,5 @@ describe('Dropdown Directive', function () {
         var isolatedScope = element.find('vbr-dropdown').isolateScope().vm;
         expect(isolatedScope.placeholder).to.equal('some placeholder');
     });
-
-
 
 });
