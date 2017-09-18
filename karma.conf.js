@@ -22,9 +22,16 @@ module.exports = function(config) {
 
             /* Need to specifically include this to get the module to load in tests */
             'bower_components/angular/angular.js',
+            'bower_components/angular-aria/angular-aria.js',
+            'bower_components/angular-messages/angular-messages.js',
+            'bower_components/angular-touch/angular-touch.js',
+            'bower_components/angular-bootstrap/ui-bootstrap.js',
+            'bower_components/ng-file-upload/ng-file-upload.js',
             'bower_components/angular-mocks/angular-mocks.js',
-            'app/scripts/main.js',
+            'app/scripts/main/styleguide.module.js',
+            'app/scripts/main/styleguide.constants.js',
             'app/scripts/main/**/*.spec.js',
+            'app/scripts/main/**/*.js',
 
             /* LOAD HTML */
             'app/scripts/main/**/*.html'
@@ -48,6 +55,14 @@ module.exports = function(config) {
             transform: [
                 istanbul({ instrumenter: require('isparta') })
             ]
+        },
+
+        ngHtml2JsPreprocessor: {
+            cacheIdFromPath: function(filepath) {
+                var result = filepath.substring(filepath.lastIndexOf("/main") + 6);
+                return result;
+            },
+            moduleName: 'my.templates'
         },
 
         // test results reporter to use
