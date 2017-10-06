@@ -1,4 +1,4 @@
-<div ng-repeat="option in rb.options" ng-class="{ vertical: rb.vertical}" class="vbr-radio-group">
+<div ng-repeat="option in rb.options track by $index" ng-class="{ vertical: rb.vertical}" class="vbr-radio-group">
     <label for="{{rb.inputId}}-{{$index}}" class="radio-button" ng-class="{ checked: rb.ngModel === option, disabled: rb.ngDisabled }" tabindex="0">
         <span></span>
         <input type="radio"
