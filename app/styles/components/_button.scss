@@ -18,57 +18,122 @@
 
 /*
 ---
-name: default button
+name: Solid (Primary) Button Style
 category: components/buttons
 ---
 
-* Default button style.
+* Primary button style: White text with a colored background.
 * Use `button` tag.
+* Add classes to set color
 
 ```html
 <button class="vbr-btn">default</a>
+```
+
+```html
+<button class="vbr-btn btn-info">info</a>
+```
+
+```html
+<button class="vbr-btn btn-success">success</a>
+```
+
+```html
+<button class="vbr-btn btn-warning">warning</a>
+```
+
+```html
+<button class="vbr-btn btn-danger">danger</a>
 ```
  */
 
 .vbr-btn{
     @extend %button-default;
     @include primary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color, $button-disabled-bg-color);
+
+    &.btn-info {
+        @include primary-button-style(colors("white"), $button-info-color, darken($button-info-color, 10%), darken($button-info-color, 20%), $button-disabled-color, $button-disabled-bg-color);
+    }
+    &.btn-success {
+        @include primary-button-style(colors("white"), $button-success-color, darken($button-success-color, 10%), darken($button-success-color, 20%), $button-disabled-color, $button-disabled-bg-color);
+    }
+    &.btn-warning {
+        @include primary-button-style(colors("white"), $button-warning-color, darken($button-warning-color, 10%), darken($button-warning-color, 20%), $button-disabled-color, $button-disabled-bg-color);
+    }
+    &.btn-danger {
+        @include primary-button-style(colors("white"), $button-danger-color, darken($button-danger-color, 10%), darken($button-danger-color, 20%), $button-disabled-color, $button-disabled-bg-color);
+    }
 }
 
 
 /*
 ---
-name: clear button
+name: Clear (Secondary) Button Style
 category: components/buttons
 ---
 
-* Clear button style.
+* Clear button style: Colored text and borders with a white background.
 * Use `button` tag.
+* Add classes to set color
 
 ```html
-<button class="vbr-btn-clear">clear</a>
+<button class="vbr-btn-clear">default</a>
+```
+
+```html
+<button class="vbr-btn-clear btn-info">info</a>
+```
+
+```html
+<button class="vbr-btn-clear btn-success">success</a>
+```
+
+```html
+<button class="vbr-btn-clear btn-warning">warning</a>
+```
+
+```html
+<button class="vbr-btn-clear btn-danger">danger</a>
 ```
  */
+
 .vbr-btn-clear{
     @extend %button-default;
     @include secondary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color);
+
+    &.btn-info {
+        @include secondary-button-style($default-bg-color, $button-info-color, darken($button-info-color, 10%), darken($button-info-color, 20%), $button-disabled-color);
+    }
+    &.btn-success {
+        @include secondary-button-style($default-bg-color, $button-success-color, darken($button-success-color, 10%), darken($button-success-color, 20%), $button-disabled-color);
+    }
+    &.btn-warning {
+        @include secondary-button-style($default-bg-color, $button-warning-color, darken($button-warning-color, 10%), darken($button-warning-color, 20%), $button-disabled-color);
+    }
+    &.btn-danger {
+        @include secondary-button-style($default-bg-color, $button-danger-color, darken($button-danger-color, 10%), darken($button-danger-color, 20%), $button-disabled-color);
+    }
 }
 
 /*
 ---
-name: large button
+name: Button Sizes
 category: components/buttons
 ---
 
-* Large button style.
+* Add classes to set button size.
 * Use `button` tag.
 
 ```html
 <button class="vbr-btn btn-large">large</a>
 ```
 ```html
-<button class="vbr-btn-clear btn-large">large</a>
+<button class="vbr-btn btn-small">small</a>
 ```
+```html
+<button class="vbr-btn btn-mini">mini</a>
+```
+
  */
 .btn-large{
     height: $button-large-height;
@@ -76,46 +141,12 @@ category: components/buttons
     padding: 0 $button-large-hz-padding;
 }
 
-
-/*
----
-name: small button
-category: components/buttons
----
-
-* Small button style.
-* Use `button` tag.
-
-```html
-<button class="vbr-btn btn-small">small</a>
-```
-```html
-<button class="vbr-btn-clear btn-small">small</a>
-```
- */
 .btn-small{
     height: $button-small-height;
     font-size: $button-small-font-size;
     padding: 0 $button-small-hz-padding;
 }
 
-
-/*
----
-name: mini button
-category: components/buttons
----
-
-* Mini button style.
-* Use `button` tag.
-
-```html
-<button class="vbr-btn btn-mini">mini</a>
-```
-```html
-<button class="vbr-btn-clear btn-mini">mini</a>
-```
- */
 .btn-mini{
     height: $button-mini-height;
     font-size: $button-mini-font-size;
