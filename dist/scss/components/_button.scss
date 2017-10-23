@@ -1,0 +1,146 @@
+
+%button-default{
+    @include border-radius($base-border-radius);
+    height: $button-default-height;
+    font-size: $button-default-font-size;
+    padding: 0 $button-default-hz-padding;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: $btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+
+/*
+---
+name: Solid (Primary) Button Style
+category: components/buttons
+---
+
+* Primary button style: White text with a colored background.
+* Use `button` tag.
+* Add classes to set color
+
+```html
+<button class="vbr-btn">default</a>
+```
+```html
+<button class="vbr-btn btn-info">info</a>
+```
+```html
+<button class="vbr-btn btn-success">success</a>
+```
+```html
+<button class="vbr-btn btn-warning">warning</a>
+```
+```html
+<button class="vbr-btn btn-danger">danger</a>
+```
+ */
+
+.vbr-btn{
+    @extend %button-default;
+    @include primary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color, $button-disabled-bg-color);
+
+    &.btn-info {
+        @include primary-button-style(colors("white"), $button-info-color, darken($button-info-color, 10%), darken($button-info-color, 20%), $button-disabled-color, $button-disabled-bg-color);
+    }
+    &.btn-success {
+        @include primary-button-style(colors("white"), $button-success-color, darken($button-success-color, 10%), darken($button-success-color, 20%), $button-disabled-color, $button-disabled-bg-color);
+    }
+    &.btn-warning {
+        @include primary-button-style(colors("white"), $button-warning-color, darken($button-warning-color, 10%), darken($button-warning-color, 20%), $button-disabled-color, $button-disabled-bg-color);
+    }
+    &.btn-danger {
+        @include primary-button-style(colors("white"), $button-danger-color, darken($button-danger-color, 10%), darken($button-danger-color, 20%), $button-disabled-color, $button-disabled-bg-color);
+    }
+}
+
+
+/*
+---
+name: Clear (Secondary) Button Style
+category: components/buttons
+---
+
+* Clear button style: Colored text and borders with a white background.
+* Use `button` tag.
+* Add classes to set color
+
+```html
+<button class="vbr-btn-clear">default</a>
+```
+```html
+<button class="vbr-btn-clear btn-info">info</a>
+```
+```html
+<button class="vbr-btn-clear btn-success">success</a>
+```
+```html
+<button class="vbr-btn-clear btn-warning">warning</a>
+```
+```html
+<button class="vbr-btn-clear btn-danger">danger</a>
+```
+ */
+
+.vbr-btn-clear{
+    @extend %button-default;
+    @include secondary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color);
+
+    &.btn-info {
+        @include secondary-button-style($default-bg-color, $button-info-color, darken($button-info-color, 10%), darken($button-info-color, 20%), $button-disabled-color);
+    }
+    &.btn-success {
+        @include secondary-button-style($default-bg-color, $button-success-color, darken($button-success-color, 10%), darken($button-success-color, 20%), $button-disabled-color);
+    }
+    &.btn-warning {
+        @include secondary-button-style($default-bg-color, $button-warning-color, darken($button-warning-color, 10%), darken($button-warning-color, 20%), $button-disabled-color);
+    }
+    &.btn-danger {
+        @include secondary-button-style($default-bg-color, $button-danger-color, darken($button-danger-color, 10%), darken($button-danger-color, 20%), $button-disabled-color);
+    }
+}
+
+/*
+---
+name: Button Sizes
+category: components/buttons
+---
+
+* Add classes to set button size.
+* Use `button` tag.
+
+```html
+<button class="vbr-btn btn-large">large</a>
+```
+```html
+<button class="vbr-btn btn-small">small</a>
+```
+```html
+<button class="vbr-btn btn-mini">mini</a>
+```
+
+ */
+.btn-large{
+    height: $button-large-height;
+    font-size: $button-large-font-size;
+    padding: 0 $button-large-hz-padding;
+}
+
+.btn-small{
+    height: $button-small-height;
+    font-size: $button-small-font-size;
+    padding: 0 $button-small-hz-padding;
+}
+
+.btn-mini{
+    height: $button-mini-height;
+    font-size: $button-mini-font-size;
+    padding: 0 $button-mini-hz-padding;
+}
