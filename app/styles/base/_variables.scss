@@ -22,6 +22,12 @@ $colors: (
     "vibrent-blue":               #0098DB,
     "vibrent-dark-blue":          #006AAB,
 
+    // buttons
+    "button-info-color":          #5bc0de,
+    "button-success-color":       #5cb85c,
+    "button-warning-color":       #f0ad4e,
+    "button-danger-color":        #d9534f,
+
     // for use on dark bg --START
     "vibrent-light-blue":         #88E9FF,
     "vibrent-sea-blue":           #3ED2FF,
@@ -123,6 +129,12 @@ $button-hover-color:                        color("vibrent-dark-blue") !default;
 $button-clicked-color:                      color("navy") !default;
 $button-disabled-bg-color:                  color("line-color") !default;
 $button-disabled-color:                     color("grey") !default;
+
+// Alternate button colors
+$button-info-color:                         color("button-info-color");
+$button-success-color:                      color("button-success-color");
+$button-warning-color:                      color("button-warning-color");
+$button-danger-color:                       color("button-danger-color");
 
 $button-secondary-bg-color:                 $default-bg-color !default;
 
