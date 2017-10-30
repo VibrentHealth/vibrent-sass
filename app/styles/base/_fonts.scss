@@ -22,6 +22,14 @@
          url("#{$font-assets-path}/AvenirNext-DemiBold.ttf") format('truetype');
 }
 
+/* Configured fonts from server need font-family as well */
+
+@font-face {
+    font-family: 'avenirnextdemibold';
+    src: url("#{$font-assets-path}/AvenirNext-DemiBold.eot#iefix") format('embedded-opentype'),
+    url("#{$font-assets-path}/AvenirNext-DemiBold.ttf") format('truetype');
+}
+
 @font-face {
   font-family: 'OpenSans-Light';
     src: url("#{$font-assets-path}/OpenSans-Light.eot#iefix") format('embedded-opentype'),
