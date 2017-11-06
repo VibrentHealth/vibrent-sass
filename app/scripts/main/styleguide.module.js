@@ -5,7 +5,7 @@
 import angular from 'angular';
 import styles from '../../styles/main.scss';
 
-const module = angular.module('vbr-style-guide',
+let module = angular.module('vbr-style-guide',
     [
         'ngAria',
         'ngMessages',

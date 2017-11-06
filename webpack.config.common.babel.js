@@ -85,7 +85,7 @@ var config = module.exports = new WebpackConfig().merge({
 
         new HtmlWebpackPlugin({
             title: 'index',
-            template: './template_ejs/index.ejs',
+            template: './template_ejs/index.html',
             inject: 'body'
         })
     ]

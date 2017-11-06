@@ -10,7 +10,7 @@ module
         function (TEMPLATES) {
             const directive = {
                 bindToController: true,
-                controller: InputCtrl,
+                controller: ["$scope", InputCtrl],
                 controllerAs: 'vm',
                 link: link,
                 restrict: 'E',
@@ -36,16 +36,15 @@ module
                 templateUrl: TEMPLATES + '/vbr-input/input.html'
             };
             return directive;
-
             function link(scope, element, attrs) {
-
             }
         });
 
 
-/* @ngInject */
+
 function InputCtrl($scope) {
-    var vm = this;
+
+    let vm = this;
 
     vm.errorClass = function () {
         if (!vm.ngDisabled && vm.validations) {
