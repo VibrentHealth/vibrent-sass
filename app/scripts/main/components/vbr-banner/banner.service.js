@@ -2,7 +2,7 @@
  * Created by kylemills on 7/18/17.
  */
 
-
+import angular from 'angular';
 
 (function () {
     'use strict';

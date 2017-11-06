@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html ng-app="vbr-style-guide">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link href="<%- root %>aigis_assets/css/highlight/okadia.css" rel="stylesheet">
-    <link href="<%- root %>aigis_assets/css/theme.css" rel="stylesheet">
-    <link href="<%- root %>main.css" rel="stylesheet">
-  </head>
 <body>
-  <div class="aigis-container">
-    <%- include('sidemenu') %>
-    <div class="aigis-contents">
-      <div class="aigis-contents__body">
-        <%- include('components') %>
-        <footer class="aigis-footer">Last update at <%- timestamp %></footer>
-      </div>
-    </div>
-  </div>
+<div class="vbr-avatar">
+    <img src="http://mhalabs.org/wp-content/uploads/upme/1451456913_brodie.jpg" />
+</div>
+<div ng-controller="ExampleController as ex">
+    <form name="someForm">
+        <div style="display: inline-flex;">
+            <vbr-photo-uploader
+                id="somePhoto"
+                form="someForm"
+                label="change"
+                ng-model="ex.somePhotoModel"
+                ng-required="true"
+                ng-change="ex.someFunction()"
+                ng-disabled="ex.disabled"
+                validations="ex.photoValidations"
+                tooltip="ex.tooltipTesting">
+            </vbr-photo-uploader>
+            <button type="submit" class="vbr-btn">test</button>
+        </div>
+    </form>
 
-    <%- include('scripts') %>
+</div>
 
 </body>
 </html>

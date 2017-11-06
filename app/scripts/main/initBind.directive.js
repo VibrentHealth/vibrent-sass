@@ -1,6 +1,7 @@
 /**
  * Created by kylemills on 7/27/17.
  */
+import angular from 'angular';
 (function () {
     "use strict";
     angular.module('vbr-style-guide')
