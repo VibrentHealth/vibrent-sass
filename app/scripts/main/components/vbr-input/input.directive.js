@@ -3,6 +3,7 @@
  */
 
 import module from '../../styleguide.module';
+import template from './input.html';
 
 module
     .directive('vbrInput',
@@ -33,7 +34,7 @@ module
                     validations: '=?',
                     tooltip: '=?'
                 },
-                templateUrl: TEMPLATES + '/vbr-input/input.html'
+                template: template
             };
             return directive;
             function link(scope, element, attrs) {

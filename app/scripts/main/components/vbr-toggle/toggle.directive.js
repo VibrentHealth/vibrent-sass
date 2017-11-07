@@ -1,4 +1,5 @@
 import module from '../../styleguide.module';
+import template from './toggle.html';
 
 module.directive('vbrToggle',
     function(TEMPLATES) {
@@ -20,7 +21,7 @@ module.directive('vbrToggle',
                 inputId: '@?id',
                 label: '@?'
             },
-            templateUrl:TEMPLATES+'/vbr-toggle/toggle.html'
+            template: template
         };
         return directive;
         function link(scope, element, attrs) {

@@ -1,8 +1,9 @@
 import angular from 'angular';
 import module from '../../styleguide.module';
+import template from './radio-button.html';
 
 module.directive('vbrRadio',
-    function(TEMPLATES) {
+    function() {
         const directive = {
             bindToController: true,
             controller: RadioCtrl,
@@ -17,7 +18,7 @@ module.directive('vbrRadio',
                 vertical: '=?', //horizontal is default, pass in true for vertical
                 change: '&?'
             },
-            templateUrl:TEMPLATES+'/vbr-radio/radio-button.html'
+            template: template
         };
         return directive;
         function link(scope, element, attrs) {

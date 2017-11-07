@@ -3,6 +3,7 @@
  */
 
 import module from '../../styleguide.module';
+import template from './dropdownOptions.html';
 
 module.directive('vbrDropdownOptions',
 
@@ -23,7 +24,7 @@ module.directive('vbrDropdownOptions',
                 disabled: '=',
                 changeWrapper: '&'
             },
-            templateUrl: TEMPLATES + '/vbr-dropdown/dropdownOptions.html'
+            template: template
         };
         return directive;
 

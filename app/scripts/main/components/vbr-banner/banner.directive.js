@@ -2,6 +2,7 @@
  * Created by jpierce on 5/15/17.
  */
 import module from '../../styleguide.module';
+import template from './banner.html';
 
 module.directive('vbrBanner',
     function (TEMPLATES) {
@@ -14,7 +15,7 @@ module.directive('vbrBanner',
             scope: {
                 name: '@'
             },
-            templateUrl: TEMPLATES + '/vbr-banner/banner.html'
+            template: template
         };
 
         function link (scope, element, attrs) {

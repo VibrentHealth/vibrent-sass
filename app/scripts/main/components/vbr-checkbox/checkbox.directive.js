@@ -4,6 +4,7 @@
 
 import module from '../../styleguide.module';
 import angular from 'angular';
+import template from './checkbox.html';
 
 module.directive('vbrCheckbox',
     function(TEMPLATES) {
@@ -21,7 +22,7 @@ module.directive('vbrCheckbox',
                 vertical: '=?', //horizontal is default, pass in true for vertical
                 change: '&?'
             },
-            templateUrl:TEMPLATES+'/vbr-checkbox/checkbox.html'
+            template: template
         };
         return directive;
         function link(scope, element, attrs) {

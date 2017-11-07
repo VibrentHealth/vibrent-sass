@@ -3,6 +3,7 @@
  */
 
 import module from '../../styleguide.module';
+import template from './photoUploader.html';
 
 module
     .directive('vbrPhotoUploader',
@@ -27,7 +28,7 @@ module
                     label: '@?',
                     default: '=?defaultImageUrl'
                 },
-                templateUrl: TEMPLATES + '/vbr-photo-uploader/photoUploader.html'
+                template: template
             };
             return directive;
 

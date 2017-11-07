@@ -4,6 +4,7 @@
 
 import angular from 'angular';
 import module from '../../styleguide.module';
+import template from './dropdown.html';
 
 module.directive('vbrDropdown',
 
@@ -30,7 +31,7 @@ module.directive('vbrDropdown',
                 label: '@?',
                 placeholder: '@?'
             },
-            templateUrl: TEMPLATES + '/vbr-dropdown/dropdown.html'
+            template: template
         };
         return directive;
 
