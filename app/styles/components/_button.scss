@@ -1,6 +1,8 @@
+$btn-font-weight: 100;
 
 %button-default{
     @include border-radius($base-border-radius);
+
     height: $button-default-height;
     font-size: $button-default-font-size;
     padding: 0 $button-default-hz-padding;
@@ -46,21 +48,11 @@ category: components/buttons
 .vbr-btn{
     @extend %button-default;
     @include primary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color, $button-disabled-bg-color);
-
-    &.btn-info {
-        @include primary-button-style(colors("white"), $button-info-color, darken($button-info-color, 10%), darken($button-info-color, 20%), $button-disabled-color, $button-disabled-bg-color);
-    }
-    &.btn-success {
-        @include primary-button-style(colors("white"), $button-success-color, darken($button-success-color, 10%), darken($button-success-color, 20%), $button-disabled-color, $button-disabled-bg-color);
-    }
-    &.btn-warning {
-        @include primary-button-style(colors("white"), $button-warning-color, darken($button-warning-color, 10%), darken($button-warning-color, 20%), $button-disabled-color, $button-disabled-bg-color);
-    }
-    &.btn-danger {
-        @include primary-button-style(colors("white"), $button-danger-color, darken($button-danger-color, 10%), darken($button-danger-color, 20%), $button-disabled-color, $button-disabled-bg-color);
-    }
 }
 
+.vbr-btn-shadow{
+    box-shadow: 0px 2px 4px 3px rgba(0,0,0,.1);
+}
 
 /*
 ---
@@ -92,19 +84,6 @@ category: components/buttons
 .vbr-btn-clear{
     @extend %button-default;
     @include secondary-button-style($default-bg-color, $button-default-color, $button-hover-color, $button-clicked-color, $button-disabled-color);
-
-    &.btn-info {
-        @include secondary-button-style($default-bg-color, $button-info-color, darken($button-info-color, 10%), darken($button-info-color, 20%), $button-disabled-color);
-    }
-    &.btn-success {
-        @include secondary-button-style($default-bg-color, $button-success-color, darken($button-success-color, 10%), darken($button-success-color, 20%), $button-disabled-color);
-    }
-    &.btn-warning {
-        @include secondary-button-style($default-bg-color, $button-warning-color, darken($button-warning-color, 10%), darken($button-warning-color, 20%), $button-disabled-color);
-    }
-    &.btn-danger {
-        @include secondary-button-style($default-bg-color, $button-danger-color, darken($button-danger-color, 10%), darken($button-danger-color, 20%), $button-disabled-color);
-    }
 }
 
 /*

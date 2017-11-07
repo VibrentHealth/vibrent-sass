@@ -6,6 +6,7 @@
 
 
 // COLORS
+/*
 $colors: (
     "black":                      #333,
     "charcoal":                   #666,
@@ -44,11 +45,30 @@ $colors: (
 
     "grass":                      #7BB51F,
     "orange":                     #F98506,
-    "candy-red":                  #E63900,
+
     "grape":                      #8C2580,
 
     "highlight-red":              #F4E0DC,
     "success":                    #5DA31F
+);
+*/
+
+$colors: (
+    "grey": #fbfbfb,
+    "black": #131313,
+    "mid-grey": #e6e6e6,
+    "border": #bfbfbf,
+    "concrete": #F3F3F3,
+    "dark-grey": #f3eff0,
+    "white": #ffffff,
+    "blue": #0297db,
+    "dark-blue": #262260,
+    "rock-blue": #a0b7cd,
+    "baby-blue": #6CABE3,
+    "light-blue": #ebf4fc,
+
+
+    "candy-red":                  #E63900,
 );
 
 @function color($name) {
@@ -74,7 +94,7 @@ $border-width-base:                         1px !default;
 $border-width-thin:                         0.5px !default;
 $border-width-thick:                        2px !default;
 
-$base-border-radius:                        3px !default;
+$base-border-radius:                        30px !default;
 $large-border-radius:                       5px !default;
 $small-border-radius:                       1px !default;
 
@@ -118,16 +138,16 @@ $error-font-color:                          color("candy-red") !default;
 
 // BACKGROUNDS
 
-$default-bg-color:                          color("white") !default;
-$mobile-nav-bg-color:                       color("pastel-light") !default;
-$error-bg-color:                            color("highlight-red") !default;
+$default-bg-color:                          color("concrete") !default;
+$mobile-nav-bg-color:                       color("concrete") !default;
+$error-bg-color:                            color("candy-red") !default;
 
 // BUTTONS
-
-$button-default-color:                      color("vibrent-blue") !default;
-$button-hover-color:                        color("vibrent-dark-blue") !default;
+$button-border-color: #086e9e;
+$button-default-color:                      color("blue") !default;
+$button-hover-color:                        color("dark-blue") !default;
 $button-clicked-color:                      color("navy") !default;
-$button-disabled-bg-color:                  color("line-color") !default;
+$button-disabled-bg-color:                  color("border") !default;
 $button-disabled-color:                     color("grey") !default;
 
 // Alternate button colors

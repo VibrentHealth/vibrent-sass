@@ -114,7 +114,7 @@
 // --------------------------------------------------
 
 @mixin primary-button-style($text-color, $normal-color, $hover-color, $clicked-color, $disabled-text-color, $disabled-color) {
-  border-color: $normal-color;
+  border-color: $button-border-color;
   background-color: $normal-color;
   color: $text-color;
   &:focus{

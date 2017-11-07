@@ -4,40 +4,8 @@
 <div class="vbr-avatar">
     <img src="http://mhalabs.org/wp-content/uploads/upme/1451456913_brodie.jpg" />
 </div>
-<div ng-controller="ExampleController as ex">
-    <form name="someForm">
-        <vbr-input
-            id="someName"
-            form="someForm"
-            type="email"
-            label="label"
-            placeholder="placeholder"
-            ng-model="ex.someModel"
-            ng-required="false"
-            ng-change="ex.someFunction()"
-            ng-minlength="3"
-            ng-maxlength="8"
-            ng-trim="true"
-            ng-disabled="ex.disabled"
-            validations="ex.someValidations"
-            tooltip="ex.tooltipTesting">
-        </vbr-input>
-        <div style="display: inline-flex;">
-            <vbr-photo-uploader
-                id="somePhoto"
-                form="someForm"
-                label="change"
-                ng-model="ex.somePhotoModel"
-                ng-required="true"
-                ng-change="ex.someFunction()"
-                ng-disabled="ex.disabled"
-                validations="ex.photoValidations"
-                tooltip="ex.tooltipTesting">
-            </vbr-photo-uploader>
-            <button type="submit" class="vbr-btn">test</button>
-        </div>
-    </form>
-</div>
+<button class="vbr-btn">default</button>
+<button class="vbr-btn vbr-btn-shadow">default</button>
 
 </body>
 </html>
