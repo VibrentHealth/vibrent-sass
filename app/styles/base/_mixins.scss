@@ -132,7 +132,7 @@
     color: $text-color;
   }
   &:disabled{
-    border-color: $disabled-color;
+    border-color: $disabled-text-color;
     background-color: $disabled-color;
     color: $disabled-text-color;
   }

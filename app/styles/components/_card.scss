@@ -1,7 +1,7 @@
 .card{
-    background: color('white');
-    border: 1px solid color('line-color');
-    border-radius: 1px;
+    background: color('grey');
+    border: 1px solid color('border');
+    border-radius: calculateRem(8px);
     padding: calculateRem(20px);
 }
 

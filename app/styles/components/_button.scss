@@ -4,6 +4,7 @@ $btn-font-weight: 100;
     @include border-radius($base-border-radius);
 
     height: $button-default-height;
+    font-family: "OpenSans-Light";
     font-size: $button-default-font-size;
     padding: 0 $button-default-hz-padding;
     display: inline-block;
@@ -15,6 +16,7 @@ $btn-font-weight: 100;
     cursor: pointer;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     border: 1px solid transparent;
+    text-transform: uppercase;
     white-space: nowrap;
 }
 

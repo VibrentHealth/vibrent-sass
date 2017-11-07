@@ -62,6 +62,7 @@ $colors: (
     "dark-grey": #f3eff0,
     "white": #ffffff,
     "blue": #0297db,
+    "disabled": #ededed,
     "dark-blue": #262260,
     "rock-blue": #a0b7cd,
     "baby-blue": #6CABE3,
@@ -147,8 +148,8 @@ $button-border-color: #086e9e;
 $button-default-color:                      color("blue") !default;
 $button-hover-color:                        color("dark-blue") !default;
 $button-clicked-color:                      color("navy") !default;
-$button-disabled-bg-color:                  color("border") !default;
-$button-disabled-color:                     color("grey") !default;
+$button-disabled-bg-color:                  color("disabled") !default;
+$button-disabled-color:                     color("border") !default;
 
 // Alternate button colors
 $button-info-color:                         color("button-info-color");
@@ -163,7 +164,7 @@ $button-large-height:                       46px !default;
 $button-small-height:                       30px !default;
 $button-mini-height:                        22px !default;
 
-$button-default-font-size:                  16px !default;
+$button-default-font-size:                  12px !default;
 $button-large-font-size:                    20px !default;
 $button-small-font-size:                    14px !default;
 $button-mini-font-size:                     11px !default;
