@@ -3,7 +3,6 @@
  */
 
 import angular from 'angular';
-import styles from '../../styles/main.scss';
 
 let module = angular.module('vbr-style-guide',
     [
