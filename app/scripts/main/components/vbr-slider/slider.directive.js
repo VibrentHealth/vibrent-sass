@@ -15,12 +15,12 @@ module.directive('vbrSlider',
             restrict: 'E',
             transclude: {
                 slides: 'slides',
-                pagination: 'pagination'
+                paginationslot: 'paginationslot'
             },
             scope:{
                 ngModel: '=?'
             },
-            templateUrl: template
+            template: template
         };
         return directive;
         function link(scope, element, attrs) {

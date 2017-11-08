@@ -13,7 +13,8 @@ module.directive('vbrPagination',
             link: link,
             restrict: 'E',
             scope:{
-                ngModel: '=?'
+                maxPage: '@',
+                minPage: '@'
             },
             template: template
         };
@@ -28,17 +29,31 @@ function PaginationCtrl($scope) {
 
     let vm = this;
 
+    console.log(vm);
+
     vm.page = 0;
 
     vm.inc = function(){
-        vm.page++;
-        $scope.$emit("INCREMENT_PAGE",vm.page);
+        if(vm.page+1 <= vm.maxPage) {
+            vm.page++;
+            $scope.$emit("INCREMENT_PAGE", vm.page);
+        }
     };
 
     vm.dec = function(){
-        vm.page--;
-        $scope.$emit("DECREMENT_PAGE",vm.page);
+        if(vm.page-1 >= vm.minPage) {
+            vm.page--;
+            $scope.$emit("DECREMENT_PAGE", vm.page);
+        }
     };
+
+    $scope.$on("INCREMENT_PAGE",function(e,data){
+        console.log(e);
+    });
+
+    $scope.$on("DECREMENT_PAGE",function(e,data){
+        console.log(e);
+    });
 }
 
 

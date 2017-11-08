@@ -40,14 +40,12 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-safari-launcher": "^1.0.0",
     "lodash": "4.12.0",
-    "main-bower-files": "^2.13.1",
     "mocha": "^3.3.0",
     "mochawesome": "^2.1.0",
     "mochawesome-screenshots": "^1.5.2",
     "ng-annotate-loader": "^0.6.1",
     "ng-annotate-webpack-plugin": "^0.2.1-pre",
     "node-sass": "^4.6.0",
-    "pump": "^1.0.2",
     "sass-loader": "^4.0.0",
     "streamqueue": "0.1.0",
     "style-loader": "^0.13.1",
@@ -63,11 +61,11 @@
     "webpack-dev-server": "^2.4.5",
     "webpack-glob-entries": "^1.0.1",
     "webpack-md5-hash": "^0.0.5",
-    "webpack-stream": "^3.1.0",
-    "wiredep": "1.7.0"
+    "webpack-stream": "^3.1.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.babel.js --port 5001 --inline --hot"
+    "start": "webpack-dev-server --config webpack.config.dev.babel.js --port 5001 --inline --hot",
+    "build": "webpack --config webpack.config.dev.babel.js --progress"
   },
   "engines": {
     "node": ">=0.10.0"
