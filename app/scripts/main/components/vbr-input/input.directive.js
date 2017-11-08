@@ -8,7 +8,7 @@ import template from './input.html';
 const vbrInput =  module
     .directive('vbrInput',
 
-        function (TEMPLATES) {
+        function () {
             const directive = {
                 bindToController: true,
                 controller: ["$scope", InputCtrl],
