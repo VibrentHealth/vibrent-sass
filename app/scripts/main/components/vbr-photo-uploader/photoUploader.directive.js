@@ -5,7 +5,7 @@
 import module from '../../styleguide.module';
 import template from './photoUploader.html';
 
-module
+const vbrPhotoUploader =  module
     .directive('vbrPhotoUploader',
 
         function (TEMPLATES) {
@@ -59,3 +59,5 @@ function PhotoUploaderCtrl() {
     };
 
 }
+
+export default vbrPhotoUploader;

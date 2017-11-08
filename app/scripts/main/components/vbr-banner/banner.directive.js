@@ -4,7 +4,7 @@
 import module from '../../styleguide.module';
 import template from './banner.html';
 
-module.directive('vbrBanner',
+const vbrBanner = module.directive('vbrBanner',
     function (TEMPLATES) {
         return {
             bindToController: true,
@@ -167,3 +167,5 @@ function BannerCtrl ($sce, $timeout, BannerService, $compile) {
     }
 
 }
+
+export default vbrBanner;

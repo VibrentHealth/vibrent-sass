@@ -6,7 +6,7 @@ import angular from 'angular';
 import module from '../../styleguide.module';
 import template from './dropdown.html';
 
-module.directive('vbrDropdown',
+const vbrDropdown = module.directive('vbrDropdown',
 
     function (TEMPLATES) {
         const directive = {
@@ -70,3 +70,5 @@ function DropdownCtrl($document, $timeout) {
         return  (vm.change || angular.noop)();
     };
 }
+
+export default vbrDropdown;

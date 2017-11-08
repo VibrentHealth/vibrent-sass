@@ -6,7 +6,7 @@ import module from '../../styleguide.module';
 import angular from 'angular';
 import template from './checkbox.html';
 
-module.directive('vbrCheckbox',
+const vbrCheckbox =  module.directive('vbrCheckbox',
     function(TEMPLATES) {
         const directive = {
             bindToController: true,
@@ -57,4 +57,4 @@ module.directive('vbrCheckbox',
     }
 
 
-
+export default vbrCheckbox;

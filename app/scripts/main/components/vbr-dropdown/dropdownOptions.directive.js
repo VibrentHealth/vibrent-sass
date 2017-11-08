@@ -5,7 +5,7 @@
 import module from '../../styleguide.module';
 import template from './dropdownOptions.html';
 
-module.directive('vbrDropdownOptions',
+const vbrDropdownOptions = module.directive('vbrDropdownOptions',
 
     function (TEMPLATES) {
         const directive = {
@@ -46,3 +46,5 @@ function DropdownOptionsCtrl($document, $timeout) {
     };
 
 }
+
+export default vbrDropdownOptions;

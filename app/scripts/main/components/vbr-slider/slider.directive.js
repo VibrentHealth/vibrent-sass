@@ -5,7 +5,7 @@ import module from '../../styleguide.module';
 import template from './slider.html';
 
 
-module.directive('vbrSlider',
+const vbrSlider = module.directive('vbrSlider',
     function(TEMPLATES) {
         let directive = {
             bindToController: true,
@@ -59,4 +59,6 @@ function SliderCtrl($scope) {
 
     }
 }
+
+export default vbrSlider;
 

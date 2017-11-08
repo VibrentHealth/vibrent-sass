@@ -1,7 +1,7 @@
 import module from '../../styleguide.module';
 import template from './toggle.html';
 
-module.directive('vbrToggle',
+const vbrToggle = module.directive('vbrToggle',
     function(TEMPLATES) {
         const directive = {
             bindToController: true,
@@ -36,3 +36,5 @@ function ToggleCtrl() {
     var tc = this;
 
 }
+
+export default vbrToggle;

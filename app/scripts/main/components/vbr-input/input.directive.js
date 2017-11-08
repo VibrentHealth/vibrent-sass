@@ -5,7 +5,7 @@
 import module from '../../styleguide.module';
 import template from './input.html';
 
-module
+const vbrInput =  module
     .directive('vbrInput',
 
         function (TEMPLATES) {
@@ -84,3 +84,5 @@ function InputCtrl($scope) {
     }
 
 }
+
+export default vbrInput;

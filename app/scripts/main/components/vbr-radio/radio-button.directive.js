@@ -2,7 +2,7 @@ import angular from 'angular';
 import module from '../../styleguide.module';
 import template from './radio-button.html';
 
-module.directive('vbrRadio',
+const vbrRadio = module.directive('vbrRadio',
     function() {
         const directive = {
             bindToController: true,
@@ -45,3 +45,4 @@ function RadioCtrl() {
 
 }
 
+export default vbrRadio;

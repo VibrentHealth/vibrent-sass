@@ -4,7 +4,7 @@
 import module from '../../styleguide.module';
 import template from './pagination.html';
 
-module.directive('vbrPagination',
+const vbrPagination = module.directive('vbrPagination',
     function(TEMPLATES) {
         let directive = {
             bindToController: true,
@@ -58,3 +58,4 @@ function PaginationCtrl($scope) {
 
 
 
+export default vbrPagination;
