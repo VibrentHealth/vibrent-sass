@@ -3,11 +3,11 @@
  */
 
 import module from './styleguide.module';
-
+import BannerService from "./components/vbr-banner/banner.service";
 
 module.controller('ExampleController',
 
-    function ExampleController(BannerService) {
+    function ExampleController() {
 
         let ex = this;
 

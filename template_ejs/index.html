@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="vbr-style-guide">
-<body>
+<body ng-controller="ExampleController as ex">
 <div class="vbr-avatar">
     <img src="http://mhalabs.org/wp-content/uploads/upme/1451456913_brodie.jpg" />
 </div>
@@ -16,7 +16,27 @@
 
 
 <h1>Input</h1>
-
+<form name="someForm">
+    <vbr-input
+        id="someName"
+        form="someForm"
+        type="email"
+        label="label"
+        placeholder="placeholder"
+        ng-model="ex.someModel"
+        ng-required="false"
+        ng-blur="ex.alert()"
+        change="ex.someFunction()"
+        ng-minlength="3"
+        ng-maxlength="8"
+        ng-pattern="somePattern"
+        match="someString"
+        ng-trim="true"
+        ng-disabled="ex.disabled"
+        validations="ex.someValidations"
+        tooltip="ex.tooltipTesting">
+    </vbr-input>
+</form>
 
 
 <h1>Slider</h1>
@@ -25,7 +45,7 @@
         transition: .5s;
     }
 </style>
-<vbr-slider>
+    <vbr-slider>
     <paginationslot>
         <vbr-pagination max-page="4" min-page="0"></vbr-pagination>
     </paginationslot>
