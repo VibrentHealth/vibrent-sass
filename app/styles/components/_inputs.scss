@@ -132,7 +132,6 @@ The Dropdown has the following properties that can be configured during initiali
         background-color: $input-error-message-bg-color;
         border-radius: $large-border-radius;
         position: relative;
-        top: ($input-default-border-vertical-padding*3 + $input-default-label-font-size*2 + $content-padding + 2px);
         width: 100%;
         padding: $content-padding/2 $content-padding;
         margin-bottom: 5px;
