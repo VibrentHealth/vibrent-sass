@@ -1,32 +1,31 @@
 /**
  * Created by kylemills on 7/27/17.
  */
-import angular from 'angular';
-(function () {
-    "use strict";
-    angular.module('vbr-style-guide')
-        .directive('initBind', function($compile) {
-            return {
-                restrict: 'A',
-                link : function (scope, element, attr) {
+import module from './styleguide.module';
 
-                    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
 
-                    var observer = new MutationObserver(function(mutations) {
-                        mutations.forEach(function(mutation) {
-                                var mutated_values = [].slice.call(element[0].children)
-                                    .map( function(node) { return node; });
-                            $compile(mutated_values[0])(scope.$parent);
-                        });
-                    });
+module.directive('initBind', function($compile) {
+    return {
+        restrict: 'A',
+        link : function (scope, element, attr) {
 
-                    observer.observe(element[0], {
-                        attributes: true,
-                        childList: true,
-                        characterData: true
-                    });
+            var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
 
-                }
-            };
-        });
-})();
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    var mutated_values = [].slice.call(element[0].children)
+                        .map( function(node) { return node; });
+                    $compile(mutated_values[0])(scope.$parent);
+                });
+            });
+
+            observer.observe(element[0], {
+                attributes: true,
+                childList: true,
+                characterData: true
+            });
+
+        }
+    };
+});
+
