@@ -3,9 +3,10 @@
  */
 import module from '../../styleguide.module';
 import template from './banner.html';
+import BannerService from './banner.service';
 
 const vbrBanner = module.directive('vbrBanner',
-    function (TEMPLATES) {
+    function () {
         return {
             bindToController: true,
             controller: BannerCtrl,
@@ -23,7 +24,7 @@ const vbrBanner = module.directive('vbrBanner',
         }
     });
 
-function BannerCtrl ($sce, $timeout, BannerService, $compile) {
+function BannerCtrl ($sce, $timeout, $compile) {
     let vm = this;
 
     /* A List of classes that is piped to ng-class directive */
