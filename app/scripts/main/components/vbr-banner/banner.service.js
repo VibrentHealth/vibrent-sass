@@ -3,7 +3,7 @@
  */
 
 
-export default function BannerService(){
+function BannerService(){
 
     let vm = this;
 
@@ -37,5 +37,10 @@ export default function BannerService(){
     vm.getKeys = function () {
         return Object.keys(vm.data);
     };
+};
 
-}
+const BannerInstance = (function () {
+    return new BannerService();
+})();
+
+export default BannerInstance;
