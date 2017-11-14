@@ -14,7 +14,7 @@ const vbrBanner = module.directive('vbrBanner',
             restrict: 'AE',
             link: link,
             scope: {
-                name: '@'
+                "bannerName": '@'
             },
             template: template
         };
@@ -24,14 +24,41 @@ const vbrBanner = module.directive('vbrBanner',
         }
     });
 
-function BannerCtrl ($sce, $timeout, $compile) {
-    let vm = this;
+function BannerCtrl ($scope, $sce, $timeout, $compile) {
+
+    var vm = this;
+
+    $scope.$watch('vm',function(o,n){
+        BannerService.listen(vm.bannerName, function (data) {
+
+            /* Check for updates to all properties */
+
+            MessageUpdate(data);
+
+            IconUpdate(data);
+
+            /* checks both hidden and visible */
+            Callbacks(data);
+
+            TypeUpdate(data);
+
+            VisibilityDurationUpdates(data);
+
+            VisibilityUpdates(data);
+
+            CSSUpdates(data);
+
+            canClose(data);
+
+        });
+    });
 
     /* A List of classes that is piped to ng-class directive */
     vm.cssClassList = "";
     vm.type = "success";
     vm.visibilityDuration = 2000;
     vm.observers = BannerService;
+
     vm.canClose = false;
 
     /* default callbacks */
@@ -42,41 +69,17 @@ function BannerCtrl ($sce, $timeout, $compile) {
         return true;
     };
 
-    /* name must be unique - enforce this */
-    isNameUnique(vm.name);
-
     /* expose close function to x icon on DOM */
     vm.close = function () {
         vm.visible = false;
         vm.hiddenCallback();
     };
 
-    init();
+
 
     /* listen for changes and react to them */
 
-    vm.observers.listen(vm.name,function (data) {
-
-        /* Check for updates to all properties */
-
-        MessageUpdate(data);
-
-        IconUpdate(data);
-
-        /* checks both hidden and visible */
-        Callbacks(data);
-
-        TypeUpdate(data);
-
-        VisibilityDurationUpdates(data);
-
-        VisibilityUpdates(data);
-
-        CSSUpdates(data);
-
-        canClose(data);
-
-    });
+    console.log("listen" + vm.name);
 
     function canClose(data){
         if(data.hasOwnProperty('canClose')){
@@ -166,6 +169,8 @@ function BannerCtrl ($sce, $timeout, $compile) {
             vm.observers.set(vm.name,{});
         }
     }
+
+    init();
 
 }
 

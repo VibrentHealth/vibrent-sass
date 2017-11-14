@@ -5,6 +5,8 @@
 import module from './styleguide.module';
 import BannerService from "./components/vbr-banner/banner.service";
 
+
+
 module.controller('ExampleController',
 
     function ExampleController($scope) {
@@ -164,7 +166,6 @@ module.controller('ExampleController',
         };
 
         ex.showBanner = function (name) {
-            console.log('showing');
             var configurationObj = {
                 visible: true,
                 message: "<a ng-click='ex.alertfn()'>ALERT ME!</a>" + " " + name + " " + "clicked:",
@@ -181,6 +182,7 @@ module.controller('ExampleController',
                 cssClassList: ""
             };
             ex.clickNum++;
+            console.log("SETTING:" + name);
             BannerService.set(name,configurationObj);
         };
 
