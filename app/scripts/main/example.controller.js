@@ -7,7 +7,7 @@ import BannerService from "./components/vbr-banner/banner.service";
 
 module.controller('ExampleController',
 
-    function ExampleController() {
+    function ExampleController($scope) {
 
         let ex = this;
 
@@ -164,7 +164,7 @@ module.controller('ExampleController',
         };
 
         ex.showBanner = function (name) {
-
+            console.log('showing');
             var configurationObj = {
                 visible: true,
                 message: "<a ng-click='ex.alertfn()'>ALERT ME!</a>" + " " + name + " " + "clicked:",

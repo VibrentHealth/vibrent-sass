@@ -2,7 +2,8 @@
      id="vbr-banner-container"
      ng-class="[vm.cssClassList,vm.type]"
      ng-show="vm.visible"
-     role="alert">
+     role="alert"
+     aria-live="assertive">
         <div class="vbr-banner-content">
             <span class="icon-left" ng-class="vm.icon"></span>
             <div class="banner-html-message" ng-bind-html="vm.message" init-bind></div>
