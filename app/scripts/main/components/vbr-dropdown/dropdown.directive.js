@@ -8,7 +8,7 @@ import template from './dropdown.html';
 
 const vbrDropdown = module.directive('vbrDropdown',
 
-    function (TEMPLATES) {
+    function () {
         const directive = {
             bindToController: true,
             controller: DropdownCtrl,
