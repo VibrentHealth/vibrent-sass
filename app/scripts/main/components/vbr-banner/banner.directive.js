@@ -50,6 +50,7 @@ function BannerCtrl ($scope, $sce, $timeout, $compile) {
 
             canClose(data);
 
+            $scope.$digest();
         });
     });
 
@@ -75,12 +76,7 @@ function BannerCtrl ($scope, $sce, $timeout, $compile) {
         vm.hiddenCallback();
     };
 
-
-
     /* listen for changes and react to them */
-
-    console.log("listen" + vm.name);
-
     function canClose(data){
         if(data.hasOwnProperty('canClose')){
             vm.canClose = data.canClose;
