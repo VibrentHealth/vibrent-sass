@@ -5,6 +5,7 @@
     placeholder="{{vm.placeholder}}"
     ng-model="vm.ngModel"
     ng-required="vm.ngRequired"
+    aria-required="vm.ngRequired"
     ng-minlength="vm.ngMinlength"
     ng-maxlength="vm.ngMaxlength"
     ng-change="vm.change()"
@@ -17,12 +18,14 @@
     tooltip-trigger="'focus'"
     tooltip-class="vbr-tooltip"
     ng-focus="vm.focused()"
+    aria-label="{{vm.label}}"
     ng-blur="vm.blurred()"
 />
 
 <label
     ng-if="vm.label"
     for="{{vm.inputId}}"
+    value="{{vm.label}}"
     ng-class="{ disabled: vm.ngDisabled}">
     {{vm.label}}
 </label>
