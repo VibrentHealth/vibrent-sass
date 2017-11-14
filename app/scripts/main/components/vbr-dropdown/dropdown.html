@@ -31,6 +31,7 @@
         ng-class="{ active: vm.active }"
         ng-blur="vm.resetDownArrow()"
         data-attr-multiple="{{vm.multiple}}"
+        aria-label="{{vm.label}}"
         ng-size="{{vm.size}}">
         <option value="" ng-selected="vm.selectPlaceHolder" hidden>{{vm.placeholder}}</option>
         <option ng-repeat="option in vm.options" value="{{option.value}}">{{option.display}}</option>
