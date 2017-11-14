@@ -32,6 +32,7 @@
 
 <div class="input-error-message" role="alert"
      ng-if="vm.shouldShowErrors()"
+     aria-live="assertive"
      ng-hide="vm.ngDisabled"
      ng-messages="vm.form[vm.inputId].$error">
 
