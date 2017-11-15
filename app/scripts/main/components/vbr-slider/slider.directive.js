@@ -6,7 +6,7 @@ import template from './slider.html';
 
 
 const vbrSlider = module.directive('vbrSlider',
-    function(TEMPLATES) {
+    function() {
         let directive = {
             bindToController: true,
             controller: SliderCtrl,

@@ -5,7 +5,7 @@ import module from '../../styleguide.module';
 import template from './pagination.html';
 
 const vbrPagination = module.directive('vbrPagination',
-    function(TEMPLATES) {
+    function() {
         let directive = {
             bindToController: true,
             controller: PaginationCtrl,
