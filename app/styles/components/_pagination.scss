@@ -1,0 +1,78 @@
+.vbr-pagination {
+
+    display: flex;
+    padding: 1rem;
+    background: white;
+    button {
+        background: none;
+        border: none;
+        font-size: 0px;
+    };
+    .pagination-left-button {
+        transition: .5s;
+        cursor: pointer;
+        > svg {
+            height: 21px;
+            transform: rotate(180deg);
+            polygon {
+                fill: color('dark-grey') !important;
+            }
+        }
+        &:hover {
+            transform: scale(1.1);
+            > svg {
+                polygon {
+                    fill: color('dark-blue') !important;
+                }
+            }
+        }
+    };
+
+    .pagination-right-button {
+        transition: .5s;
+        cursor: pointer;
+        > svg {
+            height: 21px;
+            polygon {
+                fill: color('dark-grey') !important;
+            }
+        }
+        &:after {
+            transition: .5s;
+            font-size: 20px;
+            color: color('blue');
+            cursor: pointer;
+        };
+        &:hover {
+            transform: scale(1.1);
+            > svg {
+                polygon {
+                    fill: color('dark-blue') !important;
+                }
+            }
+        };
+    };
+
+    .pagination-pages-container {
+        font-size: initial;
+        > button {
+            transition: .25s;
+            padding: 0;
+            display: inline-block;
+            border-radius: 2rem;
+            border: 1px solid lavender;
+            background: color('light-blue');
+            width: calculateRem(12px);
+            height: calculateRem(12px);
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.2);
+                background: color('rock-blue');
+            }
+        }
+
+        button.active {
+
+        }
+    }
+};
