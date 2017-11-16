@@ -55,6 +55,8 @@
 
     .pagination-pages-container {
         font-size: initial;
+        white-space: nowrap;
+        cursor: default;
         > button {
             transition: .25s;
             padding: 0;
