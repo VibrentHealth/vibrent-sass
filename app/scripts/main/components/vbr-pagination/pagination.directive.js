@@ -47,13 +47,10 @@ function PaginationCtrl($scope) {
         }
     };
 
-    $scope.$on("INCREMENT_PAGE",function(e,data){
-        console.log(e);
+    $scope.$on("SET_PAGE", function (event, page) {
+        vm.page = page;
     });
 
-    $scope.$on("DECREMENT_PAGE",function(e,data){
-        console.log(e);
-    });
 }
 
 
