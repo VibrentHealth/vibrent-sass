@@ -32,6 +32,7 @@ function PaginationCtrl($scope) {
     console.log(vm);
 
     vm.page = 0;
+    vm.maxPage = vm.maxPage || Infinity;
 
     vm.inc = function(){
         if(vm.page+1 <= vm.maxPage) {
@@ -51,6 +52,9 @@ function PaginationCtrl($scope) {
         vm.page = page;
     });
 
+    $scope.$on("MAX_PAGE_REACHED", function (event, page) {
+        vm.maxPage = page;
+    });
 }
 
 

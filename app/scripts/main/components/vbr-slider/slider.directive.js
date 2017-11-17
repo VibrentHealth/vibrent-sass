@@ -24,9 +24,10 @@ const vbrSlider = module.directive('vbrSlider',
         };
         return directive;
         function link(scope, element, attrs) {
-          
+
             let parentElement = element[0].querySelector('slides');
             let localPage = 0;
+            let localMaxPage = Infinity;
             let DOMSlides = [].slice.call(element[0].querySelector('slides').children,1);
 
             scope.$on('INCREMENT_PAGE', handlePageChange);
@@ -37,7 +38,6 @@ const vbrSlider = module.directive('vbrSlider',
             let swipe = new Hammer.Swipe();
             manager.add(swipe);
 
-
             let deltaX = 0;
             let deltaY = 0;
 
@@ -46,7 +46,9 @@ const vbrSlider = module.directive('vbrSlider',
                 let direction = e.offsetDirection;
                 /* INC PAGE */
                 if(direction === 2) {
-                    scope.$broadcast('INCREMENT_PAGE', localPage + 1);
+                    if(localPage + 1 <= localMaxPage) {
+                        scope.$broadcast('INCREMENT_PAGE', localPage + 1);
+                    }
                 }
                 /* DEC PAGE */
                 if(direction === 4) {
@@ -57,7 +59,6 @@ const vbrSlider = module.directive('vbrSlider',
             }
 
             manager.on('swipe', handleSwipe);
-
             /* always keep local state the same */
             function setPage(page) {
                 localPage = page;
@@ -71,6 +72,7 @@ const vbrSlider = module.directive('vbrSlider',
                 }
 
                 let parentWidth = parentElement.clientWidth;
+              
                 let numCards = DOMSlides.length + 1;
                 /* get width of the new item */
                 let itemWidth = DOMSlides[0].clientWidth;
@@ -82,8 +84,8 @@ const vbrSlider = module.directive('vbrSlider',
                 let numPages = Math.ceil(numCards / itemsPerPage);
 
                 if(page >= numPages){
-                    scope.$broadcast('MAX_PAGE_REACHED');
-                    setPage(page);
+                    scope.$broadcast('MAX_PAGE_REACHED', page);
+                    localMaxPage = page;
                     return;
                 }
                 /* Calculate number of cards for parent width DEFAULT: 3*/
