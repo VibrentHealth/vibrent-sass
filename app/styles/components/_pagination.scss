@@ -3,11 +3,14 @@
     display: flex;
     padding: 1rem;
     background: white;
+    white-space: nowrap;
+
     button {
         background: none;
         border: none;
         font-size: 0px;
-    };
+    }
+
     .pagination-left-button {
         transition: .5s;
         cursor: pointer;
@@ -26,7 +29,7 @@
                 }
             }
         }
-    };
+    }
 
     .pagination-right-button {
         transition: .5s;
@@ -42,7 +45,7 @@
             font-size: 20px;
             color: color('blue');
             cursor: pointer;
-        };
+        }
         &:hover {
             transform: scale(1.1);
             > svg {
@@ -50,31 +53,22 @@
                     fill: color('dark-blue') !important;
                 }
             }
-        };
-    };
+        }
+    }
 
     .pagination-pages-container {
         font-size: initial;
         white-space: nowrap;
         cursor: default;
-        > button {
-            transition: .25s;
+        > div {
             padding: 0;
             display: inline-block;
-            border-radius: 2rem;
+            border-radius: 50%;
             border: 1px solid lavender;
             background: color('light-blue');
             width: calculateRem(12px);
             height: calculateRem(12px);
             cursor: pointer;
-            &:hover {
-                transform: scale(1.2);
-                background: color('rock-blue');
-            }
-        }
-
-        button.active {
-
         }
     }
-};
+}
