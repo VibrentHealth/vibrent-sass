@@ -55,6 +55,7 @@ function PaginationCtrl($scope) {
     $scope.$on("MAX_PAGE_REACHED", function (event, page) {
         vm.maxPage = page;
     });
+
 }
 
 

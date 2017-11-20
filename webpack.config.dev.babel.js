@@ -69,7 +69,7 @@ var config = module.exports = new WebpackConfig().extend('./webpack.config.commo
         }
     },
     entry : {
-        vendor: ['angular','angular-aria','angular-messages','angular-touch','angular-bootstrap','ng-file-upload'],
+        vendor: ['angular-aria','angular-messages','angular-touch','angular-bootstrap','ng-file-upload'],
         bundle: files
     },
   plugins: [

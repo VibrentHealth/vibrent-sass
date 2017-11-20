@@ -32,7 +32,7 @@ const vbrSlider = module.directive('vbrSlider',
 
             scope.$on('INCREMENT_PAGE', handlePageChange);
             scope.$on('DECREMENT_PAGE', handlePageChange);
-
+          
             /* Set up hammer to handle swipe events */
             let manager = new Hammer.Manager(parentElement);
             let swipe = new Hammer.Swipe();
@@ -59,6 +59,7 @@ const vbrSlider = module.directive('vbrSlider',
             }
 
             manager.on('swipe', handleSwipe);
+
             /* always keep local state the same */
             function setPage(page) {
                 localPage = page;
@@ -72,7 +73,6 @@ const vbrSlider = module.directive('vbrSlider',
                 }
 
                 let parentWidth = parentElement.clientWidth;
-              
                 let numCards = DOMSlides.length + 1;
                 /* get width of the new item */
                 let itemWidth = DOMSlides[0].clientWidth;
