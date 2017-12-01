@@ -3,11 +3,11 @@
  */
 
 
-import module from './styleguide.module';
+import app from './styleguide.module';
 
 
 
-module.controller('ColorController',
+app.controller('ColorController',
 ['$http',
 
     function ColorController($http) {

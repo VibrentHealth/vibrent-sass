@@ -2,10 +2,10 @@
  * Created by moustafabaiou on 5/22/17.
  */
 
-import module from '../../styleguide.module';
+import app from '../../styleguide.module';
 import template from './photoUploader.html';
 
-const vbrPhotoUploader =  module
+const vbrPhotoUploader =  app
     .directive('vbrPhotoUploader',
 
         function (TEMPLATES) {

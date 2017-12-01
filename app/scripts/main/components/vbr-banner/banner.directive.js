@@ -1,11 +1,11 @@
 /**
  * Created by jpierce on 5/15/17.
  */
-import module from '../../styleguide.module';
+import app from '../../styleguide.module';
 import template from './banner.html';
 import BannerService from './banner.service';
 
-const vbrBanner = module.directive('vbrBanner',
+const vbrBanner = app.directive('vbrBanner',
     function () {
         return {
             bindToController: true,

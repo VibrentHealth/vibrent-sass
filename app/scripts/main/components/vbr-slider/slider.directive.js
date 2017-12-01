@@ -1,11 +1,11 @@
 /**
  * Created by kylemills on 11/3/17.
  */
-import module from '../../styleguide.module';
+import app from '../../styleguide.module';
 import template from './slider.html';
 import Hammer from 'hammerjs';
 
-const vbrSlider = module.directive('vbrSlider',
+const vbrSlider = app.directive('vbrSlider',
     function() {
         let directive = {
             bindToController: true,
@@ -32,7 +32,7 @@ const vbrSlider = module.directive('vbrSlider',
 
             scope.$on('INCREMENT_PAGE', handlePageChange);
             scope.$on('DECREMENT_PAGE', handlePageChange);
-          
+
             /* Set up hammer to handle swipe events */
             let manager = new Hammer.Manager(parentElement);
             let swipe = new Hammer.Swipe();

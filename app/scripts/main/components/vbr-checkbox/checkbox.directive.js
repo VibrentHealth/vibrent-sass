@@ -2,11 +2,11 @@
  * Created by moustafabaiou on 3/16/17.
  */
 
-import module from '../../styleguide.module';
+import app from '../../styleguide.module';
 import angular from 'angular';
 import template from './checkbox.html';
 
-const vbrCheckbox =  module.directive('vbrCheckbox',
+const vbrCheckbox =  app.directive('vbrCheckbox',
     function(TEMPLATES) {
         const directive = {
             bindToController: true,

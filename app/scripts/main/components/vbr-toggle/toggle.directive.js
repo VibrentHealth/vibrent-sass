@@ -1,7 +1,7 @@
-import module from '../../styleguide.module';
+import app from '../../styleguide.module';
 import template from './toggle.html';
 
-const vbrToggle = module.directive('vbrToggle',
+const vbrToggle = app.directive('vbrToggle',
     function(TEMPLATES) {
         const directive = {
             bindToController: true,

@@ -3,10 +3,10 @@
  */
 
 import angular from 'angular';
-import module from '../../styleguide.module';
+import app from '../../styleguide.module';
 import template from './dropdown.html';
 
-const vbrDropdown = module.directive('vbrDropdown',
+const vbrDropdown = app.directive('vbrDropdown',
 
     function () {
         const directive = {

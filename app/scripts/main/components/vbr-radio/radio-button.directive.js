@@ -1,8 +1,8 @@
 import angular from 'angular';
-import module from '../../styleguide.module';
+import app from '../../styleguide.module';
 import template from './radio-button.html';
 
-const vbrRadio = module.directive('vbrRadio',
+const vbrRadio = app.directive('vbrRadio',
     function() {
         const directive = {
             bindToController: true,

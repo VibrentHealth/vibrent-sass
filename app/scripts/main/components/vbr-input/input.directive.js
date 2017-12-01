@@ -2,10 +2,10 @@
  * Created by moustafabaiou on 3/16/17.
  */
 
-import module from '../../styleguide.module';
+import app from '../../styleguide.module';
 import template from './input.html';
 
-const vbrInput =  module
+const vbrInput =  app
     .directive('vbrInput',
 
         function () {

@@ -1,10 +1,10 @@
 /**
  * Created by kylemills on 11/6/17.
  */
-import module from '../../styleguide.module';
+import app from '../../styleguide.module';
 import template from './pagination.html';
 
-const vbrPagination = module.directive('vbrPagination',
+const vbrPagination = app.directive('vbrPagination',
     function() {
         let directive = {
             bindToController: true,

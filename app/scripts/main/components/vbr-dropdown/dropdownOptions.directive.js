@@ -2,10 +2,10 @@
  * Created by moustafabaiou on 4/3/17.
  */
 
-import module from '../../styleguide.module';
+import app from '../../styleguide.module';
 import template from './dropdownOptions.html';
 
-const vbrDropdownOptions = module.directive('vbrDropdownOptions',
+const vbrDropdownOptions = app.directive('vbrDropdownOptions',
 
     function (TEMPLATES) {
         const directive = {

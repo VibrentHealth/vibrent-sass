@@ -1,10 +1,10 @@
 /**
  * Created by kylemills on 7/27/17.
  */
-import module from './styleguide.module';
+import app from './styleguide.module';
 
 
-module.directive('initBind', function($compile) {
+app.directive('initBind', function($compile) {
     return {
         restrict: 'A',
         link : function (scope, element, attr) {

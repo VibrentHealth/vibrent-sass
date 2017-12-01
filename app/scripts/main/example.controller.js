@@ -2,12 +2,12 @@
  * Created by moustafabaiou on 3/16/17.
  */
 
-import module from './styleguide.module';
+import app from './styleguide.module';
 import BannerService from "./components/vbr-banner/banner.service";
 
 
 
-module.controller('ExampleController',
+app.controller('ExampleController',
 
     function ExampleController($scope) {
 
