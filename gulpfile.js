@@ -34,7 +34,7 @@ gulp.task('scripts', function () {
         }))
         .pipe(gulp.dest('app/scripts/main'));
 
-    return gulp.src(['app/scripts/main/**/*.module.js', 'app/scripts/main/**/*.js'])
+    return gulp.src(['app/scripts/main/**/*.module.js', 'app/scripts/main/**/*.js', '!app/scripts/**/*.spec.js'])
         .pipe($.jshint())
         .pipe($.ngAnnotate({
             remove: true,
