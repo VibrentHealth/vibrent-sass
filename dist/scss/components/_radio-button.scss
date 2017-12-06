@@ -1,0 +1,50 @@
+/*
+---
+name: Radio Button
+category: components/radio-button
+---
+
+!![](./radio_button_example.html)
+ */
+.vbr-radio, vbr-radio {
+    font-family: $radio-font;
+    .vbr-radio-group{
+        @include display-inline-flex();
+        &.vertical {
+            @include display-flex();
+        }
+        margin: $content-padding;
+        .radio-button{
+            color: $radio-default-font-color;
+            font-size: $radio-default-label-font-size;
+            &:focus{
+                outline: $radio-focused-border-color $radio-focused-border-width $radio-focused-border-style !important;
+            }
+            input[type="radio"]{
+                display: none !important;
+            }
+            span{
+                display: inline-block;
+                vertical-align: middle;
+                height: $radio-default-height;
+                width: $radio-default-width;
+                background-image: $radio-unselected-url;
+            }
+            &.checked{
+                span{
+                    background-image: $radio-selected-url;
+                }
+            }
+            &.disabled{
+                color: $radio-disabled-font-color;
+                cursor: not-allowed;
+                span{
+                    background-image: $radio-disabled-url;
+                }
+            }
+
+        }
+    }
+}
+
+

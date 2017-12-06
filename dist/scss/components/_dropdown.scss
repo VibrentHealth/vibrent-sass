@@ -1,0 +1,119 @@
+/*
+---
+name: dropdown
+category: components/dropdown
+---
+
+
+The Dropdown is initialized via the DOM.
+
+```
+<vbr-dropdown
+                custom-select="true"
+                id="select-1"
+                class="vbr-select"
+                ng-model="ex.dropdownModel"
+                label="label"
+                placeholder="placeholder"
+                ng-required="false"
+                change="ex.someFunction()"
+                options="ex.dropdownOptions"
+                ng-disabled="ex.disabledDropdown"
+
+</vbr-checkbox>
+```
+
+The Dropdown has the following properties that can be configured during initialization.
+
+---
+
+`id` - *String* - An HTML ID to be associated with the input
+
+`class` - *String* - Any number of CSS classes
+
+`custom-select` - *Boolean* - A boolean representing whether or not custom-select mode is enabled. Custom-Select enables a custom list to be injected into the component.
+
+`options` - *Array* - An array of options objects   {display: *String*, value: *String*}, ex: `{display: 'option 1', value: 1}`
+
+`ng-disabled` - *Boolean* - A Boolean representing whether or not the input is disabled
+
+`label` - *String* - Label associated with input
+
+`change` - *Function* - A function to be called when the dropdown changes state
+
+`ng-required` - *Boolean* - A boolean representing whether or not the dropdown is a required input.
+
+
+
+!![](./dropdown_example.html)
+ */
+
+.vbr-select{
+    margin: $content-padding;
+    margin-top: 0;
+    position: relative;
+    font-family: $select-font;
+    @include display-flex;
+    background-color: $select-options-bg-color;
+    .selector,select{
+        font-size: $select-default-font-size;
+        color: $select-default-font-color;
+        @include border-radius(0);
+        border: 0;
+        @include vbr-bottom-border($select-default-border-color, $select-default-border-style, $select-default-border-width);
+        padding-bottom: $select-default-border-vertical-padding;
+        //for styling select arrow
+        @include hideSelectToggle;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjY1IDYuODQiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMDA5OGRiO308L3N0eWxlPjwvZGVmcz48dGl0bGU+ZHJvcGRvd248L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJiYWNrZ3JvdW5kIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00LjgyLDYuODQuMS43NEEuNTMuNTMsMCwwLDEsLjEuMTNhLjI5LjI5LDAsMCwxLC40OCwwTDQuODIsNS42MSw5LjA3LjEzYS4yOS4yOSwwLDAsMSwuNDgsMCwuNTMuNTMsMCwwLDEsMCwuNjJaIi8+PC9nPjwvZz48L3N2Zz4=);
+        background-repeat:no-repeat;
+        background-size: 12px 12px;
+        background-position: 95% 40%;
+        min-width: 100px;
+        span{
+            padding: $content-padding/3;
+        }
+        //to style placeholder
+        &.ng-empty{
+            color: $select-default-placeholder-color;
+        }
+        .options-box{
+            position: absolute;
+            display: block;
+            top: 100%;
+            width: 100%;
+            background-color: $select-options-bg-color;
+            border-color: $select-options-border-color;
+            border-width: $select-options-border-width;
+            border-style: $select-options-border-style;
+            font-family: $select-options-font;
+            color: $select-options-font-color;
+            span{
+                display: block;
+                &:hover{
+                    background-color: $select-options-hover-bg-color;
+                    color: $select-options-hover-font-color
+                }
+            }
+        }
+        &:disabled, &.disabled{
+            color: $select-disabled-font-color;
+            border-bottom-style: $select-disabled-border-style;
+            border-bottom-color: $select-disabled-border-color;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjY1IDYuODQiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojY2NjY2NjO308L3N0eWxlPjwvZGVmcz48dGl0bGU+ZHJvcGRvd24tZGlzYWJsZWQ8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJiYWNrZ3JvdW5kIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00LjgyLDYuODQuMS43NEEuNTMuNTMsMCwwLDEsLjEuMTNhLjI5LjI5LDAsMCwxLC40OCwwTDQuODIsNS42MSw5LjA3LjEzYS4yOS4yOSwwLDAsMSwuNDgsMCwuNTMuNTMsMCwwLDEsMCwuNjJaIi8+PC9nPjwvZz48L3N2Zz4=);
+        }
+        &:active:not(.disabled), &.active:not(.disabled){
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjY1IDYuODQiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMGM0NzZiO308L3N0eWxlPjwvZGVmcz48dGl0bGU+ZHJvcGRvd24tY2xvc2U8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJiYWNrZ3JvdW5kIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00LjgyLDAsLjEsNi4xYS41My41MywwLDAsMCwwLC42Mi4yOS4yOSwwLDAsMCwuNDgsMEw0LjgyLDEuMjMsOS4wNyw2LjcyYS4yOS4yOSwwLDAsMCwuNDgsMCwuNTMuNTMsMCwwLDAsMC0uNjJaIi8+PC9nPjwvZz48L3N2Zz4=);
+        }
+    }
+
+    .label,label{
+        position: absolute;
+        bottom: - ($select-default-border-vertical-padding*3 +2px);
+        margin: $select-default-border-vertical-padding 0;
+        font-size: $select-default-label-font-size;
+        color: $select-default-label-color;
+        &:disabled, &.disabled{
+            color: $select-disabled-label-color;
+        }
+    }
+}
