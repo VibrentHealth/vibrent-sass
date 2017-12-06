@@ -44,7 +44,7 @@
 
         vm.selectedWrapper = function (option) {
             if(option){
-                return (vm.change || angular.noop)({option: option});
+                return (vm.change || angular.noop)({option: option.value});
             }
         };
 
