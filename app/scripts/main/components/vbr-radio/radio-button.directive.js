@@ -32,8 +32,17 @@
     function RadioCtrl() {
 
         var vm = this;
+        vm.options = vm.options.map(function (option) {
+            if (typeof option === 'string') {
+                option = {
+                    value: option,
+                    label: option
+                };
+            };
+            return option;
+        });
 
-        vm.selectedWrapper = function(option){
+        vm.selectedWrapper = function (option) {
             if(option){
                 return (vm.change || angular.noop)({option: option});
             }
