@@ -13,7 +13,6 @@ const vbrPagination = app.directive('vbrPagination',
             link: link,
             restrict: 'E',
             scope:{
-                maxPage: '@',
                 minPage: '@'
             },
             template: template
@@ -25,17 +24,13 @@ const vbrPagination = app.directive('vbrPagination',
     });
 
 /* @ngInject */
-function PaginationCtrl($scope) {
+function PaginationCtrl($scope, $timeout) {
 
     let vm = this;
 
-    console.log(vm);
-
     vm.page = 0;
-    vm.maxPage = vm.maxPage || Infinity;
-
     vm.inc = function(){
-        if(vm.page+1 <= vm.maxPage) {
+        if(vm.page+2 <= vm.maxPage) {
             vm.page++;
             $scope.$emit("INCREMENT_PAGE", vm.page);
         }
@@ -49,10 +44,17 @@ function PaginationCtrl($scope) {
     };
 
     $scope.$on("SET_PAGE", function (event, page) {
-        vm.page = page;
+        $scope.pc.page = page;
+        $scope.$evalAsync();
+    });
+
+    $scope.$on("CHANGE_MAX_PAGE", function(event, page) {
+        $scope.pc.maxPage = page;
+        $scope.$evalAsync();
     });
 
     $scope.$on("MAX_PAGE_REACHED", function (event, page) {
+        page = page + 1;
         vm.maxPage = page;
     });
 
