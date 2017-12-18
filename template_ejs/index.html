@@ -65,6 +65,19 @@
 
 <h1>Input</h1>
 <form name="someForm">
+    <vbr-dropdown
+        custom-select="false"
+        id="select-1"
+        class="vbr-select"
+        ng-model="ex.dropdownModel"
+        label="label"
+        placeholder="placeholder"
+        ng-required="false"
+        change="ex.someFunction()"
+        options="ex.dropdownOptions"
+        ng-disabled="ex.disabledDropdown"
+
+    </vbr-dropdown>
     <vbr-input
         id="someName"
         form="someForm"
@@ -89,19 +102,7 @@
         <option>a</option>
         <option>b</option>
     </select>
-    <vbr-dropdown
-        custom-select="false"
-        id="select-1"
-        class="vbr-select"
-        ng-model="ex.dropdownModel"
-        label="label"
-        placeholder="placeholder"
-        ng-required="false"
-        change="ex.someFunction()"
-        options="ex.dropdownOptions"
-        ng-disabled="ex.disabledDropdown"
 
-    </vbr-dropdown>
 </form>
 
 
