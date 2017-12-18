@@ -66,6 +66,34 @@ const vbrSlider = app.directive('vbrSlider',
                 scope.$broadcast('SET_PAGE', page);
             }
 
+            function findMaxPage() {
+                let parentWidth = parentElement.clientWidth;
+                let numCards = DOMSlides.length + 1;
+                /* get width of the new item */
+                let itemWidth = DOMSlides[0].clientWidth;
+                /* get the length of all the items */
+                let itemsPerPage = Math.max(1, Math.floor(parentWidth / itemWidth));
+
+                let numPages = Math.ceil(numCards / itemsPerPage);
+
+                localMaxPage = numPages;
+
+                return numPages;
+            }
+
+            function getResizedPages() {
+                let numCards = DOMSlides.length + 1;
+                let parentWidth = parentElement.clientWidth;
+                /* get width of the new item */
+                let itemWidth = DOMSlides[0].clientWidth;
+                /* get the length of all the items */
+                let itemsPerPage = Math.max(1, Math.floor(parentWidth / itemWidth));
+
+                let numPages = Math.ceil(numCards / itemsPerPage);
+
+
+            }
+
             function handlePageChange(event, page){
                 /* Get the parent width */
                 if(page === 0) {
@@ -86,7 +114,6 @@ const vbrSlider = app.directive('vbrSlider',
                 if(page >= numPages){
                     scope.$broadcast('MAX_PAGE_REACHED', page);
                     localMaxPage = page;
-                    return;
                 }
                 /* Calculate number of cards for parent width DEFAULT: 3*/
                 let visibleElements = Math.max(1, Math.floor(parentWidth / itemWidth));
@@ -102,6 +129,12 @@ const vbrSlider = app.directive('vbrSlider',
                 parentElement.setAttribute('style', offset);
                 setPage(page);
             }
+            scope.$broadcast('CHANGE_MAX_PAGE', findMaxPage());
+            window.onresize = function() {
+                let newMaxPage = findMaxPage();
+                handlePageChange(null, Math.min(newMaxPage - 1, localPage));
+                scope.$broadcast('CHANGE_MAX_PAGE', newMaxPage);
+            };
         }
     });
 
