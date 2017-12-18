@@ -55,6 +55,11 @@ The Dropdown has the following properties that can be configured during initiali
     font-family: $select-font;
     @include display-flex;
     background-color: $select-options-bg-color;
+    > div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
     .selector,select{
         font-size: $select-default-font-size;
         color: $select-default-font-color;
@@ -69,6 +74,7 @@ The Dropdown has the following properties that can be configured during initiali
         background-size: 12px 12px;
         background-position: 95% 40%;
         min-width: 100px;
+        width: 100%;
         span{
             padding: $content-padding/3;
         }
