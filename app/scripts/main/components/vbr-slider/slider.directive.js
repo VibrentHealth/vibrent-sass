@@ -130,11 +130,11 @@ const vbrSlider = app.directive('vbrSlider',
                 setPage(page);
             }
             scope.$broadcast('CHANGE_MAX_PAGE', findMaxPage());
-            window.onresize = function() {
+            window.addEventListener("resize", function() {
                 let newMaxPage = findMaxPage();
                 handlePageChange(null, Math.min(newMaxPage - 1, localPage));
                 scope.$broadcast('CHANGE_MAX_PAGE', newMaxPage);
-            };
+            });
         }
     });
 
