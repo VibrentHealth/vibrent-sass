@@ -24,12 +24,29 @@ const vbrSlider = app.directive('vbrSlider',
         };
         return directive;
         function link(scope, element, attrs) {
+            /* set up mutation observer config */
+            const config = { childList: true };
+            // Callback function to execute when mutations are observed
+            const callback = function(mutationsList) {
+                for(var mutation of mutationsList) {
+                    if (mutation.type == 'childList') {
+                        DOMSlides = [].slice.call(element[0].querySelector('slides').children,1);
+                        scope.$broadcast('CHANGE_MAX_PAGE', findMaxPage());
+                    }
+                }
+            };
+
+// Create an observer instance linked to the callback function
+            var observer = new MutationObserver(callback);
 
             let parentElement = element[0].querySelector('slides');
+            observer.observe(parentElement, config);
             let localPage = 0;
             let localMaxPage = Infinity;
-            let DOMSlides = [].slice.call(element[0].querySelector('slides').children,1);
-
+            let DOMSlides = null;
+            if (element[0].querySelector('slides').childElementCount > 0) {
+                DOMSlides = [].slice.call(element[0].querySelector('slides').children,1);
+            }
             scope.$on('INCREMENT_PAGE', handlePageChange);
             scope.$on('DECREMENT_PAGE', handlePageChange);
 
@@ -67,18 +84,20 @@ const vbrSlider = app.directive('vbrSlider',
             }
 
             function findMaxPage() {
-                let parentWidth = parentElement.clientWidth;
-                let numCards = DOMSlides.length + 1;
-                /* get width of the new item */
-                let itemWidth = DOMSlides[0].clientWidth;
-                /* get the length of all the items */
-                let itemsPerPage = Math.max(1, Math.floor(parentWidth / itemWidth));
+                if (DOMSlides !== null) {
+                    let parentWidth = parentElement.clientWidth;
+                    let numCards = DOMSlides.length + 1;
+                    /* get width of the new item */
+                    let itemWidth = DOMSlides[0].clientWidth;
+                    /* get the length of all the items */
+                    let itemsPerPage = Math.max(1, Math.floor(parentWidth / itemWidth));
 
-                let numPages = Math.ceil(numCards / itemsPerPage);
+                    let numPages = Math.ceil(numCards / itemsPerPage);
 
-                localMaxPage = numPages;
-
-                return numPages;
+                    localMaxPage = numPages;
+                    return numPages;
+                }
+                return 1;
             }
 
             function getResizedPages() {
@@ -90,8 +109,6 @@ const vbrSlider = app.directive('vbrSlider',
                 let itemsPerPage = Math.max(1, Math.floor(parentWidth / itemWidth));
 
                 let numPages = Math.ceil(numCards / itemsPerPage);
-
-
             }
 
             function handlePageChange(event, page){
