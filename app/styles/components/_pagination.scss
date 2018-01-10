@@ -1,59 +1,47 @@
 .vbr-pagination {
-
     display: flex;
-    padding: 1rem;
+    padding: calculateRem(10px);
     background: white;
     white-space: nowrap;
+    transition: opacity 0.125s;
+    opacity: 0;
 
-    button {
-        background: none;
-        border: none;
-        font-size: 0px;
+    &.is-multi-page {
+      opacity: 1;
     }
 
-    .pagination-left-button {
-        transition: .5s;
-        cursor: pointer;
-        > svg {
-            height: 21px;
-            transform: rotate(180deg);
-            polygon {
-                fill: color('dark-grey') !important;
-            }
+    .pagination-left-button, .pagination-right-button {
+      transition: transform 0.25s;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 0;
+
+      &:hover {
+          transform: scale(1.1);
+          > svg polygon {
+            fill: color('dark-blue');
+          }
+      }
+
+      &:disabled {
+        pointer-events: none;
+        > svg polygon {
+          fill: color('dark-grey');
         }
-        &:hover {
-            transform: scale(1.1);
-            > svg {
-                polygon {
-                    fill: color('dark-blue') !important;
-                }
-            }
-        }
+      }
+
+      > svg {
+          height: calculateRem(21px);
+          polygon {
+              fill: color('cerulean');
+              transition: fill 0.25s;
+          }
+      }
     }
 
-    .pagination-right-button {
-        transition: .5s;
-        cursor: pointer;
-        > svg {
-            height: 21px;
-            polygon {
-                fill: color('dark-grey') !important;
-            }
-        }
-        &:after {
-            transition: .5s;
-            font-size: 20px;
-            color: color('blue');
-            cursor: pointer;
-        }
-        &:hover {
-            transform: scale(1.1);
-            > svg {
-                polygon {
-                    fill: color('dark-blue') !important;
-                }
-            }
-        }
+    .pagination-left-button > svg {
+      transform: rotate(180deg);
     }
 
     .pagination-pages-container {
