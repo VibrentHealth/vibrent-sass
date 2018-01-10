@@ -61,17 +61,24 @@ const vbrSlider = app.directive('vbrSlider',
             function handleSwipe(e) {
                 deltaX = deltaX + e.deltaX;
                 let direction = e.offsetDirection;
+                let wasSuccessful = false;
                 /* INC PAGE */
                 if(direction === 2) {
-                    if(localPage + 1 <= localMaxPage) {
+                    if(localPage + 1 < localMaxPage) {
                         scope.$broadcast('INCREMENT_PAGE', localPage + 1);
+                        wasSuccessful = true;
                     }
                 }
                 /* DEC PAGE */
                 if(direction === 4) {
                     if(localPage !== 0){
                         scope.$broadcast('DECREMENT_PAGE', localPage - 1);
+                        wasSuccessful = true;
                     }
+                }
+                /* remove user's selection, which can occur during a swipe action */
+                if (wasSuccessful) {
+                    window.getSelection().removeAllRanges();
                 }
             }
 
