@@ -132,6 +132,7 @@
     color: $text-color;
   }
   &:disabled{
+    pointer-events: none;
     border-color: $disabled-text-color;
     background-color: $disabled-color;
     color: $disabled-text-color;
@@ -156,6 +157,7 @@
     color: $clicked-color;
   }
   &:disabled{
+    pointer-events: none;
     border-color: $disabled-color;
     background-color: $bg-color;
     color: $disabled-color;
