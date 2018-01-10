@@ -10,7 +10,7 @@
       opacity: 1;
     }
 
-    .pagination-left-button, .pagination-right-button {
+    .pagination-button-left, .pagination-button-right {
       transition: transform 0.25s;
       cursor: pointer;
       background: none;
@@ -40,7 +40,7 @@
       }
     }
 
-    .pagination-left-button > svg {
+    .pagination-button-left > svg {
       transform: rotate(180deg);
     }
 
