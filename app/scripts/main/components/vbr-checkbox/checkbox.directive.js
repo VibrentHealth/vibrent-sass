@@ -7,7 +7,7 @@ import angular from 'angular';
 import template from './checkbox.html';
 
 const vbrCheckbox =  app.directive('vbrCheckbox',
-    function(TEMPLATES) {
+    function() {
         const directive = {
             bindToController: true,
             controller: CheckboxCtrl,
